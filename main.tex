@@ -1,0 +1,73 @@
+\documentclass[12 pt]{mythesis}
+%\usepackage[utf8]{inputenc}
+
+\usepackage{tocbibind}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{comment}
+\usepackage{chngcntr}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage{cite}
+\usepackage{notoccite}
+\usepackage{verbatim}
+
+\newcommand{\rulesep}{\unskip\ \vrule\ }
+\newcommand{\zeronubb}{$0\nu \beta \beta$}
+\newcommand{\twonubb}{$2\nu \beta \beta$}
+\author{Christopher James Davis}
+\title{Measurement of Two-Neutrino Double-Beta Decay in CUORE}
+\date{Dec 2018}
+\advisor{Reina Maruyama}
+
+\begin{document}
+\frontmatter
+\input{Abstract.tex}
+\addcontentsline{toc}{chapter}{Abstract}
+\maketitle
+
+\makecopyright
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Acknowledgements
+\input{Acknowledgements.tex}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\mainmatter
+
+% Dedication
+\begin{flushright}
+\null \vspace{\stretch{1}}
+%For Valerie
+For my parents, \\
+for letting my imagination run wild
+\vspace{\stretch{2}}\null
+\end{flushright}
+
+% Thesis Chapters
+\input{Chapters/Introduction.tex}
+\input{Chapters/DoubleBetaDecay.tex}
+\input{Chapters/CUORE.tex}
+\input{Chapters/DetectorCalibrationSystem.tex}
+\input{Chapters/DataProcessing.tex}
+\input{Chapters/Simulation.tex}
+\input{Chapters/BackgroundModel.tex}
+\input{Chapters/Conclusion.tex}
+\backmatter
+\appendix
+% Appendices and Bibliography
+\input{Appendices/AppendixA.tex}
+\bibliography{Bibliography.bib}
+\bibliographystyle{ieeetr}
+
+\end{document}

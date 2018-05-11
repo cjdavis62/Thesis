@@ -1,0 +1,277 @@
+\chapter{Introduction}
+\begin{quote}
+Mathematics began to seem too much like puzzle solving. Physics is puzzle solving, too, but of puzzles created by nature, not by the mind of man.
+\end{quote}
+\begin{flushright}
+--Maria Goeppert-Mayer
+\end{flushright}
+
+
+In the 18$^\textrm{th}$ century, Isaac Newton,  watching an apple fall to the ground, thought to himself, ``Why should that apple always descend perpendicularly to the ground?'' In short, why there weren't other ways for apples to fall? While it would be significantly more difficult for apple trees to reproduce if they fell upwards, there surely had to be an explanation for why they would only fall downwards! These musings led him to develop his theory on gravitation which he learned had far-reaching implications to orbits of objects in the solar system, much further than merely the fall of a single apple. Similarly, even as modern physics has tackled tougher problems than that of the motion of an apple to the ground, the underlying question is always the same: ``Why do things act a certain way?'' and the answers found not only describe the `apples' we are looking at, but the universe as a whole.
+
+One way that this current question manifests to physicists now is ``Do neutrino particles act like other leptons?'' This indeed is the main question addressed in this thesis, and has been a topic of active study for nearly a century.
+
+\section{The Standard Model}
+\subsection{Overview}
+
+Since the days of Newton, physics has come a long way in describing the fundamental building blocks of nature. Currently, a theory developed in the 1960's known as the Standard Model of particle physics is the main explanation for physical phenomena and has correctly predicted the existence of multiple particles, most recently the Higgs boson \cite{Aad:2012tfa}\cite{Chatrchyan:2012xdj}. The Standard Model is one of the most powerful theories in physics, together with $\Lambda$CDM in cosmology , it has been able to correctly predict phenomena on both subatomic and cosmological scales.
+
+The Standard Model divides up the universe into two main types of particles: the particles that make up the matter around us, called fermions, and the particles that mediate the fundamental forces of nature, called bosons. This feature comes from the spins of the particles as the spins of fermions only come in half-integers, e.g. $\frac{1}{2}$, and the bosons are integers, e.g. 0 and 1. The classifications can be further broken down for the fermions into two more sub-types of particles: quarks and leptons. Thus, the Standard Model describes how each of these quarks and leptons interact with one another via the gauge bosons, shown in \hyperref[fig:StandardModel]{Fig. \ref*{fig:StandardModel}}. In particular, each of the gauge bosons -- the photon, the Z and W bosons, and the gluon -- each correspond to one of the fundamental forces of nature: electromagnetic, weak nuclear force, and strong nuclear force, respectively. The Higgs boson, while also a boson, does not mediate a force, but instead arises due to the spontaneous symmetry breaking of the electroweak force. 
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=0.6\linewidth]{Figures/higgs-elementary-particles.png}
+\caption[The particles in the Standard Model]{The particles in the Standard Model. They are split into the bosons and fermions, with the fermions being further split into three generations of quarks and leptons.}
+\label{fig:StandardModel}
+\end{figure}
+
+
+
+\subsection{Leptons}
+
+Of greatest interest here for the work in this thesis are the particles, or flavors, known as leptons. These 6 flavors are the electron, the muon, and the tau and the electron neutrino, the muon neutrino the tau neutrino. These 6 flavors of particles interact with one another via the W and Z bosons and is discussed more in \autoref{sec:Beta Decay}. When the Standard Model was first introduced in the 1960's, the neutrinos were massless. This was due to the fact that, as shown in \autoref{fig:NeutrinoMasses}, taking the mass of neutrinos to be massless is a reasonable approximation when the next-lightest particle, the electron with mass 0.511 $\textrm{MeV}/\textrm{c}^2$, is at least a million times more massive, in addition to the difficulty in even detecting neutrinos.
+
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=0.8\linewidth]{Figures/NeutrinoMasses.jpg}
+\caption[The masses of the fundamental fermion particles. The neutrinos are multiple orders of magnitude lighter than even their lightest counterparts.]{The masses of the fundamental fermion particles. The neutrinos are multiple orders of magnitude lighter than even their lightest counterparts.}
+\label{fig:NeutrinoMasses}
+\end{figure}
+
+\subsubsection*{Neutrino Masses and Oscillation}
+Neutrinos were shown to have mass, however, after they were observed to oscillate between their generational counterparts, viz. $\nu_{\textrm{\alpha}} \leftrightarrow \nu_{\textrm{\beta}}$, where $\alpha$ and $\beta$ correspond to two different flavor states of the neutrino \cite{PhysRevLett.20.1205}\cite{Hatakeyama:1998ea}\cite{Ahmad:2001an}. Not only does this phenomenon imply that the neutrinos have non-zero mass, it also shows that the neutrino flavor mass eigenstates are not equivalent to their mass eigenstates. This transformation between the flavor and mass bases can be represented as a matrix, called the Pontecorvo–-Maki–-Nakagawa–-Sakata (PMNS) matrix as follows:
+
+\begin{equation}\label{eq:PMNS Matrix U Form}
+\begin{bmatrix}
+\nu_{e} \\
+\nu_{\mu} \\
+\nu_{\tau}
+\end{bmatrix}
+=
+  \begin{bmatrix}
+    U_{e1} & U_{e2} & U_{e3} \\
+    U_{\mu1} & U_{\mu2} & U_{\mu3} \\
+    U_{\tau1} & U_{\tau2} & U_{\tau3}
+  \end{bmatrix}
+  \begin{bmatrix}
+  	\nu_{1} \\
+	\nu_{2} \\
+	\nu_{3}
+  \end{bmatrix}.
+  \end{equation}
+
+In this formalism, the probability for measuring an electron neutrino to have the mass associated with the $\nu_1$ state is $|U_{e1}|^2$. The notation usually used to differentiate the $\nu_1$, $\nu_2$, and $\nu_3$ states is in decreasing order of the probability for a $\nu_i$ state to be observed in a $\nu_e$ state. These probabilities are shown in \autoref{fig:neutrinosfigs3nuspic}. The PMNS matrix in \autoref{eq:PMNS Matrix U Form} can also be written as follows: 
+
+\begin{equation}\label{eq:PMNS Matrix Standard Form}
+  \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & c_{23} & s_{23} \\
+    0 & -s_{23} & c_{23}
+  \end{bmatrix}
+  \begin{bmatrix}
+  c_{13} & 0 & s_{13}e^{-i\delta_{CP}} \\
+  0 & 1 & 0 \\
+  -s_{13}e^{i\delta_{CP}} & 0 & c_{13}
+  \end{bmatrix}
+  \begin{bmatrix}
+  c_{12} & s_{12} & 0 \\
+  -s_{12} & c_{12} & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+  e^{i\alpha_1/2} & 0 & 0 \\
+  0 & e^{i\alpha_2/2} & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+\end{equation}
+where $s_{ij}$ and $c_{ij}$ are $\sin(\theta_{ij})$ and $\cos(\theta_{ij})$, respectively. While this formulation in \autoref{eq:PMNS Matrix Standard Form} looks more complicated than the formulation in \autoref{eq:PMNS Matrix U Form}, it reduces the total number of parameters to just three mixing angles and a complex phase ($\theta_{12}$, $\theta_{13}$, $\theta_{23}$, and $\delta_{CP}$) due to the fact that five of these parameters can be absorbed into the phases of the lepton fields \cite{Valle:2006}. The other parameters, $\alpha_1$ and $\alpha_2$ only play a role if the neutrino is a Majorana particle, which is discussed more in \autoref{ssec:Dirac and Majorana Masses}. In any case, these values do not play a role in neutrino oscillation and their matrix can be thought of as the identity matrix in this case \cite{BILENKY1980495}. To understand what this means for the behavior of neutrinos, a simpler model with only two neutrinos can be used. In this simplified model with two neutrinos of flavor $\alpha$ and $\beta$, the usefulness of these angles and phases becomes apparent as \autoref{eq:PMNS Matrix Standard Form} appears as
+
+\begin{equation}
+\begin{bmatrix}
+\nu_\alpha \\
+\nu_\beta 
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cos(\theta) & \sin(\theta) \\
+-\sin(\theta) & \cos(\theta) 
+\end{bmatrix}
+\begin{bmatrix}
+\nu_1 \\
+\nu_2 
+\end{bmatrix}.
+\end{equation}
+
+The probability that a neutrino has oscillated from type $\alpha$ to type $\beta$ after some time, $t$, is given as 
+
+\begin{align}
+P(\nu_\alpha\rightarrow\nu_\beta) &= \lvert<\nu_\beta(t)| \nu_\alpha>\rvert^2.
+\end{align}
+
+In the mass eigenstate, neutrinos propagate as plane waves of the form (in natural units, i.e. $c=1$ and $\hbar=1$)
+\begin{align}
+|v_i(t)>&=e^{i(Et-\vec{x}\cdot\vec{p})}|v_i(0)>.
+\label{eq:OscillationProbability_general}
+\end{align}
+
+Neutrinos that are observed in the laboratory are generally produced in either a nuclear decay or a high-energy collision and have energies much larger than their rest mass. For example, a neutrino produced in the sun can have energy up to 15 MeV. Therefore, since $E >> m$, a relativistic approximation can be made in that $t\approx L$, where $L$ is the distance that the neutrino travels from the sun to the earth, and the energy of the neutrino can be expanded as follows:
+
+\begin{align}
+E &\approx E+\frac{m_i^2}{2E}.
+\label{eq:E_approx}
+\end{align}
+Using \autoref{eq:E_approx} and \autoref{eq:OscillationProbability_general}, the probability of a neutrino osciallating from type $\alpha$ to a different type $\beta$ is then
+
+\begin{align}
+P(\nu_\alpha\rightarrow\nu_\beta) = 2 \sin^2(2\theta)\sin^2(\frac{\Delta m_{ij}^2L}{4E})
+\label{eq:OscillationProbability_2nu}
+\end{align}
+where $\Delta m_{ij} = m_i^2 - m_j^2$, the mass-squared difference in the masses of the neutrino.
+ 
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=0.9\linewidth]{Figures/Oscillation_2017Params_0CP.pdf}
+\caption[Neutrino oscillation for an initial electron neutrino for 3 flavors of neutrino.]{Neutrino oscillation for an initial electron neutrino for 3 flavors of neutrino. This plot is generated via the latest parameters in \cite{Patrignani:2016xqp} assuming normal hierarchy. For this plot, $\delta_{CP}$ has been set to zero for illustrative purposes, but a value of 0 (or 2$\pi$) is disfavored at the 2.4$\sigma$ level.}
+\label{fig:Oscillations_electron_long}
+\end{figure}
+
+%Since the 
+%\begin{align}
+%<\nu_\i(t)| & = e^{i(Et-\vec{p}\cdot \vec{x})}<\nu_\i(0)| \\
+%\end{align}
+
+Unfortunately, even with the latest data from neutrino oscillation experiments, the exact masses of the neutrinos cannot be determined. This can be seen in \autoref{eq:OscillationProbability_2nu} where only the relative masses of the neutrinos play a role, not their absolute masses. Other data can set limits on the absolute mass scale of the neutrinos, however. Using data derived from the Cosmic Microwave Background and Baryon Acoustic Oscillations \cite{refId0}, the sum of the neutrino masses can be limited to, at 95\% C.L., $\sum_j m_j < 0.170~\textrm{eV}$, but there are existing models of neutrino mass generation where this result may not effectively constrain the neutrino mass \cite{Koksbang:2017rux} \cite{PhysRevLett.94.111801}. Results from direct mass measurement experiments, which are model-independent, are able to measure this value, with results from the Troitsk and Mainz experiments limited the electron antineutrino mass to, at 95\% C.L., $m_{\bar{\nu}_e} < 2.05~\textrm{eV}$ and $m_{\bar{\nu}_e} < 2.3~\textrm{eV}$, respectively \cite{Aseev:2011dq} \cite{Kraus:2004zw}. Other upcoming experiments, KATRIN and Project 8, aim to measure these values with sensitivity up to 0.20 eV  and 0.04 eV, respectively \cite{Robertson:2013ziv} \cite{Esfahani:2017dmu}.
+
+Another insensitivity to the neutrino masses comes from another feature of \autoref{eq:OscillationProbability_2nu} in that the probabilities are unaffected by the sign of $\Delta m^2$. However, this probability is for the propagation of a neutrino through vacuum, but in matter-dense regions, such as the sun, this probability is no longer correct. This Mikheyev-Smirnov-Wolfenstein effect has been observed in solar neutrino measurements and allows for the determination that $\Delta m_{21}^2>0$ \cite{1367-2630-6-1-139}. The sign of $\Delta m_{32}^2$ is still unknown, although long-baseline experiments of neutrino oscillation through the Earth aim to determine this effect. Because of this, there are two possible scenarios for neutrino mass ordering, either $m_1 < m_2 < m_3$, called Normal Hierarchy (NH), or $m_3 < m_1 < m_2$, called Inverted Hierarchy (IH), shown in \autoref{fig:neutrinosfigs3nuspic}. There have been some recent results that point towards NH from the NOvA experiment, but nothing yet conclusive \cite{Adamson:2017gxd}.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/Neutrinos_figs_3nuspic.png}
+\caption[The mass orderings in both normal and inverted hierarchy. The sign of $(\Delta m^2)_{\textrm{atm}}$ is not known, which causes the difference between the two scenarios.]{The mass orderings in both normal and inverted hierarcy. The sign of $(\Delta m^2)_{\textrm{atm}}$ is not known, which causes the difference between the two scenarios. Figure from \cite{Hewett:2012ns}.}
+\label{fig:neutrinosfigs3nuspic}
+\end{figure}
+
+\subsection{Dirac and Majorana Masses}
+\label{ssec:Dirac and Majorana Masses}
+
+With the mass of neutrinos shown to be non-zero, the Standard Model can be extended to include the masses for the neutrinos, but this opens up another question for how exactly the neutrino mass comes in to the Standard Model Lagrangian. For the other fundamental fermionic particles, e.g. the electron that has charge $\textrm{e}^-$, the corresponding antiparticle will have the opposite charge, e.g. the positron with charge $\textrm{e}^+$ charge. This therefore means that the particle and antiparticle are distinct particles, called Dirac fermions. The neutrino is unique in this regard as it is the only electrically neutral fundamental fermion. This means the neutrino may be identical to its own antiparticle, which we call a Majorana fermion, and, more generally, may have both a Dirac and Majorana mass.
+
+A particle with a Dirac mass appears in the Standard Model Lagrangian as
+\begin{align}
+&= -m(\bar{\psi_L}\psi_R + \bar{\psi_R}\psi_L) \\
+&= -m\bar{\psi_L}\psi_R + h.c.
+\label{eq:DiracMass_chiral}
+\end{align}
+after decomposing the spinor, $\psi$, into its left- and right-handed chiral states. To make these equations clearer by taking the assumption that a particle's mass is derived purely from the Dirac term, i.e. the field is given by
+\begin{equation}
+\psi = \psi_L + \psi_R,
+\end{equation}
+\autoref{eq:DiracMass_chiral} can be rewritten as
+\begin{align}
+\mathcal{L} &= -m\bar{\psi}\psi. \label{eq:DiracMass}
+\end{align}
+
+For a Majorana particle, the mass term does not couple between left- and right-handed chiral states and appears solely as single-handed fields $\psi_L$ and the charge conjugate $\psi_L^c$ as follows,
+\begin{align}
+\mathcal{L}_L &= -\frac{1}{2}m_L\bar{\psi^c_L}\psi_L+h.c. \label{eq:MajoranaMass_chiral} \\
+\mathcal{L}_R &= -\frac{1}{2}m_R\bar{\psi^c_R}\psi_R+h.c.
+\end{align}
+What can be seen from \autoref{eq:DiracMass} and \autoref{eq:MajoranaMass_chiral} are that when the term in \autoref{eq:DiracMass} acts on a particle $\psi$, it leaves the particle as a $\psi$, but when the term in \autoref{eq:MajoranaMass_chiral} acts on a particle $\psi$, it converts the particle into its antiparticle $\bar{\psi}$. If we assign a `lepton number' of $+1$ for particles and $-1$ for antiparticles, then the Dirac mass term conserves lepton number while the Majorana mass term does not.
+
+\begin{align}
+\mathcal{L} = & -\frac{1}{2}m_D(\bar{\psi}_L\psi_R+\bar{\psi}^c_L\psi^c_R)+m_L\bar{\psi}_L\psi^c_R+m_R\bar{\psi}^c_L\psi_R +h.c. \\
+\mathcal{L} = &\frac{1}{2} \begin{pmatrix}
+\bar{\psi}_L,& \bar{\psi}^c_L \\
+\end{pmatrix} \begin{pmatrix}
+m_L & m_D \\
+m_D & m_R \\
+\end{pmatrix}
+\begin{pmatrix}
+\psi^c_R \\
+\psi_R
+\end{pmatrix}
+\end{align}
+
+\subsubsection*{Type I Seesaw Mechanism}
+
+While the Standard Model can be modified to include neutrino oscillations, it can offer no explanation of why the mass of the neutrino is of order $10^6$ times lighter than the electron, the next lightest known fundamental particle. There are some compelling theories for this difference, however. One of the simplest methods is known as the Seesaw mechanism. This method is the simplest because it only extends the SM by adding a single right-handed singlet neutrino, $\nu_R$, for each of the flavor states.
+
+The type I seesaw mechanism then introduces a mass matrix for the neutrinos of the type:
+\begin{equation}
+M =\begin{pmatrix}
+0 & m_D \\
+m_D & M_R
+\end{pmatrix}
+\end{equation}
+In the case where $M_R \gg m_D$, the two neutrino masses become $M_R$ and $\frac{m_D^2}{M_R}$, which, if we assume that the Dirac mass is similar to the other leptons ($\approx 1~\textrm{MeV}$), yields a meV-scale neutrino for a heavy neutrino of mass $10^{15}~ \textrm{eV}$.
+
+\section{Baryogenesis}
+
+Another issue with the Standard Model is that it cannot correctly predict the matter-antimatter asymmetry present in the universe. After the Big Bang, matter and antimatter should have been produced in equal amounts. However, instead of being produced in equal numbers, the observable universe is made up entirely of only matter on large scales, implying that the universe has a preference for slightly more baryons than antibaryons \cite{Canetti:2012zc}. The requirements for a process to create this asymmetry are summed up in the Sakharov conditions for baryogenesis \cite{Sakharov:1967dj}:
+\begin{enumerate}
+\item Baryon number, B, violation
+\item C and CP violation
+\item Out of thermal equilibrium
+\end{enumerate}
+The first condition is needed so that there is a physics process within which a baryon can be created or an anti-baryon destroyed ($\Delta \textrm{B}\neq0$), the second condition requires that this process occurs more often for baryon creation and anti-baryon destruction than vice-versa ($\Gamma(\Delta \textrm{B}>1) > \Gamma(\Delta \textrm{B}<-1)$), and the third condition requires that the process has to occur when the universe is not in thermal equilibrium as other processes would have to oppose baryon-asymmetry in thermal equilibrium.
+
+\section{Majorana Neutrinos and Leptogenesis}
+%One possible mechanism for baryogenesis is that the imbalance between matter and antimatter is due to an imbalance in leptons that transfers over to the baryons. This `leptogenesis' would have to fulfill the same Sakharov conditions except that there would need to be lepton number, L, violation. This violation is possible if the neutrino is its own antiparticle. In the interaction $d + d \rightarrow u + u + e + e$ shown below,  \hyperref[fig:0nuBB]{Fig. \ref*{fig:0nuBB}}, a neutrino is exchanged between the two $W^-$ and allows for the final state to have two more leptons than the initial state, thereby violating lepton number conservation.
+
+\begin{figure}[tbph]
+\centering
+\begin{subfigure}[t]{0.49\textwidth}
+\includegraphics[width=0.5\linewidth]{Figures/2NuBB_clip.pdf}
+\label{fig:2nuBB}
+\end{subfigure}
+\rulesep
+\begin{subfigure}[t]{0.49\textwidth}
+\includegraphics[width=0.5\linewidth]{Figures/0NuBB_clip.pdf}
+%\label{fig:0nuBB}
+\end{subfigure}
+\caption[Short Caption]{T}
+
+\end{figure}
+
+\begin{comment}
+
+\rulesep
+\centering
+\begin{tikzpicture}
+
+\begin{feynman}
+\vertex (a) {\(d\)};
+\vertex [right=of a] (b);
+\vertex [above right=of b] (f1) {\(u\)};
+\vertex [below right = of b] (c);
+\vertex [above right=of c] (f2) {\(e\)};
+\vertex [right = of c] (nu1) {\(\nu_e\)};
+\vertex [below=of c] (d);
+\vertex [below left = of d] (e);
+\vertex [right = of d] (nu2) {\(\nu_e\)};
+\vertex [below right = of d] (f4) {\(e\)};
+\vertex [left = of e] (f5) {\(d\)};
+\vertex [below right = of e] (f6) {\(u\)};
+
+\diagram {
+(a) -- [fermion] (b) -- [fermion] (f1),
+(b) -- [boson, edge label'=\(W^{-}\)] (c),
+(c) -- [fermion] (f2),
+(d) -- [opacity = 0] (c),
+(c) -- [anti fermion] (nu1),
+(d) -- [boson, edge label'=\(W^{-}\)] (e),
+(d) -- [fermion] (f4),
+(d) -- [anti fermion] (nu2),
+(f5) -- [fermion] (e) -- [fermion] (f6),
+};
+\end{feynman}
+\end{tikzpicture}
+\caption{}
+\label{fig:2nuBB}
+\end{subfigure}
+\caption{(a) Diagram of Neutrinoless Double Beta Decay with light neutrino exchange: $d+d\rightarrow u+u+e+e$. (b) Diagram of Two Neutrino Double Beta Decay: $d+d \rightarrow u+u+e+e+\nu+\nu$.}
+\end{figure}
+\end{comment}
+
+If this process exists, then, in the early universe, there could have been an imbalance in the number of leptons and antileptons that could have been transferred by sphaleron transitions to the baryons. Therefore, the current baryon asymmetry that is seen today might be due to lepton number violation, and a discovery could have profound implications on how we arrived at the universe we live in today.
