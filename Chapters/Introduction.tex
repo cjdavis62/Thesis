@@ -218,63 +218,20 @@ If we take that the Dirac mass occurs for neutrinos in the same manner as for th
 
 \section{Baryogenesis}
 
-Another issue with the Standard Model is that it cannot correctly predict the matter-antimatter asymmetry present in the universe. After the Big Bang, matter and antimatter should have been produced in equal amounts. However, instead of being produced in equal numbers, the observable universe is purely matter and not antimatter on large scales, implying that the universe has a preference for slightly more baryons than antibaryons \cite{Canetti:2012zc}. The requirements for a process to create this asymmetry are summed up in the Sakharov conditions for baryogenesis \cite{Sakharov:1967dj}:
+Another issue with the Standard Model is that it cannot correctly predict the matter-antimatter asymmetry present in the universe. After the Big Bang, matter and antimatter should have been produced in equal amounts; however, during the last 13.8 billion years, the matter in the universe has won out over the antimatter as measurements of the observable universe show that is is purely matter on large scales. For example, if there were antimatter galaxies or sectors of the universe, we would be able to observe large releases of energy due to matter-antimatter annihilation from collisions of galaxies or if there were an antimatter-dominated region of the universe due to annihilations at the border between the matter and antimatter regions. This implies that the universe has a preference for slightly more baryons than antibaryons \cite{Canetti:2012zc}. The requirements for a process to create this asymmetry are summed up in the Sakharov conditions for baryogenesis \cite{Sakharov:1967dj}:
 \begin{enumerate}
 \item Baryon number, B, violation
-\item C and CP violation
-\item Out of thermal equilibrium
+\item Charge, C, and Charge Parity, CP, violation
+\item Interactions out of thermal equilibrium
 \end{enumerate}
-The first condition is needed so that there is a physics process within which a baryon can be created or an anti-baryon destroyed ($\Delta \textrm{B}\neq0$), the second condition requires that this process occurs more often for baryon creation and anti-baryon destruction than vice-versa ($\Gamma(\Delta \textrm{B}>1) > \Gamma(\Delta \textrm{B}<-1)$), and the third condition requires that the process has to occur when the universe is not in thermal equilibrium as other processes would have to oppose baryon-asymmetry in thermal equilibrium.
+The first condition is needed so that there is a physics process within which a baryon can be created or an anti-baryon destroyed. Assigning baryons such as protons and neutrons $\textrm{B}=1$, antibaryons $\textrm{B}=-1$, and non-baryonic matter $\textrm{B}=0$, this constraint can be written as $\Delta \textrm{B}\neq0$. Baryon number violation is not enough on its own to create an imbalance between matter and antimatter, as a process that has $\Delta\textrm{B}\neq0$ could just be reversed and prevent an asymmetry from forming. Therefore, the second condition requires that this process occurs more often for baryon creation or anti-baryon destruction than the reverse, i.e., $\Gamma(\Delta \textrm{B}>1) > \Gamma(\Delta \textrm{B}<-1)$. Finally, the third condition requires that the process has to occur when the universe is not in thermal equilibrium as other processes would have to oppose whatever process satisfies the first two Sakharov conditions due to CPT symmetry.
 
-\section{Majorana Neutrinos and Leptogenesis}
-%One possible mechanism for baryogenesis is that the imbalance between matter and antimatter is due to an imbalance in leptons that transfers over to the baryons. This `leptogenesis' would have to fulfill the same Sakharov conditions except that there would need to be lepton number, L, violation. This violation is possible if the neutrino is its own antiparticle. In the interaction $d + d \rightarrow u + u + e + e$ shown below,  \hyperref[fig:0nuBB]{Fig. \ref*{fig:0nuBB}}, a neutrino is exchanged between the two $W^-$ and allows for the final state to have two more leptons than the initial state, thereby violating lepton number conservation.
+\subsection{Majorana Neutrinos and Leptogenesis}
+In the framework of the Standard Model, Baryon number is not a fundamental symmetry such as electric charge and is merely an ``accidental" symmetry of the Lagrangian without an associated mediator like the photon. While baryon number cannot be violated classically in the SM Lagrangian, quantum effects may violate it \cite{PhysRevLett.37.8}. However, these interactions conserve another symmetry, viz. $\textrm{B}-\textrm{L}$, where L is the lepton number and has similar rules to the baryon number described above. Therefore, a place to look for baryon number violation may be in the lepton sector. One possible mechanism for baryogenesis is that the imbalance between matter and antimatter is due to an imbalance in leptons that transfers over to the baryons. This `leptogenesis' would have to fulfill an analogous set of Sakharov conditions. This violation is possible if the neutrino is its own antiparticle. In the interaction $d + d \rightarrow u + u + e + e$ in \autoref{fig:0nuBB}, lepton number is violated by $\delta\textrm{L}=2}$. This method of lepton number violation would then also be associated with a baryon number violating process with $\delta\textrm{B}=2$ as well. Even more attractive as a candidate for baryon number asymmetry, the quantum effects that violate baryon number are unsuppressed at high temperatures as in the early universe and this lepton number violation could transfer to the baryon sector and result in the matter-dominated observable universe.
 
 \begin{figure}[tbph]
 \centering
-\begin{subfigure}[t]{0.49\textwidth}
-\includegraphics[width=0.5\linewidth]{Figures/2NuBB_clip.pdf}
-\label{fig:2nuBB}
-\end{subfigure}
-\rulesep
-\begin{subfigure}[t]{0.49\textwidth}
-\includegraphics[width=0.5\linewidth]{Figures/0NuBB_clip.pdf}
-%\label{fig:0nuBB}
-\end{subfigure}
-\caption[Short Caption]{T}
-
+\includegraphics[width=0.35\linewidth]{Figures/0NuBB_clip.pdf}
+\caption[Feynman diagram for neutrinoless double-beta decay]{The Feynman diagram for neutrinoless double-beta decay. Two down quarks convert to up quarks and emit a $\textrm{W}^{-}$ boson which exchange a neutrino and emit an electron.}
+\label{fig:0nuBB}
 \end{figure}
-
-\begin{figure}
-%\begin{comment}
-\centering
-\begin{tikzpicture}
-\begin{feynman}
-\vertex (a) {\(d\)};
-\vertex [right=of a] (b);
-\vertex [above right=of b] (f1) {\(u\)};
-\vertex [below right = of b] (c);
-\vertex [above right=of c] (f2) {\(e\)};
-\vertex [right = of c] (nu1) {\(\nu_e\)};
-\vertex [below=of c] (d);
-\vertex [below left = of d] (e);
-\vertex [right = of d] (nu2) {\(\nu_e\)};
-\vertex [below right = of d] (f4) {\(e\)};
-\vertex [left = of e] (f5) {\(d\)};
-\vertex [below right = of e] (f6) {\(u\)};
-\diagram {
-(a) -- [fermion] (b) -- [fermion] (f1),
-(b) -- [boson, edge label'=\(W^{-}\)] (c),
-(c) -- [fermion] (f2),
-(d) -- [opacity = 0] (c),
-(c) -- [anti fermion] (nu1),
-(d) -- [boson, edge label'=\(W^{-}\)] (e),
-(d) -- [fermion] (f4),
-(d) -- [anti fermion] (nu2),
-(f5) -- [fermion] (e) -- [fermion] (f6),
-};
-\end{feynman}
-\end{tikzpicture}
-\end{figure}
-%\end{comment}
-
-If this process exists, then, in the early universe, there could have been an imbalance in the number of leptons and antileptons that could have been transferred by sphaleron transitions to the baryons. Therefore, the current baryon asymmetry that is seen today might be due to lepton number violation, and a discovery could have profound implications on how we arrived at the universe we live in today.
