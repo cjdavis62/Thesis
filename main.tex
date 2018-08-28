@@ -6,23 +6,29 @@
 \usepackage{pdfpages}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{cleveref}
 \usepackage{color}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{comment}
 \usepackage{chngcntr}
 \usepackage{caption}
-\usepackage{subcaption}
 \usepackage{setspace}
 \usepackage{lineno}
 \usepackage{cite}
 \usepackage{notoccite}
 \usepackage{verbatim}
+\usepackage{subcaption}
 
+% add custom commands
 \newcommand{\rulesep}{\unskip\ \vrule\ }
 \newcommand{\zeronubb}{$0\nu \beta \beta$}
 \newcommand{\twonubb}{$2\nu \beta \beta$}
+\newcommand{\Mone}{$\mathcal{M}_1$}
+\newcommand{\Mtwo}{$\mathcal{M}_2$}
+\newcommand{\Msum}{$\Sigma_2$}
+
 \author{Christopher James Davis}
-\title{Measurement of Two Neutrino Double Beta Decay in CUORE}
+\title{Search for Neutrinoless Double-Beta Decay with Majoron Emission in CUORE}
 \date{Dec 2018}
 \advisor{Reina Maruyama}
 
@@ -39,7 +45,7 @@
 \listoftables
 
 % Acknowledgements
-%\input{Acknowledgements.tex}
+\input{Acknowledgements.tex}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 \mainmatter
 
