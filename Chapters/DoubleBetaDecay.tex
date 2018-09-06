@@ -19,24 +19,32 @@ Beta decay is a well-known process that occurs in many nuclei as the mechanism b
     
 \end{figure}
 
-The process in \autoref{eq:neutrondecay} is shown in \autoref{fig:NeutronBetaDecay}, and the accompanying process, \autoref{eq:protondecay}, while kinematically forbidden in free protons because they are lighter than neutrons, is able to occur in nuclei where the change in binding energies of the resultant nucleus is able to compensate for the proton and neutron mass difference.
+The process in \autoref{eq:neutrondecay} is shown in \autoref{fig:NeutronBetaDecay}, and the accompanying process, \autoref{eq:protondecay}, while kinematically forbidden in free protons because they are lighter than neutrons, is able to occur in nuclei where the change in binding energies of the resultant nucleus is able to compensate for the proton and neutron mass difference. When discussing these decays, an important value of interest is the Q-value of the decay, this value corresponds to the available energy released during the decay of one nucleus to another, namely (Z,A) $\rightarrow$ (Z$\pm1$, A). This energy sets the maximum energy that can be carried off by the resultant particles and serves as the endpoint of the beta decay spectrum. 
 
 \subsection{History of Beta Decay}
-Historically, the discovery and physics advancements from double beta decay can shed some light on the current state of the field of neutrinoless double-beta decay searches. In particular, when the energy spectrum of beta decays were first discovered, it took the community by surprise that the spectrum was continuous and not peaked at a single value as, e.g., an alpha decay would be \cite{o.vonbayero.hahnl.meitner}. This seemed to suggest that either energy was not conserved in the interaction or that there was another seemingly massless undetected particle that was escaping the interaction and taking away energy. To resolve this issue, Wolfgang Pauli speculated in a famous letter in 1930 to ``dear radioactive ladies and gentlemen" about the existence of the neutrino particle to account for the missing energy \cite{pauli_1930}. The physics community at the time was quite skeptical of such a theory, as it posited a particle seemingly impossible to detect in order to conserve energy, and Enrico Fermi was even rejected on these grounds from publishing his theory on beta decay in the journal Nature \cite{fermi_1934}. Luckily, neutrinos are not impossible to detect and were first discovered in the Cowan-Reines experiment only 20 years later in 1954 \cite{PhysRev.92.830}. Using beta capture, a similar process to beta decay, this experiment observed antineutrinos interacting with ``free" protons in hydrogens atoms in a water tank. In this way, beta decay has been used to observe new physics and has been both an active and fruitful area of research since it was first observed. Even recently, observations of neutrinos have resulted in the discovery of neutrino oscillations, discussed in \autoref{ssec:NeutrinoMassesandOscillation}, which was the first confirmation of physics beyond the Standard Model.
+Historically, the discovery and physics advancements from double beta decay can shed some light on the current state of the field of neutrinoless double-beta decay searches. In particular, when the energy spectrum of beta decays was first discovered, it took the community by surprise that the spectrum was continuous and not peaked at a single value as, e.g., an alpha decay would be \cite{o.vonbayero.hahnl.meitner}. This seemed to suggest that either energy was not conserved in the interaction or that there was another seemingly massless undetected particle that was escaping the interaction and taking away energy. To resolve this issue, Wolfgang Pauli speculated in a famous letter in 1930 to ``dear radioactive ladies and gentlemen" about the existence of the neutrino particle to account for the missing energy \cite{pauli_1930}. The physics community at the time was quite skeptical of such a theory, as it posited a particle seemingly impossible to detect in order to conserve energy, and Enrico Fermi was even rejected on these grounds from publishing his theory on beta decay in the journal Nature \cite{fermi_1934}. Luckily, neutrinos are not impossible to detect and were first discovered in the Cowan-Reines experiment only 20 years later in 1954 \cite{PhysRev.92.830}. Using beta capture, a similar process to beta decay, this experiment observed antineutrinos interacting with ``free" protons in hydrogens atoms in a water tank. In this way, beta decay has been used to observe new physics and has been both an active and fruitful area of research since it was first observed. Even recently, observations of neutrinos have resulted in the discovery of neutrino oscillations, discussed in \autoref{ssec:NeutrinoMassesandOscillation}, which was the first confirmation of physics beyond the Standard Model.
 
 \section{Double-Beta Decay}
 \label{sec:Double Beta Decay}
-Since beta decay is an allowed process, a decay in which two decays happen simultaneously, double-beta decay, should also be allowed. However, for most nuclei, this second-order weak process is dwarfed by the significantly higher rates of single-beta decay. For example, beta decays have a typical half-life on the order of $10^9~\textrm{yr}$, e.g. K-40 decays with a half-life of $1.251\times10^{9}~\textrm{yr}$, while typical half-lives for double-beta decay are on the order of $10^{20}~\textrm{yr}$. This many orders of magnitude higher rate makes measuring double-beta decay virtually impossible as the single-beta decay rate would be an insurmountable background. However, the exception to this occurs in some even-even nuclei wherein single beta decay is energetically forbidden, but double beta decay is allowed, shown in \autoref{fig:parabola_odd} and \autoref{fig:parabola_even}. Of the 35 naturally occurring isotopes where double beta decay is possible, 12 of them have been measured in the laboratory and are shown in \autoref{tab:2nuHalfLife}. As the longest measured alpha decay is $^{209}\textrm{Bi}$ with a half-life of $1.9 \times 10^{19}~\textrm{years}$ \cite{Marcillac:2003Bi-209detection}, double-beta decay half lives are the longest nuclear decays that have been measured.
+Since beta decay is an allowed process, a decay in which two decays happen simultaneously, double-beta decay, described in \autoref{eq:doubleneutrondecay} and \autoref{eq:doubleprotondecay}, should also be allowed.
+\begin{align}
+    (Z, A) & \rightarrow (Z+2, A)+2\textrm{e}+2\Bar{\nu}_e \label{eq:doubleneutrondecay} \\
+    (Z, A) & \rightarrow (Z-2, A)+2\Bar{\textrm{e}}+2\nu_e \label{eq:doubleprotondecay} 
+\end{align}
+However, for most nuclei, this second-order weak process is dwarfed by the significantly higher rates of single-beta decay. For example, while the rate of beta decay depends on the isotope, even some of the longest half-lives, such as that of $^{40}$K which has a half-life of $1.251\times10^{9}~\textrm{yr}$, are many orders of magnitude faster than typical half-lives for double-beta decay which are on the order of $10^{20}~\textrm{yr}$. This $10^{11}$ times higher rate makes measuring double-beta decay virtually impossible as the single-beta decay rate would be an insurmountable background. However, the exception to this occurs in some even-even nuclei wherein single beta decay is energetically forbidden, but double beta decay is allowed, shown in \autoref{fig:parabola_odd} and \autoref{fig:parabola_even}. Of the 35 naturally occurring isotopes where double beta decay is possible, 12 of them have been measured in the laboratory and are shown in \autoref{tab:2nuHalfLife}. As the longest measured half-life of alpha decay is from $^{209}\textrm{Bi}$ with a half-life of $1.9 \times 10^{19}~\textrm{years}$ \cite{Marcillac:2003Bi-209detection}, double-beta decay half lives are the rarest nuclear decays that have been measured.
 
 \begin{figure}[htbp]
+\captionsetup[subfigure]{justification=center}
 \centering
-\begin{subfigure}[t]{0.45\textwidth}
+\begin{subfigure}[t]{0.40\textwidth}
+\centering
 \includegraphics[width=0.9\textwidth]{Figures/parabola_odd_edited.pdf}
 \caption[Energy level diagram for odd mass number nuclei.]{Energy level diagram for odd mass number nuclei.}
 \label{fig:parabola_odd}
 \end{subfigure}
 \qqad
-\begin{subfigure}[t]{0.45\textwidth}
+\begin{subfigure}[t]{0.40\textwidth}
+\centering
 \includegraphics[width=0.9\textwidth]{Figures/parabola_even_edited.pdf}
 \caption[[Energy level diagram for even mass number nuclei.]{Energy level diagram for even mass number nuclei.}
 \end{subfigure}
@@ -50,33 +58,61 @@ Since beta decay is an allowed process, a decay in which two decays happen simul
 \hline
 Isotope & Half-life, $10^{21}$ years & Experiment \\ \hline 
 $^{48}\textrm{Ca}$ & $0.044^{+0.005}_{-0.004} \pm 0.004$ & Nemo-3 \cite{Bongrand:2011ei} \\ \hline
-$^{78}\textrm{Ge}$ & $1.926^{+0.025}_{-0.022} \pm 0.092$ & GERDA \cite{Agostini:2015nwa} \\ \hline
+$^{76}\textrm{Ge}$ & $1.926^{+0.025}_{-0.022} \pm 0.092$ & GERDA \cite{Agostini:2015nwa} \\ \hline
 $^{82}\textrm{Se}$ & $0.096 \pm 0.003 \pm 0.010$ & NEMO-3 \cite{Bongrand:2011ei}\\ \hline
 $^{96}\textrm{Zr}$ & $0.0235 \pm 0.0014 \pm 0.0016$ & NEMO-3 \cite{Bongrand:2011ei}\\ \hline
 $^{100}\textrm{Mo}$ & $0.00711 \pm 0.00002 \pm 0.00054$ & NEMO-3 \cite{Bongrand:2011ei}\\ \hline
 $^{116}\textrm{Cd}$ & $0.028 \pm 0.001 \pm 0.003$ & NEMO-3 \cite{Bongrand:2011ei} \\ \hline
 %^{128}\textrm{Te}$ & $7200 \pm 400$ & Geochemical \\ \hline
-$^{130}\textrm{Te}$ & $0.08 \pm 0.02\pm 0.06$ & CUORE-0 \cite{Alduino:2016vtd} \\ \hline
+$^{130}\textrm{Te}$ & $0.82 \pm 0.02\pm 0.06$ & CUORE-0 \cite{Alduino:2016vtd} \\ \hline
 $^{136}\textrm{Xe}$ & $2.165 \pm 0.016 \pm 0.059$ & EXO-200 \cite{Albert:2013gpz} \\ \hline
 $^{150}\textrm{Nd}$ & $0.00911^{+0.00025}_{-0.00022}\pm 0.00063$ & NEMO-3 \cite{Bongrand:2011ei} \\ \hline
 %$^{238}\textrm{U}$ & $2.0 \pm 0.6$ & Radiochemical \\ \hline
 \end{tabular} 
 \caption[List of known two-neutrino beta decay half lives.]{List of the known double-beta decay half lives along with the experiment which has the most precise measurement to date. The order of the errors on the half-life are statistical followed by systematic.}
 \label{tab:2nuHalfLife}
-
-\begin{comment}
-Note for the list of references
-\end{comment}
-
 \end{table}
 
 \section{Neutrinoless Double-Beta Decay}
 \label{sec:Neutrinoless Double Beta Decay}
+Of most interest to this thesis is a variation on the \twonubb~decay mentioned above where the neutrinos are exchanged during the decay and do not emerge as final state particles. This corresponds to the decay shown in \autoref{fig:0nuBB} and in \autoref{eq:doubleneutrondecay_neutrinoless} and \autoref{eq:doubleprotondecay_neutrinoless}.
+\begin{align}
+    (Z, A) & \rightarrow (Z+2, A)+2\textrm{e} \label{eq:doubleneutrondecay_neutrinoless} \\
+    (Z, A) & \rightarrow (Z-2, A)+2\Bar{\textrm{e}} \label{eq:doubleprotondecay_neutrinoless} 
+\end{align}
+In this decay, only possible if the neutrino has a Majorana mass, all of the available energy released in the decay is carried away by the electrons. Therefore, a detector which can measure the electron energy would always reconstruct the decay energy to be precisely at the Q-value of the decay, in contrast to the energy spectrum from \twonubb~decay which is a continuum up to the Q-value due to the undetected neutrinos carrying energy away from the detectors.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{Figures/2nuBBSpectrum.png}
+    \caption[The energy spectrum for \twonubb~decay of $^{130}$Te along with the spectrum for \zeronubb.]{The energy spectrum for \twonubb~decay of $^{130}$Te along with the spectrum for \zeronubb. The spectrum for \zeronubb~is not shown to scale. Note that while the \twonubb~spectrum covers the entire range from 0 to the Q-value, in the case of \zeronubb, the energies are monoenergetic at the Q-value.}
+    \label{fig:2nuSpectrum}
+\end{figure}
+The rate of \zeronubb~decay in particular nuclei can be expressed according to 
+\begin{align}
+    [T^{0\nu}_{1/2}]^{-1}&=\ln(2)|M_{0\nu}|^2|f(m_i,U_{ei})|^2
+\end{align}
+where the phase space factor, $G_{0\nu}$, is determined by the kinematics, $|M_{0\nu}|$ is the nuclear matrix element determined by the physics of each nucleus, and $|f(m_i, U_{ei})|$ is the determined by the underlying physics of the interaction and includes the masses $m_i$ and mixing matrix elements $U_{ei}$ of the neutrino species \cite{Barea:2013bz}. As experiments searching for \zeronubb~are only truly sensitive to the half-life, any further statements on any other physical parameters contained in $|f(m_i, U_{ei})|$ require difficult calculations of $G_{0\nu}$ and $|M_{0\nu}|$. Taking a model of light neutrino exchange, shown in \autoref{fig:0nuBB}, then $|f(m_i, U_{ei})|$ contains a fundamental value called the effective Majorana mass, 
+\begin{equation}
+    m_{\beta\beta}=|\sum_iU^2_{ei}m_{\nu i}|.
+\end{equation}
 
+\color{red} ADD MORE HERE \color{black}.
+
+
+\subsection{Neutrinoless Double-Beta Decay with Majoron Emission}
+\label{ssec:Neutrinoless Double-Beta Decay with Majoron Emisison}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/EnergySpectrum.pdf}
+    \caption[The summed electron energy spectra for multiple types of Majoron emission according to spectral indices 1, 2, 3, 5, and 7.]{The summed electron energy spectra for multiple types of Majoron emission according to spectral indices 1, 2, 3, 5, and 7. Spectral index 5 corresponds to \twonubb~and is not a Majoron decay, but is shown for context. The integrals of each of the spectra are normalized to 1.}
+    \label{fig:Majoron Spectrum}
+\end{figure}
 
 \section{State of Neutrinoless Double-Beta Decay Experiments}
 \label{sec:State of Neutrinoless Double Beta Decay Experiments}
-In addition to CUORE, many other experiments are currently searching and have searched for \zeronubb~ decay. Some of these experiments are listed below and the current status of the field is shown in \autoref{fig:cuore-0-mbetabeta}. As noted before in \autoref{sec:Double Beta Decay} and \autoref{sec:Neutrinoless Double Beta Decay}, the signatures of \zeronubb~ and \twonubb~ decays are a nucleus that interchanges two neutrons and two protons, along with the emission of two electrons and, in the case of \twonubb decay or Majoron emission, two neutrinos and up to two Majorons. Since the half-lives of these decays is so large, (consider that the Universe is only $1.38\times10^{9} yr$ old) an experiment needs to have extremely low background levels in order to be able to even observe these events. As an example, a 1-tonne experiment searching for \zeronubb~decay would expect only $\mathcal{O(10)$ events per year.  This is generally realized in experiments by going to deep underground laboratories to escape cosmic radiation sources and by having pure and clean materials in and near the detector and sources. Also, due to the energies being produced according to a spectrum, all of the backgrounds with energy up to the Q-value will reduce the sensitivity of the measurement. The experiments listed here all seek to identify these signals using a particular technology or set of technologies, some of which, especially in the case of GERDA and MAJORANA, are quite similar to CUORE's. Despite the wide array of technologies, all the experiments below, including CUORE, seek to identify these decays by honing in on and measuring the emitted electron energies as the summed energy spectrum is well-defined as a sharp peak for \zeronubb~or as a broader spectrum for \twonubb~for Majoron emission.
+In addition to CUORE, many other experiments are currently searching and have searched for \zeronubb~ decay. Some of these experiments are listed below and the current status of the field is shown in \autoref{fig:cuore-0-mbetabeta}. As noted before in \autoref{sec:Double Beta Decay} and \autoref{sec:Neutrinoless Double Beta Decay}, the signatures of \zeronubb~ and \twonubb~ decays are a nucleus that interchanges two neutrons and two protons, along with the emission of two electrons and, in the case of \twonubb~decay or Majoron emission, two neutrinos and up to two Majorons. Since the half-lives of these decays is so large, (consider that the Universe is only $1.38\times10^{9} yr$ old) an experiment needs to have extremely low background levels in order to be able to even observe these events. As an example, a 1-tonne experiment searching for \zeronubb~decay would expect only $\mathcal{O}(10)$ events per year.  This is generally realized in experiments by going to deep underground laboratories to escape cosmic radiation sources and by having pure and clean materials in and near the detector and sources. Also, due to the energies being produced according to a spectrum, all of the backgrounds with energy up to the Q-value will reduce the sensitivity of the measurement. The experiments listed here all seek to identify these signals using a particular technology or set of technologies, some of which, especially in the case of GERDA and MAJORANA, are quite similar to CUORE's. Despite the wide array of technologies, all the experiments below, including CUORE, seek to identify these decays by honing in on and measuring the emitted electron energies as the summed energy spectrum is well-defined as a sharp peak for \zeronubb~or as a broader spectrum for \twonubb~for Majoron emission.
+
 
 \begin{figure}[htbp]
 \centering
