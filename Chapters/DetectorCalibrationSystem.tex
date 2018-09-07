@@ -1,19 +1,46 @@
 \chapter{Detector Calibration System}
 
-This chapter details the calibration system for CUORE
+To run an experiment like CUORE, precise understanding of the energies of each event is necessary, particularly in order to reach the design goal of 5 keV energy resolution. Due to the complicated behavior of the crystals \color{red} add more here, possibly about the thermal model \color{black}, the thermal response to energy depositions needs to be characterized over multiple energies for each of the 988 TeO$_2$ crystals in CUORE. This is done by occasionally inserting radioactive sources with known intensity and composition, viz. $^232$Th, that emit mono-energetic particles such as photons that will deposit energy into the detectors. The thermal response of the detectors can then be mapped one-to-one with these known energies, and thus the entire detector array can be individually calibrated.
 
 \section{Overview}
 
+Making such a system, however, is an enormous technical challenge. In CUORE-0 and Cuoricino, calibration sources could be deployed by hand outside the innermost shielding to irradiate a single tower of detectors. \color{red} Add diagram for CUORE-0 calibration \color{black}. However, with 19 towers of crystals, and with thicker layers of shielding, efficiently deploying sources inside the cryostat requires the sources to be placed in between the towers and inside the roman lead shielding. This significantly adds to the challenge of such a system as the calibration sources need to be both inserted and retracted from the coldest region of the cryostat on a regular basis. The main challenges can be summarized as follows: 
+\begin{itemize}
+\item Calibrate all 988 crystals
+\item Minimize thermal disturbance to the crystat and the crystals
+\item Negligible contribution to the background
+\end{itemize}
+
+The solution to these issues was the Detector Calibration System developed at Wisconsin and at Yale.
+
 \section{Calibration Hardware}
 
-\subsection{Calibration Source Strings}
+figures to add here: Diagram of full calibration system, diagram of all the calibration tubes and paths
 
+\subsection{Calibration Source Strings}
+There are 12 calibration source strings that are deployed in to the detector region in order to calibrate the 19 towers of CUORE.
+
+figures to add here: Diagram/picture of source strings, location of source strings in cryostat
 \subsection{Motion Boxes}
 
-\subsection{Thermalization}
+\subsection{Thermalization and Thermometry}
+In order to deploy 12 calibration source strings from 300 K down to 50 or 10 mK, the sources need to be cooled as much as possible before they reach each stage of the cryostat or even the black-body radiation from the sources will cause the temperature of the crystals and the cryostat to rise excessively and possibly dangerously. Most of the mass, and therefore the heat \color{red} find a better word than heat \color{black} is carried in the copper capsules. The kevlar that holds the capsules is a poor conductor of heat \color{red} Citation Needed \color{black} compared with the capsules, which is a necessary feature, in addition to its strength, as the kevlar will form 12 continuous lines from the motion boxes at 300 K down to the detector region at 10 mK.
 
+To effect this cooling on the source strings, multiple methods are used. The main cooling mechanism used is from the copper thermalizers located at the 4 K plate \color{red} add reference to diagram(s) \color{black}. These thermalizers consist of a moving copper block and a copper base, with the copper block pushed away by a spring. The copper block is activated by another kevlar string that, when pulled, pushes the copper block onto the copper base, applying pressure and a strong \color{red} surely there's a better word to use than strong \color{black} contact with the capsules that are pinned inside. This cooling is performed at the 4K stage as the cryostat has the most cooling power at this stage \color{red} Link to the cooling power table \color{black}. Most of the cooling of the capsules is done at this position and this thermalization process over an entire string is a significant fraction of its total deployment time.
+
+Another way in that heat is removed from the source strings is due to the contact with the walls of the guide tubes. This cooling, however, is limited in two main ways: by the angle of the tube as steeper angles provide less contact with the source capsule and by the heat capacity and thermal contact of the tube with each stage as some tubes, namely those at 600 mK will warm up to 4K or beyond. Below the thermalizers, the inner strings also go through a ``chicane" \color{red} Should I put this in quotes? Also, add reference to figure\color{black} which increases the contact between the capsules and the tubes. This is done to further increase the rate at which heat is removed from the capsules as the cooling on these sources that are to be deployed at the 10 mK stage are the most critical to cool, but the cooling power decreases at colder stages. 
+
+Diagrams to include: pictures of the thermometers, heat loads on the thermometers in different scenarios, 600 mK chicane, 4K thermalizers
 \subsection{Impact on Cryostat}
+
+Describe how the calibration affects the state of the cryostat. What are the temperature effects on the plates during the deployment.
+
+
+\section{Calibration Simulation}
+Describe how the simulations for the calibration system are performed. How to determine the best calibration time and effects of pileup.
+
+Figures to include; Geant4 visualization of the sources, rates on the detectors in a calibration, rate dependence on pileup 
 
 \section{Calibration Performance}
 
-\section{Calibration Simulation}
+Describe how well the calibration system has performed? Also show different strategies for deploying the DCS.
