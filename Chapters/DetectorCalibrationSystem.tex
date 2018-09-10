@@ -11,17 +11,44 @@ Making such a system, however, is an enormous technical challenge. In CUORE-0 an
 \item Negligible contribution to the background
 \end{itemize}
 
-The solution to these issues was the Detector Calibration System developed at Wisconsin and at Yale.
+The solution to these issues was the Detector Calibration System developed at Wisconsin and at Yale. With this system, shown in \autoref{fig:DCSintegration}, 12 kevlar strings containing copper capsules with 2\% thoriated tungsten wire are inserted into the cryostat from 300~K down into the detector region at 10 and 50 mK.  
+
+\begin{figure}[htbp]
+\includegraphics[width=\linewidth]{Figures/DCSintegration.pdf}
+\caption[The CUORE Detector Calibration System (DCS).]{The CUORE Detector Calibration System (DCS). 12 kevlar strings are deployed intermittently into the cryostat through individual tubes through increasingly colder \color{red} increasingly colder? \color{black} stages of the cryostat. 6 of the strings are deployed through the inner guide tubes into the 10 mK region of the cryostat between the detector towers, and the other 6 strings are deployed outside the towers in the 50 mK region.}
+\label{fig:DCSintegration}
+\end{figure}
 
 \section{Calibration Hardware}
 
 figures to add here: Diagram of full calibration system, diagram of all the calibration tubes and paths
 
 \subsection{Calibration Source Strings}
-There are 12 calibration source strings that are deployed in to the detector region in order to calibrate the 19 towers of CUORE.
+There are 12 calibration source strings that are deployed in to the detector region in order to calibrate the 19 towers of CUORE. These source strings consist of copper capsules covered in PTFE heat shrink tubing that enclose the 2\% thoriated tungsten source inside, shown in \autoref{fig:source_carrierA}. The copper is crimped on top and bottom in order to hold it onto the Kevlar string and to hold the source inside, and the teflon heat shrink reduces the friction between the copper capsules and the DCS guide tubes. In addition, the bottom 8 capsules have reducing spacing and are wider than the other capsules. As the sources are deployed into the cryostat under their own weight, these heavier 
+
+\begin{figure}[htpb]
+\begin{center}
+\begin{subfigure}[b]{0.60\textwidth}
+\includegraphics[height=2.2in]{source_capsule_schematic.pdf}\label{fig:source_carrierA}
+\caption{}
+\end{subfigure}
+\begin{subfigure}[b]{0.15\textwidth}
+\includegraphics[height=2.7in]{string_bottom.pdf}\label{fig:source_carrierB}
+\caption{}
+\end{subfigure}
+\end{center}
+\caption[(a) Schematic and photograph of an assembled source capsule. (b) Photograph of five heavier bottom capsules and PTFE ball at the bottom of a source string.]{(a) Schematic and photograph of an assembled source capsule. (b) Photograph of five heavier bottom capsules and PTFE ball at the bottom of a source string.}
+\label{fig:source_carrier}
+\end{figure}
+ 
 
 figures to add here: Diagram/picture of source strings, location of source strings in cryostat
 \subsection{Motion Boxes}
+On top of the cryostat, there are four motion boxes, shown in \autoref{fig:motion_box}, that contain the DCS calibration strings while they are not being deployed. There are three strings in each motion box that are wound up on each of the source string spools in the motion box. These source strings can then be deployed independently and simultaneously down through three guide tubes in the motion box down into the cryostat. A proximity sensor at the bottom of the motion box detects when the copper capsules \color{red} how does the magnet do this? \color{black} are moving either into or out of the motion box. When the DCS is not in operation, the gate valve is closed and the DCS vacuum is disconnected from the rest of the IVC.
+\begin{figure}[htpb]
+\includegraphics[width=0.9\linewidth]{Figures/motion_box.pdf}
+\caption[A rendering of a single motion box from two different angles.]{A rendering of a single motion box from two different angles. The motion box is mounted vertically with the PEEK flange on top of the cryostat with the three source strings spools above. The windows on each motion box allow for the source strings to be observed from outside.}
+\label{fig:motion_box}
 
 \subsection{Thermalization and Thermometry}
 In order to deploy 12 calibration source strings from 300 K down to 50 or 10 mK, the sources need to be cooled as much as possible before they reach each stage of the cryostat or even the black-body radiation from the sources will cause the temperature of the crystals and the cryostat to rise excessively and possibly dangerously. Most of the mass, and therefore the heat \color{red} find a better word than heat \color{black} is carried in the copper capsules. The kevlar that holds the capsules is a poor conductor of heat \color{red} Citation Needed \color{black} compared with the capsules, which is a necessary feature, in addition to its strength, as the kevlar will form 12 continuous lines from the motion boxes at 300 K down to the detector region at 10 mK.
@@ -44,3 +71,5 @@ Figures to include; Geant4 visualization of the sources, rates on the detectors 
 \section{Calibration Performance}
 
 Describe how well the calibration system has performed? Also show different strategies for deploying the DCS.
+
+\subsection{Calibration Strategies}
