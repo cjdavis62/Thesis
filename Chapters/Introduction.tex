@@ -40,7 +40,10 @@ Of greatest interest here for the work in this thesis are the particles, or flav
 These 6 flavors are the electron, the muon, and the tau and the electron neutrino, the muon neutrino, and the tau neutrino.
 These particles interact with one another via the W and Z bosons which is discussed in more detail in \autoref{sec:Beta Decay}. 
 When the Standard Model was first introduced in the 1960's, the neutrinos were massless.
-This was due to the fact that, as shown in \autoref{fig:NeutrinoMasses}, the masses of neutrinos are at least a million times lighter than the next-lightest particle, the electron with mass 0.511 $\textrm{MeV}/\textrm{c}^2$.
+This was due to the fact that, as shown in \autoref{fig:NeutrinoMasses}, the masses of neutrinos are at least a million times lighter than the next-lightest particle, the electron with mass $0.511 \textrm{MeV}$
+\footnote{Natural units, e.g. $c=1$ and $\hbar=1$, will be used throughout this thesis.
+In this way, masses (units $\textrm{eV}/\textrm{c}^2$) and temperatures will be expressed in terms of energy, $\textrm{eV}$. 
+Later on in the thesis, SI units will also be used, but the context of the units will make the convention clear.}.
 
 \begin{figure}[tbph]
 \centering
@@ -127,7 +130,7 @@ The probability that a neutrino has oscillated from type $\alpha$ to type $\beta
 \begin{align}
 P(\nu_\alpha\rightarrow\nu_\beta) &= \lvert<\nu_\beta(t)| \nu_\alpha>\rvert^2.
 \end{align}
-In the mass eigenstate, neutrinos propagate as plane waves of the form (in natural units, i.e. $c=1$ and $\hbar=1$)
+In the mass eigenstate, neutrinos propagate as plane waves of the form
 \begin{align}
 |v_i(t)>&=e^{i(Et-\vec{x}\cdot\vec{p})}|v_i(0)>.
 \label{eq:OscillationProbability_general}
@@ -144,7 +147,7 @@ Using \autoref{eq:E_approx} and \autoref{eq:OscillationProbability_general}, the
 P(\nu_\alpha\rightarrow\nu_\beta) = 2 \sin^2(2\theta)\sin^2(\frac{\Delta m_{ij}^2L}{4E})
 \label{eq:OscillationProbability_2nu}
 \end{align}
-where $\Delta m_{ij} = m_i^2 - m_j^2$, the mass-squared difference in the masses of the neutrino.
+where $\Delta m_{ij} = m_i^2 - m_j^2$, the mass-squared difference in the masses of the neutrino. For the three flavors of neutrinos: electron, $\mu$, and $\tau$ observed in nature, an example oscillation of an initially pure electron neutrino sample is shown in \autoref{fig:Oscillations_electron_long}.
 \begin{figure}[tbph]
 \centering
 \includegraphics[width=0.9\linewidth]{Figures/Oscillation_2017Params_0CP.pdf}
@@ -263,8 +266,8 @@ Taking $m_D$ to be $\approx1~\textrm{MeV}$, a meV-scale neutrino exists with a h
     \centering
 \includegraphics[width=0.40\linewidth]{Figures/TypeIISeesaw.png}
     \caption[Type-II seesaw mechanism.]
-    {The type-II seesaw mechanism for neutrino mass generation wherein a boson, labelled $\Delta$ contributes to the mass of the neutrinos.
-    Figure adapted from \cite{MIRANDA2016436}}
+    {The type-II seesaw mechanism for neutrino mass generation wherein a boson, labelled $\Delta$, contributes to the mass of the neutrinos.
+    Figure adapted from \cite{MIRANDA2016436}.}
     \label{fig:TypeIISeesawMechanism}
 \end{figure}
 
@@ -286,10 +289,25 @@ On its own, baryon number violation is not enough to create an imbalance between
 Therefore, the second condition requires that a process with $\Delta\textrm{B}\neq0$ occurs more often for baryon creation or anti-baryon destruction than the reverse, i.e., $\Gamma(\Delta \textrm{B}>1) > \Gamma(\Delta \textrm{B}<-1)$.
 Finally, the third condition requires that the process has to occur when the universe is not in thermal equilibrium as other processes would have to oppose whatever process satisfies the first two Sakharov conditions due to CPT (charge, parity, and time reversal) symmetry.
 
-\subsection{Majorana Neutrinos and Leptogenesis}
 Therefore, in order to determine what caused the universe to evolve from equal parts matter and antimatter into the matter-dominated universe we see today, processes which satisfy all three Sakharov conditions are needed. In the framework of the Standard Model, Baryon number is not a fundamental symmetry such as electric charge and is merely an ``accidental" symmetry of the Lagrangian without an associated mediator like the photon.
-While baryon number cannot be violated classically in the SM Lagrangian, quantum effects may violate it \cite{PhysRevLett.37.8}.
-However, these interactions conserve another symmetry, viz. $\textrm{B}-\textrm{L}$, where L is the lepton number and has similar rules to the baryon number described above.
+While baryon number cannot be violated classically in the Standard Model Lagrangian, quantum effects, viz. sphaleron processes, may violate it \cite{PhysRevLett.37.8} \cite{KUZMIN198536}, and, while these effects satisfy the other two Sakharov conditions, do not have enough of an effect to explain the measured asymmetry,
+\begin{align}
+\Delta &= \frac{N_B - N_{\bar{B}}} {N_B + N_{\bar{B}}} \biggr\rvert_{T \gtrsim 1~\textrm{GeV}},
+\label{eq:BAU_earlyuniverse}
+\end{align}
+where $N_B$ and $N_{\bar{B}}$ are the number of baryons and anti-baryons, respectively, when the asymmetry formed with the universe at a temperature of approximately 1 GeV.
+This Baryon Asymmetry in the Universe (BAU) can be inferred from the current abundance of baryons and photons in the universe at the current temperature of 0.2 meV.
+In this way, \autoref{eq:BAU_earlyuniverse} can be written as
+\begin{align}
+    \Delta &\sim \eta = \frac{N_B}{N_\gamma} \biggr\rvert_{T = 0.2 meV}
+    \label{eq:eta_lateuniverse}
+\end{align}
+as the main product of baryon-antibaryon annihilation are photons, given by $N_\gamma$, and the number of anti-baryons remaining in the universe is vanishingly small.
+Calculations from fitting parameters due to Big Bang Nucleosynthesis from the abundance of light elements in the intergalactic medium and calculations from the Cosmic Microwave Background data both give values of $\eta\sim 10^{-10}$ \cite{Canetti:2012zc}.
+However, the contributions to $\eta$ from Standard Model processes predict an $\eta$ of $10^{-20}$, far below the observed value.
+
+\subsection{Majorana Neutrinos and Leptogenesis}
+However, these sphaleron processes conserve another symmetry, viz. $\textrm{B}-\textrm{L}$, where L is the lepton number and has similar rules to the baryon number described above.
 Therefore, a place to look for baryon number violation may be in the lepton sector.
 In this case, the imbalance between matter and antimatter is due to an imbalance in leptons that transfers over to the baryons.
 This `leptogenesis' would have to fulfill an analogous set of Sakharov conditions to that described above.
