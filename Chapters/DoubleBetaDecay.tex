@@ -196,9 +196,8 @@ which is a significant increase in sensitivity, especially as experiments work t
 Some proposed models of \zeronubb~decay predict the existence of another particle, called a majoron, that is emitted during the decay.
 In the original theory, these majorons are the Goldstone boson that is created during a spontaneous global breaking of B-L symmetry \cite{CHIKASHIGE1981265}.
 The Majorons in the original models were posited as belonging to either a singlet, doublet, or triplet state, but the doublet and triplet states have been ruled out by precision measurements of the Z boson width at the LEP experiment \cite{ALEPH:2005ab}.
-However, a whole class of models have now been developed that predict similar phenomena as the original theories where either one or two light, neutral bosons
-\footnote{While the original majoron was postulated as a Goldstone boson, depending on the model, the majoron may or may not be a Goldstone boson.}
-are emitted during a neutrinoless double-beta decay.
+However, a whole class of models have now been developed that predict similar phenomena as the original theories where either one or two light, neutral bosons\footnote{Although the original majoron was postulated as a Goldstone boson, the majoron in these models may or may not be a Goldstone boson.}
+are emitted during a neutrinoless double-beta decay \cite{HIRSCH19968}.
 Decays emitting a single majoron are denoted as \zeronubbonechi, and decays emitting two majorons are denoted as \zeronubbtwochi.
 These models are classified into two types (I and II) where either lepton number is (type I) violated in neutrinoless double-beta decay, i.e. the lepton number of the majoron is zero, or where lepton number is not (type II) violated, i.e. the lepton number of the majoron cancels out the $L=\pm2$ from the emitted electrons.
 In models of type II, \zeronubb~decay without majoron emission is forbidden, whereas for models of type I, \zeronubb~decay is allowed.
@@ -206,9 +205,9 @@ However, as \zeronubb~decay has yet to be observed in the laboratory, these two 
 The types of models for majoron decay are summarized in \autoref{tab:Majoron Decay Modes}. 
 \begin{table}[H]
     \centering
-\begin{tabular}{cccccc}
+\begin{tabular}{lllcc}
 \hline \hline
-Model   & Decay Mode & Goldstone boson & Lepton Number & Spectral Index \\ \hline
+Model   & Decay Mode & Goldstone Boson & Lepton Number & Spectral Index \\ \hline
 IB      & \zeronubbonechi & no              & 0    & 1              \\ 
 IC      & \zeronubbonechi & yes             & 0    & 1              \\ 
 ID      & \zeronubbtwochi & no              & 0    & 3              \\ 
@@ -220,11 +219,13 @@ IID     & \zeronubbtwochi & no              & -1   & 3              \\
 IIE     & \zeronubbtwochi & no              & -1   & 7              \\ 
 IIF     & \zeronubbonechi & no              & -2   & 3              \\ 
 \hline
-``bulk" & \zeronubbonechi & no              & 0    & 2              \\ 
+``bulk" \cite{Mohapatra:2000px} & \zeronubbonechi & no              & 0    & 2              \\
+\hline \hline
 \end{tabular}
 \caption[The majoron models and their associated decay modes.]
 {The majoron models and their associated decay modes.
-For \zeronubbtwochi, each majoron has an associated lepton number of $-1$, which precisely cancels out the $\Delta L$ carried by the electrons in these \zeronubbtwochi~decays.}
+Also shown is if the majoron is a Goldstone boson, the associated lepton number of the majoron, and the spectral index of the decay.
+In models of type II \zeronubbtwochi, each majoron has an associated lepton number which precisely cancels out the $\Delta L$ carried by the electrons in these \zeronubbtwochi~decays.}
 \label{tab:Majoron Decay Modes}
 \end{table}
 Experimentally, the energy spectrum of the two electrons emitted varies by the spectral index of each of the models according to
@@ -232,7 +233,7 @@ Experimentally, the energy spectrum of the two electrons emitted varies by the s
     S(E_{\textrm{sum}}) &= \int_1^{E_{sum}-1}F(Z, E_1) E_1 p_1 F(Z, E_2) E_2 p_2 (E_{tot}-E_1-E_2)^n dE_1 dE_2 \delta(E_{sum}-E_1-E_2)
     \label{eq:spectral index}
 \end{align}
-where $E_{\textrm{sum}}$ is the summed energy of the electrons, $F(Z, E)$ is the Fermi function for a particular nucleus with atomic number Z, \color{red} define Fermi function \color{black}, $E_i$ and $p_i$ are the energy and momentum of each particle, respectively, and $n$ is the spectral index.
+where $E_{\textrm{sum}}$ is the summed energy of the electrons, $F(Z, E)$ is the Fermi function for the daughter nucleus with atomic number Z, $E_i$ and $p_i$ are the energy and momentum of each particle, respectively, and $n$ is the spectral index.
 The Fermi function comes from a correction due to Coulomb interactions between the emitted electrons and the daughter nucleus in the decay.
 To lowest order, this function is given by 
 \begin{align}
@@ -240,7 +241,7 @@ To lowest order, this function is given by
     \gamma &= (1-(\alpha Z)^2)^{1/2} \\
     y &= \alpha Z W / p
 \end{align}
-where $\rho$ is the nuclear radius, \color{red} p is something, maybe momentum?, got from this article: https://journals.aps.org/pr/pdf/10.1103/PhysRev.150.846, but check w/ code \color{black}.
+where $\rho$ is the nuclear radius, $p$ is the momentum of the electron, and $\Gamma(x)$ is the gamma function\footnote{$\Gamma(z)=\int_0^\infty x^{z-1}e^{-x}dx$} \cite{PhysRev.150.846}.
 The spectrum for \twonubb~decay corresponds to a spectral index of 5.
 The energy spectrum for each spectral index of \zeronubb~with majoron emission is shown in \autoref{fig:Majoron Spectrum}.
 
@@ -310,9 +311,12 @@ The detection principles for the \textsc{Demonstrator} are similar to that of GE
 \subsection{KamLAND-Zen}
 The Kamioka Liquid Scintillator Antineutrino Detector Zero-neutrino double-beta decay search (KamLAND-Zen) searches for \zeronubb~in 90.8\% enriched $^{136}$Xe \cite{KamLAND-Zen:2016pfg}.
 This experiment uses the existing infrastructure from the KamLAND experiment, with a balloon filled with enriched Xe in the center of the KamLAND liquid scintillator.
-The detector uses the Xe as a liquid scintillator acting as both the source and detector of \zeronubb. Xe benefits from self-shielding due to the attenuation length of gammas in xenon which allows for reduced levels of background in the innermost volume.
+The detector uses the Xe-doped (2.9\% by weight) liquid scintillator acting as both the source and detector of \zeronubb.
+Xe benefits from self-shielding due to the attenuation length of gammas in xenon which allows for reduced levels of background in the innermost volume.
 This is a distinct advantage over experiments such as CUORE, MAJORANA, and GERDA, as their detectors need to be held in place and cannot self-shield as a result.
-However, the energy resolution of the KamLAND-Zen is significantly worse than the $\mathcal{O}(\textrm{keV})$ resolution in these experiments.
+Also, the detector mass is relatively easily scalable by the size of the balloon and does not require a full reconstruction of the surrounding veto from the KamLAND experiment.
+In addition, by taking out the Xe or depleting the Xe in the liquid scintillator, the experiment can make an on/off measurement to confirm any possible measurement of \zeronubb. 
+However, the energy resolution of the KamLAND-Zen is significantly worse than the $\mathcal{O}(\textrm{keV})$ resolution in these experiments which introduces the tail of the \twonubb spectrum as an irreducible background.
 A diagram of the KamLAND-Zen detector is shown in \autoref{fig:kamlandzen}.
 \begin{figure}[tbph]
 \centering
@@ -340,7 +344,7 @@ This provides discrimination between the multi-site \gamma~backgrounds and the s
 
 \subsection{NEMO-3}
 The Neutrino Ettore Majorana Observatory (NEMO-3) collected \twonubb~data from multiple isotopes including $^{100}$Mo, $^{82}$Se, $^{130}$Te, $^{116}$Cd, $^{150}$Nd, $^{96}$Zr, and $^{48}$Ca \cite{Bongrand:2011ei}.
-NEMO-3 also searched for \zeronubb~in $^{100}$Mo, $^{82}$Se, $^{48}$Ca, and $^{150}$Nd \cite{Bongrand:2011ei}\cite{::2016dpe}\cite{Arnold:2016ezh}.
+NEMO-3 also searched for \zeronubb~in $^{100}$Mo, $^{82}$Se, $^{48}$Ca, and $^{150}$Nd \cite{Bongrand:2011ei}\cite{Arnold:2016qyg}\cite{Arnold:2016ezh}.
 Unlike the other experiments listed in this section, NEMO-3 did not utilize a ``detector = source" method, instead using separate detectors and sources.
 An advantage of this method is that the two emitted electrons can be tracked and measured separately, which is a clear signal that a decay occured as a vertex can be reconstructed along with the energies of the particles.
 An example track in NEMO-3 is shown in \autoref{fig:nemo3393042373top2}.
