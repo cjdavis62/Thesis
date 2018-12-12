@@ -17,25 +17,50 @@ An example in the case of CUORE comes from the fact that determining the energy 
 Furthermore, these types of problems are highly parallelizable and benefit strongly from large computing clusters.
 
 \section{Geant4 Simulation Toolkit}
-The Geant4 toolkit is a software widely used in the physics community to solve these sorts of physics problems where particles pass through matter using these Monte Carlo methods \cite{AGOSTINELLI2003250, 528223, ALLISON2016186}.
+The Geant4 toolkit is a software widely used in the physics community to solve these sorts of physics problems where particles pass through matter using Monte Carlo methods \cite{AGOSTINELLI2003250, 528223, ALLISON2016186}.
 Using this toolkit, one can define the detector geometry and materials and then propagate particular particles with varying physics models.
-As these particles move throughout these materials, their interactions and daughter particles are created and further propagated through along steps defined in the materials.
+As these particles move throughout these materials, their interactions and daughter particles are created and further propagated through matter.
+In a detector, the energy lost by the particle and its daughters during steps inside the volume can be recorded as the energy deposited in the detector.
 
 \section{CUORE Reconstruction in Geant4}
-CUORE utilizes this software package and has recreated the entire cryostat in its own software package, called \textit{qshields}, shown in \autoref{fig:CUORE_cyrostat_MC} and \autoref{fig:CUORE_cyrostat_MC}
+CUORE utilizes this software package and has recreated the entire cryostat in its own software package, called \textit{qshields}, shown in \autoref{fig:CUORE_cyrostat_MC} and \autoref{fig:CUORE_crystals_MC}.
+For the reconstruction, there is a balancing act in the reconstruction between the full fidelity of the recreation and the need for simplicity to reduce the load on CPU resources.
+For example, there are 4 thermalizing blocks for the calibration system on the 4K stage, see \color{red}add reference to 4K thermalizer image \color{black}, but they are not included in the reconstruction of the cryostat.
+The detectors and their nearest components do require as high-fidelity of a reconstruction as possible, as their particular geometry plays a significantly larger role in the simulated physics\footnote{Consider an $\alpha$ emitted from the external lead versus one from the copper frames around the detectors.
+It is certainly important to each what the geometry looks like, but the $\alpha$ from the external lead will never make it to the detectors.}.
+This can be seen in \autoref{fig:CUORE_crystals_MC}
+In the internal and external lead shielding, particles are propagated to a minimum of 1 cm step size, as they are less likely to interact with the detectors, while the other components have a minimum step size of 0.1 cm.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[height=0.6\linewidth]{Figures/CUORE_cryostat_MC.png}
-    \caption{A rendering of the CUORE cryostat as it is reconstructed in Geant4. The shielding is cut away show the inside of the cryostat and some of the tubes for the internal Detector Calibration System. \color{red} add labels \color{black}.}
+    \includegraphics[height=0.6\paperheight]{Figures/CUORE_cryostat_MC.png}
+    \caption[A rendering of the CUORE crysotat as it is reconstructed in Geant4.]
+    {A rendering of the CUORE cryostat as it is reconstructed in Geant4.
+    The shielding is cut away show the inside of the cryostat and some of the tubes for the internal Detector Calibration System.
+    \color{red} add labels \color{black}.}
     \label{fig:CUORE_cyrostat_MC}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[height=0.4\paperheight, angle = 40, center = c]{Figures/Crystals.pdf}
-    \caption[A visualization of the CUORE crystals as they are reconstructed in Geant4.]{A visualization of the CUORE crystals as they are reconstructed in Geant4. Care is taken to precisely replicate these components in close proximity to the crystals. \color{red} add labels \color{black}.}
+    \includegraphics[height=0.4\paperheight]{Figures/Crystals_rotated.pdf}
+    \caption[A visualization of the CUORE crystals as they are reconstructed in Geant4.]
+    {A visualization of the CUORE crystals as they are reconstructed in Geant4.
+    Care is taken to precisely replicate these components in close proximity to the crystals.
+    \color{red} add labels \color{black}.}
     \label{fig:CUORE_crystals_MC}
 \end{figure}
 
 \section{Simulating Detector Response}
+The physics simulation is Geant4 is only one part of the two-step process in performing physics simulations in CUORE.
+Geant4 does not take into consideration the actual detector response to the physics, nor does it consider any pileup effects between different primary particles.
+To then be able to characterize this response, another software package called \textit{g4cuore} is used.
+In this software, the pure physics output from the output of Geant4 is then passed through multiple parameters, including but not limited to
+\begin{itemize}
+    \item detector resolution
+    \item pileup rejection and detector dead time
+    \item energy thresholds
+    \item coincidences
+    \item multi-site events
+    \item quenching factors
+\end{itemize}
