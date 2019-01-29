@@ -23,7 +23,7 @@ As these particles move throughout these materials, their interactions and daugh
 In a detector, the energy lost by the particle and its daughters during steps inside the volume can be recorded as the energy deposited in the detector.
 
 \section{CUORE Reconstruction in Geant4}
-CUORE utilizes this software package and has recreated the entire cryostat in its own software package, called \textit{qshields}, shown in \autoref{fig:CUORE_cyrostat_MC} and \autoref{fig:CUORE_crystals_MC}.
+CUORE utilizes this software package\footnote{Version 9.6.p03} and has recreated the entire cryostat in its own software package, called \textit{qshields}, shown in \autoref{fig:CUORE_cyrostat_MC} and \autoref{fig:CUORE_crystals_MC}.
 For the reconstruction, there is a balancing act in the reconstruction between the full fidelity of the recreation and the need for simplicity to reduce the load on CPU resources.
 For example, there are 4 thermalizing blocks for the calibration system on the 4K stage, see \color{red}add reference to 4K thermalizer image \color{black}, but they are not included in the reconstruction of the cryostat.
 The detectors and their nearest components do require as high-fidelity of a reconstruction as possible, as their particular geometry plays a significantly larger role in the simulated physics\footnote{Consider an $\alpha$ emitted from the external lead versus one from the copper frames around the detectors.
@@ -60,7 +60,7 @@ In this software, the pure physics output from the output of Geant4 is then pass
     \item detector resolution
     \item pileup rejection and detector dead time
     \item energy thresholds
-    \item coincidences
+    \item coincidences \color{red} maybe same as next? find better wording \color{black}
     \item multi-site events
     \item quenching factors
 \end{itemize}

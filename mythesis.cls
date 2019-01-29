@@ -265,7 +265,7 @@ class, modified by AG]
 
 \newcommand{\makecopyright}{
   \hbox{\hfil}\vspace{4in}\begin{center}
-  Copyright \copyright\ 2018 by \@author \\
+  Copyright \copyright\ 2019 by \@author \\
   All rights reserved.
   \end{center}
   \clearpage
