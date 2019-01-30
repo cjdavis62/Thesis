@@ -14,7 +14,8 @@ In addition, this resolution aids in understanding background sources that depos
 As noted in \autoref{sec:State of Neutrinoless Double Beta Decay Experiments}, current experiments in the field of \zeronubb~use a wide array of technologies to identify \zeronubb~events.
 However, CUORE utilizes a different method of calorimetry than its counterparts in that it uses a technique known as the bolometric method.
 As particles pass through matter, the energy they deposit is eventually carried into the surrounding material as heat.
-This method requires a mass that acts as a thermal capacitor, a weak thermal connection to a heat bath, and a thermometer (generally a thermistor) and CUORE's setup is sketched in \autoref{fig:thermal_crystal_cartoon} and a sample pulse is shown in \autoref{fig:Sample_pulse}. The detectors in CUORE, $\textrm{TeO}_2$~crystals, respond to energy deposition by a temperature rise according to
+This method requires a mass that acts as a thermal capacitor, a weak thermal connection to a heat bath, and a thermometer (generally a thermistor) and CUORE's setup is sketched in \autoref{fig:thermal_crystal_cartoon} and a sample pulse is shown in \autoref{fig:Sample_pulse}.
+The detectors in CUORE, $\textrm{TeO}_2$~crystals, respond to energy deposition by a temperature rise according to
 \begin{equation}
 \delta T = \delta E/C(T).
 \end{equation}
@@ -35,43 +36,120 @@ The weak thermal coupling is provided by the PTFE.}
 \label{fig:thermal_crystal_cartoon}
 \end{figure}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{Figures/pulse-conference.pdf}
-\caption[An example pulse from a single CUORE detector.]
-{An example pulse from a single CUORE detector.
-After an event at 1 s where energy is deposited in the crystal, a fast temperature rise is observed along with a slow cooling through the weak coupling to the thermal bath.}
-\label{fig:Sample_pulse}
-\end{figure}
-
+\subsubsection*{Bolometer Thermometry Instrumentation}
 Of course, an integral component to the bolometric method is the choice of thermometer used to detect these changes in temperature.
 The choice of thermometer that CUORE uses is a Neutron Transmutation Doped (NTD) germanium thermistor due to its reproducibility and uniformity, which is critically important across CUORE's crystal array. However, a drawback to this is that each NTD thermistor must be individually cut from a block and then mounted onto each bolometer \cite{NTDThermistor}.
-The NTD thermistorks works under the principle of causes the conduction electrons to localize into the doped atoms which are spread out into the germanium.
-At high temperatures, the electrons tunnel to the nearest available unoccupied sites.
-At low temperatures such as the $<1~K$ temperatures of CUORE, the resulting lack of higher-energy phonons prevents the electron from tunneling into the nearest sites, and instead favor sites with similar energies to the electron.
+
+\begin{figure}[htbp]
+%\captionsetup[subfigure]{justification=centering}
+\centering
+\begin{subfigure}[t]{0.40\textwidth}
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/fig04a.pdf}
+\caption{}
+\label{fig:NTD_picture}
+\end{subfigure}
+\qquad
+\begin{subfigure}[t]{0.40\textwidth}
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/fig04b.pdf}
+\caption{}
+\label{fig:NTD_sketch}
+\end{subfigure}
+\caption[A photograph (a) and a diagram (b) of an NTD thermistor used in CUORE.]
+{A photograph (a) and a diagram (b) of an NTD thermistor used in CUORE.
+The dimensions of the NTD are $3.0\times2.9\times0.9~\textrm{mm}^3$ ($\textrm{L} \times \textrm{W} \times \textrm{H}$ with $\textrm{P}=0.2~\textrm{mm}$.
+Figure from \cite{Alduino:2016vjd}.}
+\label{fig:NTD}
+\end{figure}
+
+The NTD thermistors are created by irradiating pure Ge with a flux of thermal neutrons, and the NTD sensors used in CUORE were irradiated at the MIT Nuclear Reactor Laboratory.
+This flux produces Ga, As, and Se, which dopes the Ge, and the doping stops before the Ge reaches a critical doping threshold such that it still remains a semiconductor.
+Above this threshold, the Ge material acts as a metal where resistivity goes to 0 at 0 K, but just below this threshold, the resistivity increases sharply.
+This is due to the fact that the doping causes conduction electrons in the material to localize into the doped atoms which are spread out into the germanium.
+When conducting at high temperatures, the electrons tunnel to the nearest available unoccupied sites in the material.
+At low temperatures, however, such as the $<1~\textrm{K}$ temperatures of the CUORE detectors, the resulting lack of higher-energy phonons prevents the electron from tunneling into the nearest sites, and instead favor sites with similar energies to the electron.
 In this regime of ``variable range hopping", the resistance of the NTD goes as
 \begin{equation}
     R(T) = R_0 e^{\left(\frac{T_0}{T}\right)^p} 
     \label{eq:NTD_Resistivity}
 \end{equation}
 as shown by Shklovskii and Efros \cite{NTDResistivity}.
-This causes the resistivity to have a strong temperature dependence at cryogenic temperature and allows the NTD thermistor to serve as the thermometer to measure the temperature rise as a voltage, as shown in \autoref{fig:Sample_pulse}.
+This causes the resistivity to have a strong temperature dependence at cryogenic temperature and allows the NTD thermistor to serve as a highly sensitive thermometer to measure the temperature rise as a voltage, as shown in \autoref{fig:Sample_pulse}.
+For the NTDs used on the CUORE-0 detectors, the measured values for $T_0$ and $R_0$ are 3.84 K and 1.13 $\Omega$, respectively, corresponding to a resistance of 0.37 G$\Omega$ at 10 mK \cite{Alduino:2016vjd}.
+The NTDs used on the CUORE towers have slightly higher resistances, with an average resistance of 0.6-1.1 G$\Omega$ \cite{Nutini:LoadCurves}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/pulse-conference.pdf}
+\caption[An example pulse from a single CUORE detector measured by an NTD Ge thermistor.]
+{An example pulse from a single CUORE detector measured by an NTD Ge thermistor.
+After an event at 1 s where energy is deposited in the crystal, a fast (0.1 s) temperature rise is observed followed with a slow (3 s) cooling through the weak coupling to the thermal bath.}
+\label{fig:Sample_pulse}
+\end{figure}
+
+\subsubsection*{Silicon Heater}
+While the detectors are calibrated through physics events on a $\sim$ monthly basis by the calibration system, discussed more in \autoref{chap:DCS}, additional and continuous stabilization is provided through direct heating of the bolometers through a silicon heater that is also attached onto the bolometer, discussed more in \autoref{ssec:Stabilization}.
+These heaters are custom-designed $2.33\times2.40\times0.52~\textrm{mm}^3$ high-purity Si chips, shown in \autoref{fig:Si_heater}.
+They were manufactured by Istituto per la Ricerca Scientifica e Tecnologica (IRST, now Fondazione Bruno Kessler) in Trento, Italy.
+As current passes through these Si chips with resistance $\approx300~\textrm{k}\Omega$, power is dissipated through ohmic losses in the heaters into the bolometers, which is then measured by the NTDs.
+By pulsing these heaters with a known energy, the detector response can then be stabilized at various detector baselines.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\linewidth]{Figures/fig05a.pdf}
+    \caption[Photograph of a silicon heater.]
+    {Photograph of a silicon heater.
+    There are four aluminum pads on the chip, and, depending on the pair of pads connected, the resistance across the heater can be 100, 200, or 300 k$\Omega$.}
+    \label{fig:Si_heater}
+\end{figure}
+
+There are some particular challenges to the bolometric method, however.
+The dependence on the heat capacity of the crystal depends on the exact crystalline structure of the crystal, which requires regular calibrations due to possible minute changes.
+In addition, this strong temperature dependence, while useful for identifying signal, needs a well-stabilized detector with few disturbances from non-particle thermal sources and a consistent and well-understood temperature baseline.
+Finally, the long time constant of the cooling of the crystal, which is generally a few seconds for a 1 MeV pulse, requires that there be a low rate of events in the crystal.
+This requirement of a low rate is generally not an issue for physics datataking, as the background rates are necessarily low due to the sensitivity requirements of a \zeronubb~search, but this limits the time it takes to calibrate the bolometer\footnote{This generally becomes an optimization problem, later discussed in \autoref{chap:DCS}, where the time it takes to calibrate a detector with 100 events can be reduced by reducing the activity of a calibration source.}.
+
 
 \subsection{CUORE Detector Array}
-CUORE uses 988 \teotwo~crystals as bolometers arranged in 19 towers with 13 floors as shown in \autoref{fig:cuore_detector_array}.
-These crystals are $5\times5\times5~\textrm{cm}^3$ in size and have mass 750g each, for a total of 742 kg of \teotwo.
+CUORE uses 988 \teotwo~crystals as bolometers arranged in 19 towers with 13 floors as shown in \autoref{fig:cuore_detector_array} and \autoref{fig:cuore_photograph}.
+These crystals are $5\times5\times5~\textrm{cm}^3$ in size and have mass 750 g each, for a total of 742 kg of \teotwo.
+The crystals are grown by The Shanghai Institute of Ceramics, Chinese Academy of Sciences (SICCAS) \cite{Arnaboldi:2010fj} and shipped to Italy by boat, avoiding air travel in order to minimize cosmogenic activation \cite{Barghouty:2010kj}.
 Taking advantage of the relatively high natural isotopic abundance of Te, shown in \autoref{fig:q_vs_ia-color}, this comes to a total mass of 206 kg of $^{130}$Te and 189 kg of $^{128}$Te.
 Each tower is approximately 80 cm tall, such that in operation, these crystals form the coldest cubic meter in the known universe \cite{Ouellet:2014qua}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{Figures/CUORE_detector_array_0.png}
+    \includegraphics[width=0.75\linewidth]{Figures/CUORE_detector_array_0.png}
     \caption[A schematic of the CUORE detector array.]
     {A schematic of the CUORE detector array.
-    The detectors are held in place by the copper frames and arranged in 19 towers with 13 floors each.}
+    The detectors are held in place by the copper frames and arranged in 19 towers with 13 floors each.
+    The position of the detector array relative to the rest of the cryostat can be seen in \autoref{fig:cryostat_cad_cutout}.}
     \label{fig:cuore_detector_array}
 \end{figure}
 
+Another benefit to using a bolometric method for particle detection is that it enables a ``source $=$ detector" style experiment such that the \zeronubb~and \twonubb~decays happen directly inside the detectors themselves.
+This both reduces the amount of material and associated radioactive backgrounds needed in the experiment and also increases the signal detection efficiency of \zeronubb~and \twonubb-like decays.
+
+In order to arrange these bolometers into these 19 towers, the \teotwo~crystals are held together inside copper frames with polytetrafluoroethylene (PTFE) holders.
+These holders are designed such that the crystals are held in place firmly at the low temperatures in CUORE\footnote{Although, the thermal contractions between copper and \teotwo~are similar with values of $\Delta l/l \approx 0.27\%$ and $\Delta l / l \approx 0.33\%$, respectively \cite{ALESSANDRELLO1995363}.}.
+A rendering of a CUORE tower is shown in \autoref{fig:tower_rendering}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/fig02.pdf}
+    \caption[A rendering of the components of a single CUORE tower (left) and floor (right).]
+    {A rendering of the components of a CUORE tower (left) and floor (right).
+    The copper frames are shared between floors, and only the PTFE and the gold wiring connecting the silicon heaters and NTD thermistors to the wiring on the frames act as the weak thermal contact to the detectors.
+    Figure from \cite{Alduino:2016vjd}.}
+    \label{fig:tower_rendering}
+\end{figure}
+It is important to note that the number and size of each component on the towers is minimized as much as possible, while keeping the structural integrity intact.
+Since these components are the nearest to the detectors, keeping their radioactivity to a minimum significantly lowers the background and is discussed more in \autoref{ssec:CUORE-0}.
+This was one of the improvements from Cuoricino's towers to CUORE's towers, as the amount of copper used in the frames was able to be reduced by a factor of $\sim2.5$.
+
+
+\subsubsection{CUORE Construction and Assembly}
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{Figures/CUORE_29Aug16_HR-2477.jpg}
@@ -80,7 +158,7 @@ Each tower is approximately 80 cm tall, such that in operation, these crystals f
     {A photograph of the 19 CUORE towers from below after installation in the cryostat.
     Also visible are the inner calibration source tubes with their teflon caps.
     Photo Credit: Yury Suvorov.}
-    \label{fig:my_label}
+    \label{fig:cuore_photograph}
 \end{figure}
 
 \section{Predecessor Experiments}
@@ -98,6 +176,7 @@ Of course, as shown in \autoref{eq:sensitivity_short}, the detector mass is only
 \subsection{Cuoricino}
 
 \subsection{CUORE-0}
+\label{ssec:CUORE-0}
 After the completion of the Cuoricino experiment, an intermediate experiment was planned while working on completing the CUORE cryostat.
 This experiment, CUORE-0, was meant to bridge the gap between the two experiments with a single CUORE-like tower placed in the Cuoricino cryostat.
 A schematic of the experimental apparatus can be seen in \autoref{fig:CUORE-0_cryostat_schematic}.
@@ -122,7 +201,7 @@ The \gamma~backgrounds are not reduced as significantly as the cryostat is the s
     {A comparison of the backgrounds in the Cuoricino and CUORE-0 experiments.
     The backgrounds are significantly reduced in the \gamma~ regions as the improved materials selection and cleaning procedures reduced the surface contaminants on the \teotwo~crystals and the copper frames on the tower.
     There is also some improvement on the level of \gamma~ backgrounds, but as the cryostat is the same, those contaminations remain.
-    However, one peak in the \alpha region from $^{210}$Po does not decrease, and may be particular to this single tower.}
+    However, one peak in the $\alpha$ region from $^{210}$Po does not decrease, and may be particular to this single tower.}
     \label{fig:cuore-0_vs_cuoricino}
 \end{figure}
 
@@ -157,7 +236,7 @@ In addition, since the 5 pulse tubes on CUORE are not symmetrically aligned due 
 Since the cyrostat needs to reach temperatures of 10 mK, a dilution refrigerator is used as the main cooling mechanism in the coldest stages of the cryostat.
 A dilution refrigerator works by taking advantage of the phase boundary between dilute and concentrated phases of a $^3$He and $^4$He mixture, shown in \autoref{fig:He_phase_diagram}.
 In the mixing chamber of the dilution refrigerator on the 100~mK stage of the CUORE cryostat, $^3$He flows from the concentrated phase to the dilute phase.
-This process extracts energy from the environment of the mixing chamber, and by extension the coldest stages of the cryostat, as energy is required to move the $^3$He across the phase boundary\footnote{Of course, the Universe's entropy is not reduced by this exchange and additional energy is used to induce this endothermic cooling.}.
+This process extracts energy from the environment of the mixing chamber, and, by extension, the coldest stages of the cryostat, as energy is required to move the $^3$He across the phase boundary\footnote{Of course, the Universe's entropy is not reduced by this exchange and additional energy is used to induce this endothermic cooling.}.
 
 \begin{figure}
     \centering
@@ -200,14 +279,16 @@ The CUORE goal is 0.01 counts/keV/kg/y with most of the background due to the su
 \label{fig:cuore_background_budget}
 \end{figure}
 
-The background goal of CUORE is to have no greater than 0.01 counts/keV/kg/yr in the region of interest, defined to be a 100 keV interval from 2470 keV to 2570 keV. In order to achieve this low background, the parts nearest to the detectors undergo intensive cleaning. The contamination of these surfaces is given in \autoref*{tab:NearDetectorSources}.
+The background goal of CUORE is to have no greater than 0.01 counts/keV/kg/yr in the region of interest, defined to be a 100 keV interval from 2470 keV to 2570 keV.
+In order to achieve this low background, the parts nearest to the detectors undergo intensive cleaning.
+The contamination of these surfaces is given in \autoref*{tab:NearDetectorSources}.
 
 \begin{table}[htbp]
 \centering
 \caption[90\% upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector.]
 {90\% upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector.
 The units in the table are relative masses of contamination to the mass of the component.
-Table from \cite{Alduino:2016vjd}}
+Table from \cite{Alduino:2016vjd}.}
 \label{tab:NearDetectorSources}.
 \begin{tabular}{|c|c|c|}
 \hline 
@@ -231,111 +312,3 @@ Glue & $<2.2\times 10^{-10}$ & $<8.2\times10^{-10}$ \\
 \hline 
 \end{tabular} 
 \end{table}
-
-
-
-\begin{comment}
-
-\subsection{CUORE Detectors}
-
-The CUORE detectors are 988 $ 5\times 5 \times 5~ \textrm{cm}^3$ crystals arranged into 19 towers with 13 floors containing 4 crystals each as shown in \hyperref[fig:cuore-detector-array0]{Fig. \ref*{fig:cuore-detector-array0}}. The total detector mass is 742 kg with 206 kg of $^{130}$Te. 
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{"Figures/CUORE detector array_0"}
-\caption{A rendering of the CUORE towers. The 19 towers are arranged into rows of 3, 4, 5, 4, and 3 towers.}
-\label{fig:cuore-detector-array0}
-\end{figure}
-
-
-The crystals in each tower are held by copper frames, with polytetrafluoroethylene (PTFE) in between the copper and the crystals. The crystals respond to energy deposition by a small temperature rise according to
-\begin{equation}
-\delta T = E/C(T).
-\end{equation}
-At low C, $\delta T$ is maximized; therefore, the crystals are operated at low temperatures where C(T) is given by the Debye Model:
-\begin{equation}
-C(T)\sim T^3.
-\end{equation}
-At 10 mK, the operating temperature of CUORE, the heat capacity is $\sim2$ nJ/K, which causes a 1 MeV energy deposit to have a $\delta T$ of $\sim0.1$ mK.
-
-This temperature rise is measured by a neutron-transmutation-doped (NTD) germanium thermistors which are glued onto each crystal. These thermistors allow the temperature change of the crystals to be read out by electronics as a change in applied voltage. Also glued on the crystals are silicon resistors which are used as a Joule heater. Bonded to the thermistors and the heaters are gold wires which are bonded to copper tape with a polyethylene naphthalate (PEN) substrate (collectively called Cu-PEN) on wire trays along the sides of the towers, shown in \hyperref[fig:bondedchips]{Fig. \ref*{fig:bondedchips}}.
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{Figures/BondedChips}
-\caption{A germanium NTD on the crystal with four gold wires that have been bonded to both the NTD and to copper pads on the Cu-PEN tape.}
-\label{fig:bondedchips}
-\end{figure}
-These signals are then read out by room-temperature electronics on top of the cryostat. A rendering of a full tower with the copper frames, wire trays, PTFE, and crystals can be seen at \hyperref[fig:SingleTowerWithZoom]{Fig. \ref*{fig:SingleTowerWithZoom}}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{Figures/C0TowerZoom.pdf}
-\caption[A rendering of a single tower in the CUORE detector assembly with a cutout for a single floor. Adjacent floors share the same frames.]{A rendering of a single tower in the CUORE detector assembly with a cutout for a single floor. Adjacent floors share the same frames. Diagram from \cite{Alduino:2016vjd}}
-\label{fig:SingleTowerWithZoom}
-\end{figure}
-
-After an energy deposition causes the temperature of the crystal to rise, the crystal returns slowly back to the baseline temperature due to the weak thermal connection between the crystals and the copper frames which are held at 10 mK. A diagram of the thermal connection is shown in \hyperref[fig:thermal_crystal_cartoon]{Fig. \ref*{fig:thermal_crystal_cartoon}}. The rise and fall times of the signal are around 0.05 seconds and 0.2 seconds, respectively, for a 2615 keV signal.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{Figures/BolDetector_Cartoon.pdf}
-\caption[A diagram of the thermal connection of the TeO$_2$ crystals to the thermal bath provided by the copper frames. The weak thermal coupling is provided by the PTFE and the gold wires for the NTD and the heater. The thermistor is not shown to scale.]{A diagram of the thermal connection of the TeO$_2$ crystals to the thermal bath provided by the copper frames. The weak thermal coupling is provided by the PTFE and the gold wires for the NTD and the heater. The thermistor is not shown to scale. Diagram from \cite{Alduino:2016vjd}}
-\label{fig:thermal_crystal_cartoon}
-\end{figure}
-
-\subsection{CUORE Cryostat}
-
-Since the heat capacity of the CUORE crystals is so strongly dependent on temperature, it is important to have a system that can cool down the crystals to low temperatures and keep them running in stable conditions over long periods. To this end, we constructed a custom cryostat to house the crystals. The cooling components of the cryostat are pulse tubes that cools the cryostat stages held 4 K, and a dilution refrigerator that is responsible for maintaining the coldest regions of the cryostat, including the crystals at 10 mK. In addition to cooling the crystals, the cryostat also houses the shielding for the crystals and needs to be made of radiopure materials, especially near the detectors themselves.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\linewidth]{Figures/Cryostat_Adjusted.png}
-\caption{A CAD drawing of a cutaway the CUORE cryostat showing the internal shielding of the cryostat. The temperature stages of the cryostat are also shown. Not included are the external shields which extend around the sides of the cryostat}
-\label{fig:cryostat_cad_cutout}
-\end{figure}
-
-\subsubsection*{Cooling Systems}
-
-Since the cyrostat needs to reach temperatures of 10 mK, a dilution refrigerator is used as the main cooling mechanism in the coldest stages of the cryostat. A dilution refrigerator works by diluting a He-3 solution
-%The CUORE cryostat 
-
-\subsubsection*{Radiopurity}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{Figures/CUORE_background_budget}
-\caption{CUORE background budget. The CUORE goal is 0.01 counts/keV/kg/y with most of the background due to the surfaces of cryostat elements nearest to the crystal and the bulk of the Roman lead.}
-\label{fig:istogramma}
-\end{figure}
-
-The background goal of CUORE is to have no greater than 0.01 counts/keV/kg/yr in the region of interest, defined to be a 100 keV interval from 2470 keV to 2570 keV. In order to achieve this low background, the parts nearest to the detectors undergo intensive cleaning. The contamination of these surfaces is given in \hyperref[tab:NearDetectorSources]{Table \ref*{tab:NearDetectorSources}}.
-
-\begin{table}[htbp]
-\centering
-\caption[90\% upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector.]{90\% upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector. Table from \cite{Alduino:2016vjd}}
-\label{tab:NearDetectorSources}
-\begin{tabular}{|c|c|c|}
-\hline 
- Component & $^{232}$Th [g/g] & $^{238}$ U [g/g] \\ 
-\hline 
-TeO$_2$ crystals & $< 2.1\times 10^{-13}$ & $<5.3\times 10^{-14}$ \\ 
-\hline 
-NOSV copper & $<5.0 \times 10^{-13}$ & $<5.3 \times 10^{-12}$ \\ 
-\hline 
-NTD sensors & $< 1.0 \times 10^{-9}$ & $<1.0 \times 10^{-9}$ \\ 
-\hline 
-Bonding gold wires & $< 1.0 \times 10^{-8}$ & $<1.0 \times 10^{-9}$ \\ 
-\hline 
-Si heaters &   $<8\times 10^{-11}$ & $<1.7 \times 10^{-10}$ \\ 
-\hline 
-PTFE holders & $<1.5\times 10^{-12}$ & $<1.8 \times 10^{-12}$ \\ 
-\hline 
-Cu-PEN cables & $<4.4\times 10^{-10}$ & $<1.1 \times 10^{-10}$ \\ 
-\hline
-Glue & $<2.2\times 10^{-10}$ & $<8.2\times10^{-10}$ \\
-\hline 
-\end{tabular} 
-\end{table}
-
-
-\end{comment}

@@ -200,6 +200,7 @@ keywords = "Meteorites "
       SLACcitation   = "%%CITATION = ARXIV:1402.0922;%%"
 }
 
+%CUORE-0 Detector paper
 @article{Alduino:2016vjd,
       author         = "Alduino, C. and others",
       title          = "{CUORE-0 detector: design, construction and operation}",
@@ -981,22 +982,98 @@ url="https://doi.org/10.1023/A:1017555615150"
 }
 
 
-@article{NTDThermistor,
-author = {Itoh,K. M.  and Haller,E. E.  and Hansen,W. L.  and Beeman,J. W.  and Farmer,J. W.  and Rudnev,A.  and Tikhomirov,A.  and Ozhogin,V. I. },
-title = {Neutron transmutation doping of isotopically engineered Ge},
-journal = {Applied Physics Letters},
-volume = {64},
-number = {16},
-pages = {2121-2123},
-year = {1994},
-doi = {10.1063/1.111703},
+@Inbook{NTDThermistor,
+author="Haller, E. E.
+and Palaio, N. P.
+and Rodder, M.
+and Hansen, W. L.
+and Kreysa, E.",
+editor="Larrabee, Robert D.",
+title="NTD Germanium: A Novel Material for Low Temperature Bolometers",
+bookTitle="Neutron Transmutation Doping of Semiconductor Materials",
+year="1984",
+publisher="Springer US",
+address="Boston, MA",
+pages="21--36",
+abstract="Six samples of ultra-pure (|NA − ND| ≤ 1011 cm-3), single-crystal germanium have been neutron transmutation doped to p-type with neutron doses between 7.5 {\texttimes} 1016 and 1.88 {\texttimes} 1018 cm-2. After thermal annealing at 400{\textdegree}C for six hours in a pure argon atmosphere, the samples were characterized with Hall effect and resistivity measurements between 300 and 0.3 K. The results show that the resistivity in the low temperature, hopping conduction regime can be approximated by $\rho$ = $\rho$oexp($\Delta$/T). The three more heavily-doped samples show values for $\rho$o and $\Delta$ ranging from 430 to 3.3 $\Omega$ cm and from 4.9 to 2.8 K respectively. The excellent reproducibility of neutron transmutation doping and the values of $\rho$o and $\Delta$ make NTD germanium a prime candidate for the fabrication of low-temperature, low-noise bolometers. The large variation in the tabulated values of the termal neutron cross sections for the different germanium isotopes makes it clear that accurate measurements of these cross sections for well defined neutron energy spectra would be highly desirable.",
+isbn="978-1-4613-2695-3",
+doi="10.1007/978-1-4613-2695-3_2",
+url="https://doi.org/10.1007/978-1-4613-2695-3_2"
+}
 
-URL = { 
-        https://doi.org/10.1063/1.111703
-},
-eprint = { 
-        https://doi.org/10.1063/1.111703
-}
-}
 
 @book{NTDResistivity, place={Berlin}, title={Electronic properties of doped semiconductors}, publisher={Springer-Verlag}, author={Shklovskiĭ B. I. and Ėfros A. L.}, year={1984}} 
+
+%TeO2 crystal activation
+@article{Barghouty:2010kj,
+      author         = "Barghouty, A. F. and others",
+      title          = "{Measurements of proton-induced radionuclide production
+                        cross sections to evaluate cosmic-ray activation of
+                        tellurium}",
+      journal        = "Nucl. Instrum. Meth.",
+      volume         = "B295",
+      year           = "2013",
+      pages          = "16-21",
+      doi            = "10.1016/j.nimb.2012.10.008",
+      eprint         = "1010.4066",
+      archivePrefix  = "arXiv",
+      primaryClass   = "nucl-ex",
+      SLACcitation   = "%%CITATION = ARXIV:1010.4066;%%"
+}
+
+%Cuore single crystal
+@article{Arnaboldi:2010fj,
+      author         = "Arnaboldi, C. and others",
+      title          = "{Production of high purity TeO$_2$ single crystals for the
+                        study of neutrinoless double beta decay}",
+      journal        = "J. Cryst. Growth",
+      volume         = "312",
+      year           = "2010",
+      number         = "20",
+      pages          = "2999-3008",
+      doi            = "10.1016/j.jcrysgro.2010.06.034",
+      eprint         = "1005.3686",
+      archivePrefix  = "arXiv",
+      primaryClass   = "cond-mat.mtrl-sci",
+      SLACcitation   = "%%CITATION = ARXIV:1005.3686;%%"
+}
+
+%thermal expansions
+@article{ALESSANDRELLO1995363,
+title = "First tests on a large mass, low temperature array detector",
+journal = "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+volume = "360",
+number = "1",
+pages = "363 - 366",
+year = "1995",
+note = "Proceedings of the Sixth Pisa Meeting on Advanced Detectors",
+issn = "0168-9002",
+doi = "https://doi.org/10.1016/0168-9002(94)01723-9",
+url = "http://www.sciencedirect.com/science/article/pii/0168900294017239",
+author = "A. Alessandrello and C. Brofferio and O. Cremonesi and E. Garcia and A. Giuliani and A. Nucciotti and S. Parmeggiano and M. Pavan and G. Pessina and E. Previtali and P. De Marcillac",
+abstract = "A new generation of detectors for non-accelerator particle physics has been under development in the last years and has recently started to be used in experimental searches. The results have already demonstrated that low temperature detectors can be competitive with conventional ones in several fields of non-accelerator particle physics. The near future upgrading of this technique will be the extension from one single crystal device to arrays of several single crystals. This new detector set-up poses stimulating and original technical problems, both on detector structure and signal analysis: our progresses in this field are reported."
+}
+
+%Load Curves Docdb and NTD measurements
+@unpublished{Nutini:LoadCurves,
+author  ="Cremonesi, O. and Nutini, I.",
+title = "{Fit Load Curves - T scan 15-27 mK}",
+note = "CUORE DocDB-1376v1, Dec 2017.",
+url = "https://docdb.wlab.yale.edu/cuore/ShowDocument?docid=1376"
+}
+
+% Silicon Heater paper
+@article{ALESSANDRELLO1998454:Si-heater,
+title = "Methods for response stabilization in bolometers for rare decays",
+journal = "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+volume = "412",
+number = "2",
+pages = "454 - 464",
+year = "1998",
+issn = "0168-9002",
+doi = "https://doi.org/10.1016/S0168-9002(98)00458-6",
+url = "http://www.sciencedirect.com/science/article/pii/S0168900298004586",
+author = "A Alessandrello and C Brofferio and C Bucci and O Cremonesi and A Giuliani and B Margesin and A Nucciotti and M Pavan and G Pessina and E Previtali and M Zen",
+keywords = "Bolometers, Response stabilization, Rare decays, -radioactivity",
+abstract = "Massive bolometric detectors operated at very low temperatures (≃10mK) can be used to search for rare events, such as Double Beta Decay and interactions of Dark Matter candidates. In experiments of this type it is important to keep the detector response steady within 0.1% level over periods of the order of one year or more, often in conflict with the intrinsic instabilities of the cryogenic setups. Here, a powerful method to stabilize detector response is described: using calibrated amounts of energy, injected by means of alpha particles or resistive heaters, a correlation between pulse amplitude and detector bias can be established. This correlation can be used to correct off-line the amplitudes of every pulse. The satisfactory results achieved with this technique are reported and discussed. For this purpose heavily doped Si heaters with steady resistances at cryogenic temperatures were designed and succesfully tested."
+}
