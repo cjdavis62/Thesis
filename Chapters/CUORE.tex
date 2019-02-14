@@ -11,6 +11,7 @@ In addition, this resolution aids in understanding background sources that depos
 \section{CUORE Detectors}
 
 \subsection{Particle Detection with Bolometers}
+\label{ssec:Particle Detectrion with Bolometers}
 As noted in \autoref{sec:State of Neutrinoless Double Beta Decay Experiments}, current experiments in the field of \zeronubb~use a wide array of technologies to identify \zeronubb~events.
 However, CUORE utilizes a different method of calorimetry than its counterparts in that it uses a technique known as the bolometric method.
 As particles pass through matter, the energy they deposit is eventually carried into the surrounding material as heat.
@@ -132,7 +133,7 @@ Another benefit to using a bolometric method for particle detection is that it e
 This both reduces the amount of material and associated radioactive backgrounds needed in the experiment and also increases the signal detection efficiency of \zeronubb~and \twonubb-like decays.
 
 In order to arrange these bolometers into these 19 towers, the \teotwo~crystals are held together inside copper frames with polytetrafluoroethylene (PTFE) holders.
-These holders are designed such that the crystals are held in place firmly at the low temperatures in CUORE\footnote{Although, the thermal contractions between copper and \teotwo~are similar with values of $\Delta l/l \approx 0.27\%$ and $\Delta l / l \approx 0.33\%$, respectively \cite{ALESSANDRELLO1995363}.}.
+These holders are designed such that the crystals are held in place firmly at the low temperatures in CUORE\footnote{Although, one of the benefits of using \teotwo~is that its thermal contraction is similar to that of copper, with values of $\Delta l/l \approx 0.27\%$ and $\Delta l / l \approx 0.33\%$, respectively \cite{ALESSANDRELLO1995363}.}.
 A rendering of a CUORE tower is shown in \autoref{fig:tower_rendering}.
 
 \begin{figure}
@@ -149,7 +150,99 @@ Since these components are the nearest to the detectors, keeping their radioacti
 This was one of the improvements from Cuoricino's towers to CUORE's towers, as the amount of copper used in the frames was able to be reduced by a factor of $\sim2.5$.
 
 
-\subsubsection{CUORE Construction and Assembly}
+\subsection{CUORE Tower Construction and Assembly}
+
+\subsubsection{Crystal Growth}
+As mentioned in the preceeding section, the first part of the detector construction and tower assembly occurrs with growth of the Te crystals at SICCAS.
+This growth was performed in two phases: crystal growth and crystal polishing.
+During each procedure, extreme care was taken to minimize bulk contaminations forming in the first phase and surface contaminations in the second \cite{crystal_growth_methods, crystal_growth_methods_2, Barghouty:2010kj}.
+During the first procedure, the crystals are grown twice, where, after the first growth, 1 mm is removed from the ingots and the selected best sections of the first growth are used as high-purity powder for the second.
+This two-stage growth process enables crystal purity of 99.999\%, up from the 99.99\% purity of commercially available powder.
+This increased purity, along with growing the crystals from powder, strongly reduces bulk contaminations of $^{40}$K, which is a particularly problematic background for \twonubb~measurements, as it decays through beta-decay.
+
+After the crystals are grown, they are then cut into cubes with $5 \pm 0.0050$ cm edges and $0.05$ cm chamfers with an average flatness on each face of $<0.001$ cm.
+In addition, the cubic faces are oriented parallel to the planes of the crystalline structure of the \teotwo~within $\pm1^{\circ}$ by means of an X-ray on the crystals after their growth.
+The cleaning process then takes two steps: first, by means of chemical etching, and, second, by polishing the crystals.
+Each of these processes removes approximately $10^5$ atomic layers from the surface of the crystal, which removes surface impurities that may have adsorbed onto the crystal surface and begun to diffuse into the bulk.
+At the end of the polishing step, the completed crystal is then triple-bagged in vacuum and stored in groups of 6 in a polyethylene vacuum box in order to avoid exposure to atmospheric radon.
+
+Once the crystals arrive at LNGS, they are immediately placed in storage underground under a flux of nitrogen.
+Despite the short $\sim$1 month that the crystals are aboveground causes the crystals to have cosmogenic activation of $^{110m}$Ag and $^{60}$Co that contribute $<1\%$ of the background at the Q-value of $^{130}$Te \cite{PhysRevC.92.024620, BARGHOUTY201316}.
+
+\subsubsection{Parts Selection and Cleaning}
+The copper used to house the detectors in the detector array also undergoes an extensive cleaning process.
+The copper selected for this is produced by Arubis\footnote{Originally named Norddeutsche Affinerie.} and is their high-purity Electrolytic Tough Pitch (ETP1) copper alloy, called NOSV\footnote{\RaggedRight\url{http://www.aurubis.com/en/our-business/products/aurubis-shapes/materials/shapes-materials-table}}.
+This copper was chosen for CUORE due to its radiopurity and its high residual resistance ratio, certified to be over 400.
+However, while the bulk contamination of NOSV copper is low, the surface contaminations of commercially-available NOSV copper due to its handling and machining.
+This required the development of a stringent cleaning procedure that involved a sequence of tumbling and chemical etching.
+In addition, the larger copper shields facing the detector were wrapped in polyethlyene film while the small copper parts on the towers were also subjected to Magnetron plasma etching, TECM.
+This cleaning procedure required the copper to be above ground for a total of 4 months between casting and storage underground.
+During this time, the cosmogenic activity for CUORE data-taking is estimated to be a negligible value of <50 $\mu$Bq$/$kg.
+These procedures were validated during the Three Towers Test  and the surface contamination of the cleaned NOSV copper was measured to be 3.8 nBq/cm$^2$ and 2.0 nBq/cm$^2$ for $^{238}$U and $^{232}$Th, respectively \cite{ALESSANDRIA201313}.
+The other components on the CUORE towers, viz. the NTDs, the silicon heaters, PTFE holders, etc., are also subjected to a cleaning process and are stored under a nitrogen flux before assembly.
+The final bulk contaminations of the components of the CUORE tower are shown in \autoref{tab:NearDetectorSources_Bulk}.
+
+\begin{table}[htbp]
+\centering
+\caption[90\% C.L. upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector.]
+{90\% upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector.
+The units in the table are relative masses of contamination to the mass of the component.
+Table from \cite{Alduino:2017qet}.}
+\label{tab:NearDetectorSources_Bulk}
+\begin{tabular}{llll}
+\hline
+\hline
+Material         & 232 Th [Bq/kg]         & 238U [Bq/kg]           & Technique           \\
+\hline
+TeO2             & $<8.4\times10^{-7}$ & $<6.7\times10^{-7}$ & bolometric          \\
+Glue             & $<8.9\times10^{-4}$ & $<1.0\times10^{-2}$ & NAA                 \\
+Au bonding wires & $<4.1\times10^{-2}$ & $<1.2\times10^{-2}$ & ICPMS               \\
+heaters          & $<3.3\times10^{-4}$ & $<2.1\times10^{-3}$ & NAA                 \\
+NTDs             & $<4.1\times10^{-3}$ & $<1.2\times10^{-2}$ & Producer spec.      \\
+PEN              & $<1.0\times10^{-3}$ & $<1.3\times10^{-3}$ & NAA (Th), HPGe (U) \\
+PTFE             & $<6.1\times10^{-6}$ & $<2.2\times10^{-5}$ & NAA                 \\
+CuNOSV           & $<2.1\times10^{-6}$ & $<6.5\times10^{-5}$ & NAA + HPGe         \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+\begin{comment}
+
+\begin{table}[htbp]
+\centering
+\caption[90\% C.L. upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector.]
+{90\% upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector.
+The units in the table are relative masses of contamination to the mass of the component.
+Table from \cite{Alduino:2016vjd}.}
+\label{tab:NearDetectorSources}.
+\begin{tabular}{|c|c|c|}
+\hline 
+ Component & $^{232}$Th [g/g] & $^{238}$ U [g/g] \\ 
+\hline 
+TeO$_2$ crystals & $< 2.1\times 10^{-13}$ & $<5.3\times 10^{-14}$ \\ 
+\hline 
+NOSV copper & $<5.0 \times 10^{-13}$ & $<5.3 \times 10^{-12}$ \\ 
+\hline 
+NTD sensors & $< 1.0 \times 10^{-9}$ & $<1.0 \times 10^{-9}$ \\ 
+\hline 
+Bonding gold wires & $< 1.0 \times 10^{-8}$ & $<1.0 \times 10^{-9}$ \\ 
+\hline 
+Si heaters &   $<8\times 10^{-11}$ & $<1.7 \times 10^{-10}$ \\ 
+\hline 
+PTFE holders & $<1.5\times 10^{-12}$ & $<1.8 \times 10^{-12}$ \\ 
+\hline 
+Cu-PEN cables & $<4.4\times 10^{-10}$ & $<1.1 \times 10^{-10}$ \\ 
+\hline
+Glue & $<2.2\times 10^{-10}$ & $<8.2\times10^{-10}$ \\
+\hline 
+\end{tabular} 
+\end{table}
+\end{comment}
+
+\subsubsection{Tower Assembly}
+
+
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{Figures/CUORE_29Aug16_HR-2477.jpg}
@@ -162,6 +255,7 @@ This was one of the improvements from Cuoricino's towers to CUORE's towers, as t
 \end{figure}
 
 \section{Predecessor Experiments}
+\label{sec:Predecessor Experiments}
 The CUORE experiment benefits from the experience gained through multiple previous incarnations of this bolometric technique in \teotwo.
 Starting with the smallest proof-of-concept detectors, successive generations of this technology have increased in total detector mass and decreased in background in order to increase sensitivity and further probe \zeronubb~decay.
 This almost-exponential growth in mass in the different generations of CUORE-like experiments from 73~g to 742~kg is shown in \autoref{fig:bolometer_mass_over_time}.
@@ -281,34 +375,4 @@ The CUORE goal is 0.01 counts/keV/kg/y with most of the background due to the su
 
 The background goal of CUORE is to have no greater than 0.01 counts/keV/kg/yr in the region of interest, defined to be a 100 keV interval from 2470 keV to 2570 keV.
 In order to achieve this low background, the parts nearest to the detectors undergo intensive cleaning.
-The contamination of these surfaces is given in \autoref*{tab:NearDetectorSources}.
-
-\begin{table}[htbp]
-\centering
-\caption[90\% upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector.]
-{90\% upper limits of $^{232}$Th and $^{238}$U bulk contamination of sources near the detector.
-The units in the table are relative masses of contamination to the mass of the component.
-Table from \cite{Alduino:2016vjd}.}
-\label{tab:NearDetectorSources}.
-\begin{tabular}{|c|c|c|}
-\hline 
- Component & $^{232}$Th [g/g] & $^{238}$ U [g/g] \\ 
-\hline 
-TeO$_2$ crystals & $< 2.1\times 10^{-13}$ & $<5.3\times 10^{-14}$ \\ 
-\hline 
-NOSV copper & $<5.0 \times 10^{-13}$ & $<5.3 \times 10^{-12}$ \\ 
-\hline 
-NTD sensors & $< 1.0 \times 10^{-9}$ & $<1.0 \times 10^{-9}$ \\ 
-\hline 
-Bonding gold wires & $< 1.0 \times 10^{-8}$ & $<1.0 \times 10^{-9}$ \\ 
-\hline 
-Si heaters &   $<8\times 10^{-11}$ & $<1.7 \times 10^{-10}$ \\ 
-\hline 
-PTFE holders & $<1.5\times 10^{-12}$ & $<1.8 \times 10^{-12}$ \\ 
-\hline 
-Cu-PEN cables & $<4.4\times 10^{-10}$ & $<1.1 \times 10^{-10}$ \\ 
-\hline
-Glue & $<2.2\times 10^{-10}$ & $<8.2\times10^{-10}$ \\
-\hline 
-\end{tabular} 
-\end{table}
+The contamination of these surfaces is given in \color{red} label \color{black}.

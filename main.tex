@@ -15,12 +15,12 @@
 \usepackage{caption}
 \usepackage{setspace}
 \usepackage{lineno}
-\usepackage{cite}
+\usepackage[numbers]{natbib}
 \usepackage{notoccite}
 \usepackage{verbatim}
 \usepackage{subcaption}
 \usepackage{float}
-\usepackage[acronym, toc]{glossaries}
+\usepackage{url}
 
 % add custom commands and definitions
 \newcommand{\rulesep}{\unskip\ \vrule\ }
@@ -36,15 +36,14 @@
 \def\quad{\hskip1em\relax}
 \def\qquad{\hskip2em\relax}
 
+\usepackage{ragged2e}
+
+
 \author{Christopher James Davis}
 \title{Search for Neutrinoless Double-Beta Decay with Majoron Emission in CUORE}
 \date{May 2019}
 \advisor{Reina Maruyama}
 
-
-% Glossary
-\makeglossaries
-\input{glossary.tex}
 
 \begin{document}
 \frontmatter
@@ -62,7 +61,6 @@
 %\input{Acknowledgements.tex}
 %\addcontentsline{toc}{chapter}{Acknowledgements}
 \clearpage
-\printglossary[type=\acronymtype]
 
 \mainmatter
 
@@ -90,6 +88,7 @@ for letting my imagination run wild
 \appendix
 % Appendices and Bibliography
 %\input{Appendices/AppendixA.tex}
+\bibliographystyle{apsrev4-1}
 \bibliography{Bibliography.bib}
 \bibliographystyle{ieeetr}
 
