@@ -105,6 +105,61 @@ By pulsing these heaters with a known energy, the detector response can then be 
     \label{fig:Si_heater}
 \end{figure}
 
+\subsubsection*{Cables and Glue}
+The heaters and thermistors need to be attached to the crystals with a strong thermal and mechanical coupling to work properly.
+This is done by Araldite Rapid\footnote{\url{http://www.go-araldite.com/products/epoxy-adhesives/araldite-rapid-2-x-15ml-tube}}
+epoxy which is deposited in a pattern of glue spots shown in \autoref{fig:glue}.
+
+\begin{figure}[htbp]
+%\captionsetup[subfigure]{justification=centering}
+\centering
+\begin{subfigure}[t]{0.45\textwidth}
+\centering
+    \includegraphics[width=0.95\linewidth]{Figures/fig10a.pdf}
+\caption{}
+\label{fig:glue_NTD}
+\end{subfigure}
+\qquad
+\begin{subfigure}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/fig10b.pdf}
+\caption{}
+\label{fig:glue_Si}
+\end{subfigure}
+\caption[Photographs of the glue spots on the CUORE NTD (a) and Si heater (b).]
+{Photographs of the glue spots on the CUORE NTD (a) and Si heater (b).
+The NTD has a pattern of 9 glue spots and the heater has a pattern of 5 glue spots, applied robotically.
+Figure from \cite{Alduino:2016vjd}.}
+\label{fig:glue}
+\end{figure}
+
+After being glued to each detector, the heater and NTD need to also be connected to the readout electronics.
+To achieve this, gold cables are bonded to the pads of the copper tape that is connected to the readout electronics.
+Since the NTDs are critically important to the operation of the experiment, these gold cables are doubled for redundancy in case of a poor connection.
+
+\begin{figure}[htbp]
+%\captionsetup[subfigure]{justification=centering}
+\centering
+\begin{subfigure}[t]{0.45\textwidth}
+\centering
+    \includegraphics[width=0.95\linewidth]{Figures/NTD_bond.png}
+\caption{}
+\label{fig:bond_NTD}
+\end{subfigure}
+\qquad
+\begin{subfigure}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/Si_bond.png}
+\caption{}
+\label{fig:bond_Si}
+\end{subfigure}
+\caption[Photographs of the gold wire bonds on a CUORE NTD (a) and Si heater (b).]
+{Photographs of the gold wire bonds on a CUORE NTD (a) and Si heater (b).
+Figure courtesy of the CUORE collaboration.}
+\label{fig:bonds}
+\end{figure}
+
+\subsubsection*{Bolometric Method Drawbacks}
 There are some particular challenges to the bolometric method, however.
 The dependence on the heat capacity of the crystal depends on the exact crystalline structure of the crystal, which requires regular calibrations due to possible minute changes.
 In addition, this strong temperature dependence, while useful for identifying signal, needs a well-stabilized detector with few disturbances from non-particle thermal sources and a consistent and well-understood temperature baseline.
@@ -121,7 +176,7 @@ Each tower is approximately 80 cm tall, such that in operation, these crystals f
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{Figures/CUORE_detector_array_0.png}
+    \includegraphics[height=4in]{Figures/CUORE_detector_array_0.png}
     \caption[A schematic of the CUORE detector array.]
     {A schematic of the CUORE detector array.
     The detectors are held in place by the copper frames and arranged in 19 towers with 13 floors each.
@@ -149,6 +204,23 @@ It is important to note that the number and size of each component on the towers
 Since these components are the nearest to the detectors, keeping their radioactivity to a minimum significantly lowers the background and is discussed more in \autoref{ssec:CUORE-0}.
 This was one of the improvements from Cuoricino's towers to CUORE's towers, as the amount of copper used in the frames was able to be reduced by a factor of $\sim2.5$.
 
+As shown in \autoref{fig:tower_rendering}, there are trays on opposite sides of the tower.
+These wire trays contain copper-insulator tape with a polyethylene naphthalate substrate (referred to as ``Cu-PEN" tape) and are used to electrically connect the NTD thermistors and the Si heaters on the detectors to the other NbTi cabbles that connect to the electronics at the top of the cryostat.
+These cables have a length of 1.4 meters with a thickness of 80 $\mu \textrm{m}$ and a pattern of traces in the 17 $\mu \textrm{m}$ thick copper layer.
+As the detectors are read out through these connections, they must have low cross-talk and microphonic pickup in addition to their background requirements.
+Two sets of these cables are connected to two opposing sides of the towers, and branch out to connect to crystals on each floor.
+These tapes  are divided into 4 types, depending on how far down along the tower they reach, and a separate tape is used for the Si heaters.
+A photograph of these tapes is shown in \autoref{fig:CuPEN}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/fig07.pdf}
+    \caption[A photograph of the Cu-PEN tapes that are placed inside the wire trays on the CUORE towers.]
+    {A photograph of the Cu-PEN tapes that are placed inside the wire trays on the CUORE towers.
+    The numbered tapes connect to floors 9-13, 5-8, and 1-4, respectively counting from the bottom of the tower, and the Heater tape contains two sets of signals to connect to a single column each.
+    Figure from \cite{Alduino:2016vtd}.}
+    \label{fig:CuPEN}
+\end{figure}
 
 \subsection{CUORE Tower Construction and Assembly}
 
@@ -242,8 +314,97 @@ Glue & $<2.2\times 10^{-10}$ & $<8.2\times10^{-10}$ \\
 
 \subsubsection{Tower Assembly}
 
+Assembling the towers components takes place in two stages.
+First, a semi-automated workstation was set up to glue the NTD and Si heater chips to the crystals, and then another workstation with task-specific glove boxes for the assembly.
+The activities were undertaken in a class 1000 (ISO 6) cleanroom in the same underground hut at LNGS as the CUORE cryostat.
+During the entire assembly process, the tower materials are held in a nitrogen-flushed environment and contact with other materials is minimized to prevent contaminations.
 
-\begin{figure}
+For gluing the NTDs and Si heaters to the crystals, a six-axis articulated robotic arm lifts and positions the crystals, which are then glued by a three-axis Cartesian robot.
+The glue dots are applied in the dot pattern shown in \autoref{fig:glue} as there is a mismatch between the thermal expansion coefficients for the components.
+This pattern balances the need for good thermal coupling with the mechanical stress resulting from cooling down the crystals.
+The use of a semi-automated system was learned from the experience in the Cuoricino experiment, where manual gluing strongly affected the signal shapes\footnote{Not to mention scaling up to 988 crystals in CUORE requires more uniformity and less manually-intensive labor per crystal/tower.}.
+The setup used for the entire gluing process is shown in \autoref{fig:gluing_workstation}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Figures/cuore_gluing_pic1.jpg}
+    \caption[The CUORE gluing workstation.]
+    {The CUORE gluing workstation.
+    On the left, the robotic arm lifts and moves the crystals, which can be seen on the workstation in the center, as needed for the gluing process.
+    The Cartesian robot is on the right side of the workstation, along with the glue mixer.
+    Photograph courtesy of the CUORE collaboration.}
+    \label{fig:gluing_workstation}
+\end{figure}
+
+In the gluing process, the NTD thermistor and Si heater are placed upside down and then the mixed epoxy is injected into a syringe on the Cartesian robot and deposited onto the chips.
+After the dots are inspected, a crystal is then taken from the shelf and placed above the chips with a hard face of the crystal facing the chips.
+During this time, vacuum suction is used to keep the crystals at a distance of 50$\pm 5~\mu$m from the chips.
+This whole process takes three minutes, taking into account the setting time of the epoxy.
+After the crystal is glued, allowing as a precaution an hour for the epoxy to cure, the glued crystals are then removed from the glove box inside a vacuum-sealed box and placed into nitrogen-flushed storage.
+
+After the gluing is completed, the assembly of the tower begins.
+This is done at a separate workstation which consists of a ``garage" flushed with nitrogen to store the tower and a specialized glovebox that can couple to the garage depending on the task at hand.
+First, the assembly takes place one floor at a time, with the crystals being placed in the teflon supports in the NOSV coper structure.
+This assembly is shown in \autoref{fig:assemblybox}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Figures/TowerAssemblyBox.jpg}
+    \caption[The glovebox used for tower assembly.]
+    {The glovebox used for tower assembly.
+    As each floor of the tower is completed, the tower is lowered into the garage.
+    Once all 13 floors are assembled, the tower is sealed into the garage and the next glovebox is put into place above.
+    Photograph courtesy of the CUORE collaboration.}
+    \label{fig:assemblybox}
+\end{figure}
+
+The next part of the assembly is to attach the CuPEN tapes to the sides of the tower inside a larger glovebox.
+The tapes are glued to the wire trays by means of Araldite Standard bicomponent epoxy\footnote{\RaggedRight\url{http://www.go-araldite.com/products/epoxy-adhesives/araldite-standard-2-x-15ml-tube}}.
+The glovebox used for this procedure is shown in \autoref{fig:assemblybox_2}.
+The wire trays are left open until the next step, the wire bonding of the chips to CuPEN tape, is completed.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\linewidth, angle=90,origin=c]{Figures/TowerAssemblyBox_2.jpg}
+    \caption[The assembly box used to assemble the CuPEN tapes on the towers.]
+    {The assembly box used to assemble the CuPEN tapes on the towers.
+    This assembly box is also flushed with nitrogen when a tower is in place, and the vertical access (in comparison with the box in \autoref{fig:assemblybox}) allows for placing the wire trays and tapes on the tower.
+    The $\approx60~\textrm{cm}$ of tape is rolled up inside PTFE cylinders and can be seen at the top of the tower.
+    Photograph courtesy of the CUORE collaboration.}
+    \label{fig:assemblybox_2}
+\end{figure}
+
+The last step of the tower assembly process is the bonding of the gold wires to the copper pads on the tower.
+This step is performed in the same glovebox as the previous step, but a modified Westbond 7700E manual wire bonder, mounted on rails and shown in \autoref{fig:bonding_machine}, is inserted on the right side of the glovebox.
+With this bonder, the gold cables (4 for redundancy) are ball-bonded onto the chip pads and then wedge bonded to the copper pads on the CuPEN tape, as shown in \autoref{fig:bonds}.
+Finally, another ball-bond is placed on the wedge bond to add extra security to the connection.
+Considering the 988 crystals to be instrumented, and in line with the previous comments regarding the uniformity of the gluing, this process was also designed to be as repeatable as possible, and the lengths of the bonded gold wire are as uniform as possible.
+After the tower assembly is completed, the towers are stored in nitrogen-flushed containers, shown in \autoref{fig:tower_storage}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\linewidth, angle=270, origin=c]{Figures/bonding_machine.jpg}
+    \caption[The wire bonding machine used in CUORE.]
+    {The wire bonding machine used in CUORE.
+    The bonder was modified to allow motion vertically and the rails serve to increase its reach.
+    The tower is raised/lowered or rotated by a second operator, and a video camera with high magnification is used to make and verify the connections.
+    Photograph courtesy of the CUORE collaboration.}
+    \label{fig:bonding_machine}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Figures/cuore_towers_pic1.jpg}
+    \caption[The storage area for the completed CUORE towers before installation.]
+    {The storage area for the completed CUORE towers before installation.}
+    \label{fig:tower_storage}
+\end{figure}
+
+\subsubsection{Tower Installation}
+
+
+\begin{figure} [htbp]
     \centering
     \includegraphics[width=0.8\linewidth]{Figures/CUORE_29Aug16_HR-2477.jpg}
     \caption[A photograph of the 19 CUORE towers from below.
