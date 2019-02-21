@@ -13,7 +13,7 @@ In addition, this resolution aids in understanding background sources that depos
 \subsection{Particle Detection with Bolometers}
 \label{ssec:Particle Detectrion with Bolometers}
 As noted in \autoref{sec:State of Neutrinoless Double Beta Decay Experiments}, current experiments in the field of \zeronubb~use a wide array of technologies to identify \zeronubb~events.
-However, CUORE utilizes a different method of calorimetry than its counterparts in that it uses a technique known as the bolometric method.
+However, CUORE utilizes a different method of calorimetry than its counterparts in that it uses a technique known as the bolometric method, which was first proposed for use in \zeronubb~experiments by Ettore Fiorini and Tapio Niinikosky \cite{FIORINI198483}.
 As particles pass through matter, the energy they deposit is eventually carried into the surrounding material as heat.
 This method requires a mass that acts as a thermal capacitor, a weak thermal connection to a heat bath, and a thermometer (generally a thermistor) and CUORE's setup is sketched in \autoref{fig:thermal_crystal_cartoon} and a sample pulse is shown in \autoref{fig:Sample_pulse}.
 The detectors in CUORE, $\textrm{TeO}_2$~crystals, respond to energy deposition by a temperature rise according to
@@ -107,7 +107,7 @@ By pulsing these heaters with a known energy, the detector response can then be 
 
 \subsubsection*{Cables and Glue}
 The heaters and thermistors need to be attached to the crystals with a strong thermal and mechanical coupling to work properly.
-This is done by Araldite Rapid\footnote{\url{http://www.go-araldite.com/products/epoxy-adhesives/araldite-rapid-2-x-15ml-tube}}
+This is done by Araldite Rapid\footnote{\RaggedRight\url{http://www.go-araldite.com/products/epoxy-adhesives/araldite-rapid-2-x-15ml-tube}}
 epoxy which is deposited in a pattern of glue spots shown in \autoref{fig:glue}.
 
 \begin{figure}[htbp]
@@ -242,6 +242,7 @@ Once the crystals arrive at LNGS, they are immediately placed in storage undergr
 Despite the short $\sim$1 month that the crystals are aboveground causes the crystals to have cosmogenic activation of $^{110m}$Ag and $^{60}$Co that contribute $<1\%$ of the background at the Q-value of $^{130}$Te \cite{PhysRevC.92.024620, BARGHOUTY201316}.
 
 \subsubsection{Parts Selection and Cleaning}
+\label{ssec:Parts Selection and Cleaning}
 The copper used to house the detectors in the detector array also undergoes an extensive cleaning process.
 The copper selected for this is produced by Arubis\footnote{Originally named Norddeutsche Affinerie.} and is their high-purity Electrolytic Tough Pitch (ETP1) copper alloy, called NOSV\footnote{\RaggedRight\url{http://www.aurubis.com/en/our-business/products/aurubis-shapes/materials/shapes-materials-table}}.
 This copper was chosen for CUORE due to its radiopurity and its high residual resistance ratio, certified to be over 400.
@@ -313,7 +314,7 @@ Glue & $<2.2\times 10^{-10}$ & $<8.2\times10^{-10}$ \\
 \end{comment}
 
 \subsubsection{Tower Assembly}
-
+\label{ssec:Tower Assembly}
 Assembling the towers components takes place in two stages.
 First, a semi-automated workstation was set up to glue the NTD and Si heater chips to the crystals, and then another workstation with task-specific glove boxes for the assembly.
 The activities were undertaken in a class 1000 (ISO 6) cleanroom in the same underground hut at LNGS as the CUORE cryostat.
@@ -402,6 +403,14 @@ After the tower assembly is completed, the towers are stored in nitrogen-flushed
 \end{figure}
 
 \subsubsection{Tower Installation}
+After the towers are completed and and the cryostat is ready for operation, the CUORE towers need to be installed into the cryostat.
+This is another critical operation, as this is the first and only time that the CUORE crystals are exposed to air, with an approximate exposure of 1 day per tower.
+In order to complete this activity, a specialized clean room was installed around the exposed inner part of the cryostat.
+As the danger of being exposed to air is due to the presence of Radon in the air.
+LNGS has an activity of 80 $\textrm{Bq}/\textrm{m}^3$ of Radon \cite{UndergroundLabs_Radon}, which required the use of a system to flush this specialized clean room with radon-free air.
+This system reduced the radon to $<1~\textrm{Bq}/\textrm{m}^3$.
+Each of the towers is then connected to the tower support plate independently, and the inner guide tubes for the DCS, discussed later in \autoref{chap:DCS}, are also connected at this time.
+A view of the completed cryostat is shown in \autoref{fig:cuore_photograph}.
 
 
 \begin{figure} [htbp]
@@ -410,7 +419,7 @@ After the tower assembly is completed, the towers are stored in nitrogen-flushed
     \caption[A photograph of the 19 CUORE towers from below.
     Photo Credit: Yury Suvorov.]
     {A photograph of the 19 CUORE towers from below after installation in the cryostat.
-    Also visible are the inner calibration source tubes with their teflon caps.
+    Also visible are the inner calibration source tubes with their PTFE caps.
     Photo Credit: Yury Suvorov.}
     \label{fig:cuore_photograph}
 \end{figure}
@@ -418,9 +427,11 @@ After the tower assembly is completed, the towers are stored in nitrogen-flushed
 \section{Predecessor Experiments}
 \label{sec:Predecessor Experiments}
 The CUORE experiment benefits from the experience gained through multiple previous incarnations of this bolometric technique in \teotwo.
-Starting with the smallest proof-of-concept detectors, successive generations of this technology have increased in total detector mass and decreased in background in order to increase sensitivity and further probe \zeronubb~decay.
+Starting with the smallest proof-of-concept detectors, successive generations of this technology \cite{ }have increased in total detector mass and decreased in background in order to increase sensitivity and further probe \zeronubb~decay.
 This almost-exponential growth in mass in the different generations of CUORE-like experiments from 73~g to 742~kg is shown in \autoref{fig:bolometer_mass_over_time}.
-Of course, as shown in \autoref{eq:sensitivity_short}, the detector mass is only one part of the sensitivity equation, but successive experiments have also significantly reduced backgrounds and other improvements to increase sensitivity beyond merely the increase from increased mass. 
+Of course, as shown in \autoref{eq:sensitivity_short}, the detector mass is only one part of the sensitivity equation, but successive experiments have also have significantly reduced backgrounds and other improvements to increase sensitivity beyond merely the increase from increased mass.
+As a full description and history of the CUORE-like experiments is too long for discussion here, the most recent experiments, viz. Cuoricino and CUORE-0, that directly inform choices made for CUORE are described below.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{Figures/bolometer_mass_over_time.pdf}
@@ -428,12 +439,44 @@ Of course, as shown in \autoref{eq:sensitivity_short}, the detector mass is only
     {The increase in mass of \teotwo~crystals in successive experiments.}
     \label{fig:bolometer_mass_over_time}
 \end{figure}
+
 \subsection{Cuoricino}
+Building off the success of the Mi-Beta experiment \cite{Pirro:2002gw}, the Cuoricino experiment \cite{Andreotti:2010vj} performed a search of \zeronubb~with a tower consisting of 62 \teotwo~crystals, shown in \autoref{fig:Cuoricino_tower}, and, in addition, the Cuoricino experiment also served as a testing bed for CUORE.
+Of the 62 crystals used in Cuoricino, 44 were ``big crystals" with $5\times5\times5~\textrm{cm}^3$ of naturally-abundant $^{130}$Te, 14 were ``small crystals" with $3\times3\times6~\textrm{cm}^3$ of naturally-abundant $^{130}$Te, 2 were the same size as the small crystals but with 75\% enriched $^{130}$Te, and the final 2 crystals were enriched with $^{128}$Te and had a negligible $^{130}$Te content.
+In total, the crystals had a mass of $\approx11$ kg of $^{130}$Te and completed data-taking with 19.75 $\textrm{kg}\cdot \textrm{yr}$ of $^{130}$Te exposure.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth, height=0.8\linewidth, keepaspectratio, angle=270, origin = c]{Figures/CUORICINO.jpg}
+    \vspace*{-1.5 in}
+    \caption[The Cuoricino tower consisting of both big and small unenriched and enriched crystals.]
+    {The Cuoricino tower consisting of both big and small unenriched and enriched crystals.}
+    \label{fig:Cuoricino_tower}
+\end{figure}
+
+With this exposure, Cuoricino determined an experimental limit of $2.8\times10^{25}$ yr (90\% C.L).
+During the operation of Cuoricino, a few things were learned that influenced the design choices in CUORE.
+As the big crystals with naturally abundant $^{130}$Te had better energy resolution ($6.3 \pm2.5$ keV) than the smaller unenriched ($9.9\pm4.2$ keV) and enriched crystals ($13.9\pm5.3$ keV), the big crystals were selected as the choice for CUORE.
+With this resolution for the big crystals, the design goal of the CUORE crystals was set to be 5 keV, and the improved wire bonding method described in \autoref{ssec:Tower Assembly} was developed in order to attain this.
+Cuoricino's cryostat was a wet dilution refrigerator that required a liquid helium bath to be refilled every 48 hours, which interrupted data-taking for 3-4 hours at a time.
+As this directly affects the detector livetime and stability, CUORE's cryostat is designed as a dry cryostat and makes use of pulse tube cooling at the 4-K stage.
+Lastly, as $\alpha$ backgrounds made up a significant portion of the background of Cuoricino in the region of interest, a more rigorous parts selection and cleaning regimen was undertaken for cuore, which is described in detail in \autoref{ssec:Parts Selection and Cleaning}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/CuoricinoSpectrum.pdf}
+    \caption[The energy spectrum for Cuoricino in background (black) data along with calibration (red) data which has been normalized to the 2615 keV peak.]
+    {The energy spectrum for Cuoricino in background (black) data along with calibration (red) data which has been normalized to the 2615 keV peak.
+    The calibration spectrum is normalized to highlight the difference between the background near the 2528 keV Q-value of \zeronubb~due to gammas depositing energy versus that of degraded alphas.}
+    \label{fig:cuoricino spectrum}
+\end{figure}
 
 \subsection{CUORE-0}
 \label{ssec:CUORE-0}
-After the completion of the Cuoricino experiment, an intermediate experiment was planned while working on completing the CUORE cryostat.
-This experiment, CUORE-0, was meant to bridge the gap between the two experiments with a single CUORE-like tower placed in the Cuoricino cryostat.
+
+After the completion of the Cuoricino experiment, an intermediate experiment, CUORE-0, was planned while working on completing the CUORE cryostat.
+CUORE-0 was meant to bridge the gap between Cuoricino and CUORE by installing a single CUORE-like tower into the Cuoricino cryostat.
+In this way, a CUORE-like tower could be studied inside the well-understood Cuoricino cryostat which allowed the changes to the tower to be decoupled from changes to the cryostat.
 A schematic of the experimental apparatus can be seen in \autoref{fig:CUORE-0_cryostat_schematic}.
 
 \begin{figure} [htbp]
@@ -460,7 +503,7 @@ The \gamma~backgrounds are not reduced as significantly as the cryostat is the s
     \label{fig:cuore-0_vs_cuoricino}
 \end{figure}
 
-CUORE-0 collected data between 2013 and 2015, and during this time, many analysis and data-collection techniques were refined and improved for use in CUORE.
+CUORE-0 collected data between 2013 and 2015, and during this time many analysis and data-collection techniques were refined and improved for use in CUORE.
 In particular, from the data collected, CUORE-0 was able to make the most precise measurement of \twonubb~decay in $^{130}$Te at the time, listed in \autoref{tab:2nuHalfLife} \cite{Alduino:2016vtd}.
 In addition, CUORE-0 also performed a search for \zeronubb~and, in a combined analysis with the Cuoricino experiment, formed the most stringent limit at the time for \zeronubb~decay in $^{130}$Te with a limit of $T^{0ν}_{1/2}>4.0\times10^{24}$ yr \cite{Alfonso:2015wka}.
 
