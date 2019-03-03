@@ -6,7 +6,12 @@
 \usepackage{tocbibind}
 \usepackage{pdfpages}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[%
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=blue,
+  citecolor=blue
+]{hyperref}
 \usepackage{cleveref}
 \usepackage{color}
 \usepackage[compat=1.1.0]{tikz-feynman}
@@ -33,8 +38,10 @@
 \newcommand{\Msum}{$\Sigma_2$}
 \newcommand{\teotwo}{$\textrm{TeO}_2$}
 \newcommand{\teonethirty}{$^{130}$Te}
+\newcommand{\noop}[1]{}
 \def\quad{\hskip1em\relax}
 \def\qquad{\hskip2em\relax}
+
 
 \usepackage{ragged2e}
 
@@ -90,6 +97,5 @@ for letting my imagination run wild
 %\input{Appendices/AppendixA.tex}
 \bibliographystyle{apsrev4-1}
 \bibliography{Bibliography.bib}
-\bibliographystyle{ieeetr}
 
 \end{document}
