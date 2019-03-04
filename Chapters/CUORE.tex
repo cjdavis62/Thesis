@@ -563,7 +563,7 @@ In addition, the side of the 10-mK plate facing the detector is covered by thin 
 \subsubsection*{Cryostat Cooling Systems}
 \label{sssec:Cooling Systems}
 Not only does the cryostat shield the detectors from radiation, but it also needs to cool the detectors to temperatures of $\sim$10 mK.
-Therefore, a dilution refrigerator is used as the main cooling mechanism of the cryostat.
+Therefore, a custom dilution refrigerator built by Leiden Cryogenics\footnote{\RaggedRight\url{http://www.tokyoinst.co.jp/product_file/file/LCG01_cat01_ja.pdf}} is used as the main cooling mechanism of the cryostat.
 A dilution refrigerator works by taking advantage of the phase boundary between dilute and concentrated phases of a $^3$He and $^4$He mixture, shown in \autoref{fig:He_phase_diagram}.
 In the mixing chamber of the dilution refrigerator on the 10~mK stage of the CUORE cryostat, $^3$He flows from the concentrated phase to the dilute phase.
 This process extracts energy from the environment of the mixing chamber, and, by extension, the coldest stages of the cryostat, as energy is required to move the $^3$He across the phase boundary\footnote{Of course, the Universe's entropy is not reduced by this exchange and additional energy is used to induce this endothermic cooling.}.
@@ -600,6 +600,7 @@ With these systems, the cooldown of the CUORE cryostat can be effected in $\sim2
     \hline
     40-K     & 40~W \\
     4-K      & 1.5~W \\
+    Dilution unit &  2 mW at 100~mK \\
     Dilution unit*    & 10~$\mu$W at 12~mK \\
     \hline
     \hline
@@ -607,7 +608,7 @@ With these systems, the cooldown of the CUORE cryostat can be effected in $\sim2
     \caption[The cooling power of the cryostat at varying thermal stages.]
     {The cooling power of the cryostat at varying thermal stages.
     The power is maximized in warmer stages, but decreases significantly towards the coldest stages.
-    Note: the thermal power of the dilution unit was determined in a test cryostat, but should be consistent with the cooling power in CUORE*.}
+    The values here come from the manufacturers of the pulse tubes and Dilution unit, except for the thermal power of the dilution unit at 12 mK which was determined in a test cryostat (*).}
     \label{tab:cryostat_cooling_power}
 \end{table}
 \subsubsection*{Cryostat Radiopurity}
