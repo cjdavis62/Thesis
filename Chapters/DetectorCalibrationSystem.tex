@@ -12,17 +12,17 @@ The thermal response of the detectors can then be mapped one-to-one with these k
 
 Making such a system as the DCS, that can meet this goal in the CUORE cryostat is an enormous technical challenge.
 As noted in \autoref{sec:Predecessor Experiments} and shown in \autoref{fig:CUORE-0_cryostat_schematic}, calibration sources in CUORE-0 and Cuoricino could be deployed by hand inside the innermost lead shielding to irradiate a single tower of detectors.
-However, with 19 towers of crystals making up the CUORE detector array, and with thicker layers of shielding, efficiently deploying sources inside the cryostat requires the sources to be placed in between the towers and inside the roman lead shielding.
-This significantly adds to the challenge of such a system as the calibration sources need to be both inserted and retracted from the coldest region of the cryostat on a regular basis.
+However, with 19 towers of crystals making up the CUORE detector array, and with thicker layers of shielding, efficiently deploying sources inside the cryostat requires the sources to be placed in between the towers and inside the roman lead shielding, requiring insertion and retraction from the coldest regions of the cryostat on a regular basis.
+Therefore, the decision was made to move to a motorized system that can deploy calibration sources smoothly and carefully without disturbing the delicate operation of the cryostat.
 The main challenges can be summarized as follows: 
 \begin{itemize}
 \item Calibrate all 988 crystals in as short a time as possible
-\item Minimize thermal disturbance to the crystat and the crystals
+\item Minimize thermal disturbance to the cryostat and the crystals
 \item Negligibly contribute to the background in operation
 \end{itemize}
 
 The solution to these issues was the Detector Calibration System developed at Wisconsin and at Yale.
-With this system, shown in \autoref{fig:DCSintegration}, 12 Kevlar strings containing copper capsules with 2\% thoriated tungsten wire are inserted into the cryostat from above the 300-K stage down into the detector region at the 10-mK and 50-mK stages. 
+With this system, shown in \autoref{fig:DCSintegration}, 12 Kevlar strings containing copper capsules with 2\% thoriated tungsten wire are inserted into the cryostat from above the 300-K stage down into the detector region at the 10-mK and 50-mK stages.
 
 \begin{figure}[htbp]
 \includegraphics[width=\linewidth]{Figures/DCSintegration.pdf}
@@ -40,9 +40,12 @@ The DCS can be divided into a few separate hardware components: the 12 source st
 Each of these sets of components has different technical challenges, particularly for the calibration tubes nearest to the detectors that have stringent radioactivity requirements, and are described in more detail in this section.
 
 \subsection*{Calibration Source Strings}
-There are 12 calibration source strings that are deployed in to the detector region in order to calibrate the 19 towers of CUORE.
+There are 12 calibration source strings, referred to throughout the section as source strings, that are deployed in to the detector region in order to calibrate the 19 towers of CUORE.
 These source strings consist of copper capsules covered in PTFE heat shrink tubing that enclose the 2\% thoriated tungsten source inside, shown in \autoref{fig:source_carrierA}.
-The copper is crimped on top and bottom in order to hold it onto the Kevlar string and to hold the source inside, and the Teflon heat shrink reduces the friction between the copper capsules and the DCS guide tubes. In addition, the bottom 8 capsules have reducing spacing and are wider than the other capsules, shown in \autoref{fig:source_carrierB}.
+The copper is crimped on top and bottom in order to hold it onto the Kevlar string and to hold the source inside, and the PTFE heat shrink reduces the friction between the copper capsules and the DCS guide tubes. In addition, the bottom 8 capsules have reducing spacing and are wider and shorter than the other capsules, shown in \autoref{fig:source_carrierB}.
+The mass of the weight capsules (and the Kevlar in between) on the string is 2.8 g, the mass of all 33 capsules (and the Kevlar in between) on a string is 5.6 g, and the mass of an entire unwound string is 13.7 g.
+The spacing of the capsules is 6 mm between the weight capsules and PTFE ball and 21 mm between the source capsules.
+The decision for the number of source capsules and the relative spacings was optimized based on the need for consistent irradiation over each floor of the CUORE towers and the competing need for minimizing thermal load for cooling purposes, as more capsules would make it easier to uniformly irradiate the towers, but more capsules require more thermalization.
 As the sources are deployed into the cryostat under their own weight, these heavier capsules (called ``weight" capsules, opposed to the other ``source" capsules\footnote{Despite the naming convention, all the copper capsules contain radioactive sources.}), and particularly the PTFE guide ball, assist the strings with lowering into the funnels between stages and in detecting obstructed paths.
 For example, if the tubes are not perfectly vertically centered, the guide ball will be caught by the funnel and guide the string down into the funnel, where the weight of the capsules will pull the string down into the funnel correctly.
 This is opposed to a case where, if there were no weight capsules, some string would fall into the tube, but the rest would drape off the side of the funnel and fail to deploy since the string would not be sufficiently pulled down into the tube.
@@ -65,11 +68,11 @@ This is opposed to a case where, if there were no weight capsules, some string w
 \end{figure}
  
 Recalling that one of the design goals for the DCS is to calibrate all 988 crystals in as short a time as possible, the strings are configured, when fully deployed in the cryostat, to optimize coverage on all the crystals, as the time it takes to calibrate the detector array is limited by the time it takes the least-irradiated crystals to calibrate.
-To this end, the calibration sources are configured in a double-hexagonal pattern, as shown in \autoref{fig:Calibration_source_top_view} with the inner source strings inside the 10-mK vessel irradiating the towers and floors closest to the center and the outer strings outside the 50-mK vessel irradiating the towers and floors furthest from the center.
-The inner calibration strings are located about 2 cm from the faces of the crystals, and the outer calibration strings are about 18 cm away from the crystals, although they are shielded from the crystals by the 10-mK and 50-mK vessel.
-As a result of this geometry, there are two main differences between the copper capsules in each calibration string and between the inner and outer strings, viz., the bottom and top capsules of each string have a boosted activity relative to the capsules in the middle of the string, and the capsules in the outer strings have a boosted activity relative to their counterparts in the inner strings, with the specific activities of each described in \autoref{tab:calibration_activities}
-In addition, there is one more capsule on the inner strings relative to the outer strings, which is due to the fact that when the strings were made, the activities were lower than anticipated and needed a more significant boost at the top of the calibration string.
-The reason for this asymmetry for the activity of the capsules on each string is to have roughly equal rates on each crystal on each floor, and, since the calibration strings are only slightly longer than the towers themselves\footnote{The inner and outer calibration strings have an active region 80 and 83 cm long, respectively.}, these edge effects need to be considered for optimal calibration.
+To this end, the final positions of the source strings are configured in a double-hexagonal pattern, as shown in \autoref{fig:Calibration_source_top_view} with the inner source strings inside the 10-mK vessel irradiating the towers and floors closest to the center and the outer strings outside the 50-mK vessel irradiating the towers and floors furthest from the center.
+The inner source strings are located about 2 cm from the faces of the crystals, and the outer source strings are about 18 cm away from the crystals, although they are shielded from the crystals by the 10-mK and 50-mK vessel.
+As a result of this geometry, there are two main differences between the copper capsules in each source string and between the inner and outer strings, viz., the bottom and top capsules of each string have a boosted activity relative to the capsules in the middle of the string, and the capsules in the outer strings have a boosted activity relative to their counterparts in the inner strings, with the specific activities of each described in \autoref{tab:calibration_activities}
+In addition, there is one more capsule on the inner strings relative to the outer strings, which is due to the fact that when the strings were made, the activities were lower than anticipated and needed a more significant boost at the top capsules of the source string.
+The reason for this asymmetry for the activity of the capsules on each string is to have roughly equal rates on each crystal on each floor, and, since the source strings are only slightly longer than the towers themselves\footnote{The inner and outer calibration strings have an active region 80 and 83 cm long, respectively, while the towers are 76 cm from the bottom frame to the top frame of the tower.}, these edge effects need to be considered for optimal calibration.
 The spacing of the source capsules is designed such that each floor sees roughly 2-3 adjacent capsules at a time, and the vertical geometry of the strings in their nominal vertical positions is shown in \autoref{fig:Calibration_source_tower}.
 
 \begin{figure}[htpb]
@@ -122,20 +125,58 @@ The spacing of the source capsules is designed such that each floor sees roughly
 \end{table}
 
 \subsection*{Motion Boxes}
-On top of the cryostat, there are four motion boxes, shown in \autoref{fig:motion_box}, that contain the DCS calibration strings while they are not being deployed and the motors that control the motion of the strings.
-The motion boxes have dimensions $12.6\times7.9\times60.7~\textrm{cm}^3$ constituting a 6 L volume.
-There are three strings in each motion box that are wound up on each of the calibration string spools internally.
-These calibration strings can then be deployed independently and simultaneously down through three guide tubes in the motion box down into the cryostat.
-Inside the motion boxes, each acts as an independent vacuum system during, only connecting to the IVC when calibration strings are being deployed into the cryostat.
-A proximity sensor at the bottom of the motion box detects when the copper capsules enter and disturb the electromagnetic field produced by the sensor.
-This allows for us to determine when individual source capsules or the weight capsules\footnote{The sensor is unable to resolve the denser-packed weight capsules and triggers continuously while they are in the sensor.} move either into or out of the motion box.
+On top of the cryostat and mounted on the 300-K plate, there are four stainless steel motion boxes, with dimensions $12.6\times7.9\times60.7~\textrm{cm}^3$ shown in \autoref{fig:motion_box}, that contain the DCS calibration strings while they are not being deployed and the motors that control the motion of the strings.
 \begin{figure}[htpb]
 \includegraphics[width=0.9\linewidth]{Figures/motion_box.pdf}
 \caption[A rendering of a single motion box from two different angles.]{A rendering of a single motion box from two different angles. The motion box is mounted vertically with the PEEK flange on top of the cryostat with the three source strings spools above. The windows on each motion box allow for the source strings to be observed from outside.}
 \label{fig:motion_box}
 \end{figure}
-The motion box has 3 CF
-The motion boxes contain all of the electronic controls that enable and monitor the deployment of the calibration strings into the crystat.
+The motion boxes are electrically isolated from the rest of the cryostat by a polyetheretherketone (PEEK) flange in order to prevent ground loops, with the gate valves that connect the motion boxes to the IVC above them.
+Above the gate valve and inside the motion box is a proximity sensor that detects when the copper capsules enter and disturb the electromagnetic field produced by the sensor.
+This allows for us to determine when individual source capsules or the weight capsules\footnote{The sensor is unable to resolve the denser-packed weight capsules and triggers continuously while they are in the sensor.} move either into or out of the motion box.
+Above this, 3 conflat flanges seal the 3 drive spools to the motion box and are shown in \autoref{fig:drive_spool}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/drive_spool.pdf}
+    \caption[The drive spools inserted into the DCS Motion Boxes.]
+    {The drive spools inserted into the DCS Motion Boxes.
+    These spools contain the hardware used for deploying and extracting the strings and many of the sensors used for monitoring the system and providing interlocks.
+    Not shown on the diagram are heat sinks which are mounted behind the encoder.}
+    \label{fig:drive_spool}
+\end{figure}
+On these drive spools, a stepper motor\footnote{Kollmorgen CTP11ELF11MMA00 \url{http://sine.ni.com/nips/cds/view/p/lang/en/nid/203936}} drives a rotary feedthrough\footnote{\url{https://www.mdcvacuum.com/DisplayPartResp.aspx?d=MDC&p=652000}} to turn the source string spool and is used to raise and lower the strings into the cryostat.
+With this stepper motor, it takes 200 steps for a full revolution, and in conjunction with a 320:1 reducer, takes 64,000 steps for a full rotation of the source string spool.
+Behind the motor is an encoder\footnote{\RaggedRight\url{https://www.usdigital.com/products/encoders/incremental/rotary/kit/E5-1000-197-IE-D-D-G-B}} that optically measures the rotations of the motor and acts to double-check that the steps sent to the stepper motor are properly implemented.
+This is critically important as having precise knowledge of the string position enables us to use the 4-K thermalizers, which are discussed later, and is one of the few ways we have information about the strings while they are in the cryostat.
+The last component outside of the motion box vacuum is a thermal fin mounted on the back of the encoder.
+As the motor heats up during operation to temperatures of over 325 K, this fin assists with cooling the motor body, and reduces the temperature in operation to be 310 K.
+This helps another component on the drive spool in the interior of the motion box, the load cell\footnote{\url{https://www.smdsensors.com/products/type/s251-miniature-platform-load-cell/?highlight=251\%20}}.
+This load cell is rated up to 20 N and is used to measure the tension on the string.
+This is another critical component of the system, as the measurement of the tension is the only signal that a source string has encountered difficulties during deployment or extraction, e.g. the tension rises if the string is obstructed on the way up and decreases if the string misses a funnel and is spooling up on one of the cryostat plates.
+However, a known issue with load cells is that they have significant thermal drift, which the thermal fin helps mitigate.
+\color{red} Add parts to call to appendix on operation?\color{black}.
+The load cell is read out through an electrical feedthrough on the spool and the output signals are filtered, amplified, and digitized.
+The last two components on the drive spool are used for interlocks on the system.
+The home limit switch is lever with a hole sized to allow source capsules but not weight capsules through.
+When the weight capsules attempt to pass up through the lever, it triggers the switch and allows for the the string to say partially unwound from the spool, in addition to being the position that the source strings are left between calibrations.
+The last component on the drive spool is a PTFE guide that connects to a microswitch that triggers when the tension in the string becomes too high, around 0.5 N.
+This switch is not used during normal operation of the DCS, but activates in the case that the string becomes caught while extracting and experiences a rapid rise in tension that an operator cannot react quickly enough to.
+In addition, this interlock directly shuts down the hardware that runs the motor and kills any motion, protecting the string in the case of user or software error.
+A useful tool that an operator can use on the motion box are the windows that open on the opposite face of the motion box from the drive spools. These spools allow the operator to see the string coming out of the PTFE string guide and into the home switch and to verify string integrity and motor operation even when the motion box is closed off and under vacuum.
+When the source strings are deployed into the cryostat, they are each contained in a separate guide tube that guides them through the motion box and down into the proximity sensor and below, with a gap at the gate valve.
+Lastly, two of the four motion boxes are instrumented with a vacuum gauge, as each motion box is its own vacuum environment, only connecting to the IVC when the gate valves are opened, such as when the calibration strings are being deployed into the cryostat.
+The full vacuum setup of the motion boxes is shown in \autoref{fig:vacuum_setup_diagram}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/DCS_Vacuum_System_Edit.pdf}
+    \caption[A schematic of the vacuum system of the DCS.]
+    {A schematic of the vacuum system of the DCS.
+    The motion boxes are separated by a hand valve from the OVC stack and can be pumped out with the OVC turbo pump.
+    There are two main lines of KF-50 bellows extending from the OVC that connect to two motion boxes independently.
+    Each of these sets of motion boxes has its own vacuum gauge, and each have a gate valve that connects them to the IVC.}
+    \label{fig:vacuum_setup_diagram}
+\end{figure}
 
 \subsection{Guide Tubes}
 
@@ -153,11 +194,13 @@ The motion boxes contain all of the electronic controls that enable and monitor 
 \end{figure}
 
 
-\subsection{Thermalization and Thermometry}
-In order to deploy 12 calibration source strings from 300 K down to 50 or 10 mK, the sources need to be cooled as much as possible before they reach each stage of the cryostat or even the black-body radiation from the sources will cause the temperature of the crystals and the cryostat to rise excessively and possibly dangerously. Most of the mass, and therefore the heat \color{red} find a better word than heat \color{black} is carried in the copper capsules. The kevlar that holds the capsules is a poor conductor of heat \color{red} Citation Needed \color{black} compared with the capsules, which is a necessary feature, in addition to its strength, as the kevlar will form 12 continuous lines from the motion boxes at 300 K down to the detector region at 10 mK.
+\subsection*{Thermalization and Thermometry}
+In order to deploy 12 calibration source strings from the 300-K stage down to the 50-mK or 10-mK stages, the calibration source strings need to be cooled as much as possible before reaching each stage of the cryostat or even the black-body thermal radiation from the sources will cause the temperature of the crystals and the cryostat to rise excessively and possibly dangerously. Most of the mass, and therefore the thermal energy is carried in the copper capsules. The Kevlar that holds the capsules is a poor conductor of heat compared, which is a necessary feature, in addition to its strength, as the Kevlar will form 12 continuous lines from the motion boxes at 300 K down to the detector region at 10 mK \cite{VENTURA2009735}.
 
-To effect this cooling on the source strings, multiple methods are used. The main cooling mechanism used is from the copper thermalizers located at the 4 K plate, shown in \autoref{fig:DCS_4K_schematic}. These thermalizers consist of a moving copper block and a copper base, with the copper block pushed away by a spring. The copper block is activated by another kevlar string that, when pulled, pushes the copper block onto the copper base. The cooling time decreases as the force between the copper block and capsule increases, and a force of 32 N was chosen This cooling is performed at the 4K stage as the cryostat has the most cooling power at this stage \color{red} Link to the cooling power table \color{black}. Most of the cooling of the capsules is done at this position and this thermalization process over an entire string is a significant fraction of its total deployment time.
+To effect this cooling on the source strings, multiple methods are used. The main cooling mechanism used is from the copper thermalizers located at the 4 K plate, shown in \autoref{fig:DCS_4K_schematic}. These thermalizers consist of a moving copper block and a copper base, with the copper block pushed away by a spring. The copper block is activated by another Kevlar string that, when pulled, pushes the copper block onto the copper base. The cooling time decreases as the force between the copper block and capsule increases, and a force of 32 N was chosen This cooling is performed at the 4-K stage as the cryostat has significant cooling power, as shown in \autoref{tab:cryostat_cooling_power}. Most of the cooling of the capsules is done at this position and this thermalization process over an entire string is a significant fraction of its total deployment time.
 
+The thermometer used on each of the thermalizers is a CX-1010-SD Cernox\footnote{https://lakeshore.com/Pages/PackagesCX.aspx.} thermometer calibrated to 1.4 K, and mounted at varying locations on each of the 600-mK guide tubes are CX-1030-SD Cernox thermometers, with 10 calibrated to 1.2 K, and the other 2 calibrated to 300 mK.
+During Run 3, one of the cold commissioning runs of the cryostat and the DCS, the 10 thermometers on the 600-mK guide tubes calibrated at 1.4 were then calibrated down to 600 mK.
 
 \color{red}connect these figures \color{black}
 \begin{figure}[htbp]
