@@ -166,6 +166,10 @@ A useful tool that an operator can use on the motion box are the windows that op
 When the source strings are deployed into the cryostat, they are each contained in a separate guide tube that guides them through the motion box and down into the proximity sensor and below, with a gap at the gate valve.
 Lastly, two of the four motion boxes are instrumented with a vacuum gauge, as each motion box is its own vacuum environment, only connecting to the IVC when the gate valves are opened, such as when the calibration strings are being deployed into the cryostat.
 The full vacuum setup of the motion boxes is shown in \autoref{fig:vacuum_setup_diagram}.
+Before operation of the DCS, the motion boxes are first pumped out to a pressure of $\mathcal{O}(10^{-5})$ mbar before opening the gate valves into the cryostat.
+During operation of the DCS, the motion boxes are continuously pumped by the OVC turbo, until the strings are fully deployed into the cryostat.
+Afterwards, the hand valves on the motion boxes are closed and the motion boxes are cryopumped through the tubes below the gate valve into the IVC\footnote{Unfortunately, this is a significant design flaw of the DCS, as any leak or outgassing in the motion box builds up in these tubes and can fully block a calibration source's movement.}.
+This cryopumping can be observed as well as shown in \autoref{fig:capsule_cryopumping} when the cold capsules are extracted from the cyrostat and return to the motion box.
 
 \begin{figure}[htbp]
     \centering
@@ -178,8 +182,73 @@ The full vacuum setup of the motion boxes is shown in \autoref{fig:vacuum_setup_
     \label{fig:vacuum_setup_diagram}
 \end{figure}
 
-\subsection{Guide Tubes}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/CUORE_vacuum_cryopumping.png}
+    \caption[The pressure in the motion boxes when cold capsules are extracted into the room-temperature motion boxes.]
+    {The pressure in the motion boxes when cold capsules are extracted into the room-temperature motion boxes.
+    Starting at 3:30 pm, it can be seen that the capsules cryopump the motion box when they arrive, and then the gas that had previously frozen onto the capsules melts and evaporates back into the motion box.}
+    \label{fig:capsule_cryopumping}
+\end{figure}
 
+\subsection*{Guide Tubes}
+When the strings are deployed down into the cryostat out of the motion boxes, they are guided down through a series of guide tubes, shown in \autoref{fig:DCSintegration} and \autoref{fig:dcs_thermal_coupling}.
+At the 300-K stage, the strings first are guided by an ``s-tube" that connects the tube from the 300-K stage down to the 4-K thermalizers, which are discussed later in \autoref{ssec:Thermalization_and_Thermometry}, and are shown in \autoref{fig:s-tube}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.5\pageheight]{Figures/s_tube_labeled.pdf}
+    \caption[The 3 stainless steel s-tubes below a motion box.]
+    {The 3 stainless steel s-tubes below a motion box.
+    The tubes are thermally connected to the 300-K, 40-K, and 4-K plates and form a thermal gradient between each.
+    The bend in the tubes is for both geometrical reasons and for reducing the radiative heat load on the bottom stages of the cryostat as there is no line-of-sight from the top of the funnels at 300-K to the bottom at 4-K.
+    As the strings are deployed down through the tube, they are thermalized by contact with the walls of the tube and by radiative cooling.}
+    \label{fig:s-tube}
+\end{figure}
+Below the s-tubes and the 4-K thermalizers are the stainless steel 600-mK guide tubes, shown in \autoref{fig:600mK_guide_tubes}.
+It is at this stage that the first differences between the inner and outer guide tubes appear.
+As the inner source strings will be deployed into the 10-mK region of the cryostat, they require more thermalization, but, due to geometrical constraints within the cryostat, the path between the 600-mK and 50-mK stages for the inner strings is vertical, which reduces the ability of the tubes to extract heat from the capsules.
+As shown in \autoref{tab:cryostat_cooling_power}, the cooling power of the cryostat drastically decreases at colder stages; therefore, the inner guide tubes have a chicane just under their funnel that assists with the cooling of the capsules by increasing their contact as they pass through the tube.
+Under the 600-mK plate, the outer guide tubes take the outer strings to the outside of the 50mK plate, while the inner guide tubes, as noted before, continue straight down through the 50-mK plate.
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.37\textwidth}
+\centering
+\includegraphics[width=0.9\textwidth, height= 3 in, keepaspectratio]{Figures/600mKguidetube_cropped.jpg}
+\caption{}
+\label{fig:600mk_guide_tubes_top}
+\end{subfigure}
+\qquad
+\begin{subfigure}[t]{0.5\textwidth}
+\centering
+\includegraphics[width=0.9\textwidth, height = 3 in, keepaspectratio]{Figures/600mKguidetube_below_cropped.jpg}
+\caption{}
+\label{fig:600mk_guide_tubes_bottom}
+\end{subfigure}
+\caption[Photographs of a set of 600-mK guide tubes above (a) and below (b) the 600-mK plate.]
+{Photographs of a set of 600-mK guide tubes above (a) and below (b) the 600-mK plate.
+In order to safely and reliably catch the strings as they come out of the 4-K thermalizer, top of (a), the funnels for the tubes are significantly wider than the tubes themselves.
+The tubes for the inner strings have a chicane that increases the thermal contact between the copper capsules and the guide tube.
+Below the 600-mK plate (b), the outer string guide tube path goes out to the outside of the 50-mK shield.
+For each of the tubes, they are clamped and thermalized to the 600-mK and 50-mK plates.}
+\label{fig:600mK_guide_tubes}
+\end{figure}
+For the outer guide tubes, the next components are the 6 copper helical tubes around the 50-mK vessel, shown in \autoref{fig:helical_tubes}.
+These tubes take the outer strings to their final locations on the outside of the 50-mK vessel.
+When the string is fully deployed, the active region of the string hangs freely out of the helical tubes in order to reduce the mass of copper and the resultant radioactive background contributions.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height = 3.5 in]{Figures/HelicalTubes.jpg}
+    \caption[A photograph of two of the helical guide tubes around the 50-mK vessel.]
+    {A photograph of two of the helical guide tubes around the 50-mK vessel.
+    The helical tubes are arranged around the cryostat in such a way as to have the final positions of the outer strings as shown in \autoref{fig:Calibration_source_locations}.
+    When fully deployed, the end of the string extends down to a few cm above the bottom of the vessel}
+    \label{fig:helical_tubes}
+\end{figure}
+
+
+
+In the 10-mK region, the guide tubes are made of 3 separate parts and are assembled in a glove box before installation into the cryostat, which occurs along with the detector installation.
 
 \begin{figure}[htbp]
     \centering
@@ -193,14 +262,14 @@ The full vacuum setup of the motion boxes is shown in \autoref{fig:vacuum_setup_
     \label{fig:dcs_thermal_coupling}
 \end{figure}
 
-
-\subsection*{Thermalization and Thermometry}
+\subsection*{4-K Thermalization and Thermometry}
+\label{ssec:Thermalization_and_Thermometry}
 In order to deploy 12 calibration source strings from the 300-K stage down to the 50-mK or 10-mK stages, the calibration source strings need to be cooled as much as possible before reaching each stage of the cryostat or even the black-body thermal radiation from the sources will cause the temperature of the crystals and the cryostat to rise excessively and possibly dangerously. Most of the mass, and therefore the thermal energy is carried in the copper capsules. The Kevlar that holds the capsules is a poor conductor of heat compared, which is a necessary feature, in addition to its strength, as the Kevlar will form 12 continuous lines from the motion boxes at 300 K down to the detector region at 10 mK \cite{VENTURA2009735}.
 
 To effect this cooling on the source strings, multiple methods are used. The main cooling mechanism used is from the copper thermalizers located at the 4 K plate, shown in \autoref{fig:DCS_4K_schematic}. These thermalizers consist of a moving copper block and a copper base, with the copper block pushed away by a spring. The copper block is activated by another Kevlar string that, when pulled, pushes the copper block onto the copper base. The cooling time decreases as the force between the copper block and capsule increases, and a force of 32 N was chosen This cooling is performed at the 4-K stage as the cryostat has significant cooling power, as shown in \autoref{tab:cryostat_cooling_power}. Most of the cooling of the capsules is done at this position and this thermalization process over an entire string is a significant fraction of its total deployment time.
 
 The thermometer used on each of the thermalizers is a CX-1010-SD Cernox\footnote{https://lakeshore.com/Pages/PackagesCX.aspx.} thermometer calibrated to 1.4 K, and mounted at varying locations on each of the 600-mK guide tubes are CX-1030-SD Cernox thermometers, with 10 calibrated to 1.2 K, and the other 2 calibrated to 300 mK.
-During Run 3, one of the cold commissioning runs of the cryostat and the DCS, the 10 thermometers on the 600-mK guide tubes calibrated at 1.4 were then calibrated down to 600 mK.
+During Run 3, one of the cold commissioning runs of the cryostat and the DCS, the 10 thermometers on the 600-mK guide tubes calibrated at 1.4 were then calibrated down to below 600 mK.
 
 \color{red}connect these figures \color{black}
 \begin{figure}[htbp]
@@ -220,7 +289,6 @@ During Run 3, one of the cold commissioning runs of the cryostat and the DCS, th
     \label{fig:DCS_4K_schematic}
 \end{figure}
 
-
 Another way in that heat is removed from the source strings is due to the contact with the walls of the guide tubes. This cooling, however, is limited in two main ways: by the angle of the tube as steeper angles provide less contact with the source capsule and by the heat capacity and thermal contact of the tube with each stage as some tubes, namely those at 600 mK will warm up to 4K or beyond. Below the thermalizers, the inner strings also go through a ``chicane" \color{red} Should I put this in quotes? Also, add reference to figure\color{black} which increases the contact between the capsules and the tubes. This is done to further increase the rate at which heat is removed from the capsules as the cooling on these sources that are to be deployed at the 10 mK stage are the most critical to cool, but the cooling power decreases at colder stages. 
 
 \begin{figure}[htbp]
@@ -232,8 +300,12 @@ Another way in that heat is removed from the source strings is due to the contac
     \label{fig:chicane_thermometers}
 \end{figure}
 
-\subsection{Software Control of the DCS}
 Diagrams to include: pictures of the thermometers, heat loads on the thermometers in different scenarios, 600 mK chicane, 4K thermalizers
+
+
+\subsection{Software Control of the DCS}
+We control the DCS with a computer!
+
 \subsection{Impact on Cryostat}
 
 Describe how the calibration affects the state of the cryostat. What are the temperature effects on the plates during the deployment.
