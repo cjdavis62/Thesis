@@ -9,6 +9,7 @@ This is done by occasionally inserting radioactive sources with known intensity 
 The thermal response of the detectors can then be mapped one-to-one with these known energies, and thus the entire detector array can then be individually calibrated. The hardware and simulation for this work in described in this chapter, and a discussion of how the software analyzes calibrations is described in \autoref{ssec:Calibration}.
 
 \section{Overview}
+\label{sec:DCS_Overview}
 
 Making such a system as the DCS, that can meet this goal in the CUORE cryostat is an enormous technical challenge.
 As noted in \autoref{sec:Predecessor Experiments} and shown in \autoref{fig:CUORE-0_cryostat_schematic}, calibration sources in CUORE-0 and Cuoricino could be deployed by hand inside the innermost lead shielding to irradiate a single tower of detectors.
@@ -192,6 +193,7 @@ This cryopumping can be observed as well as shown in \autoref{fig:capsule_cryopu
 \end{figure}
 
 \subsection*{Guide Tubes}
+\label{ssec:Guide Tubes}
 When the strings are deployed down into the cryostat out of the motion boxes, they are guided down through a series of guide tubes, shown in \autoref{fig:DCSintegration} and \autoref{fig:dcs_thermal_coupling}.
 At the 300-K stage, the strings first are guided by an ``s-tube" that connects the tube from the 300-K stage down to the 4-K thermalizers, which are discussed later in \autoref{ssec:Thermalization_and_Thermometry}, and are shown in \autoref{fig:s-tube}.
 \begin{figure}[htbp]
@@ -232,23 +234,25 @@ Below the 600-mK plate (b), the outer string guide tube path goes out to the out
 For each of the tubes, they are clamped and thermalized to the 600-mK and 50-mK plates.}
 \label{fig:600mK_guide_tubes}
 \end{figure}
+
 For the outer guide tubes, the next components are the 6 copper helical tubes around the 50-mK vessel, shown in \autoref{fig:helical_tubes}.
 These tubes take the outer strings to their final locations on the outside of the 50-mK vessel.
 When the string is fully deployed, the active region of the string hangs freely out of the helical tubes in order to reduce the mass of copper and the resultant radioactive background contributions.
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[height = 3.5 in]{Figures/HelicalTubes.jpg}
     \caption[A photograph of two of the helical guide tubes around the 50-mK vessel.]
     {A photograph of two of the helical guide tubes around the 50-mK vessel.
     The helical tubes are arranged around the cryostat in such a way as to have the final positions of the outer strings as shown in \autoref{fig:Calibration_source_locations}.
-    When fully deployed, the end of the string extends down to a few cm above the bottom of the vessel}
+    When fully deployed, the end of the string extends down to a few cm above the bottom of the vessel, and a string can be seen partially hanging out of the left tube.}
     \label{fig:helical_tubes}
 \end{figure}
 
-
-
-In the 10-mK region, the guide tubes are made of 3 separate parts and are assembled in a glove box before installation into the cryostat, which occurs along with the detector installation.
+For the inner guide tubes below the 50-mK plate, there is another non-vertical section as the strings are directed towards the center of the tower array and line up with their final positions as noted in \autoref{fig:Calibration_source_locations}.
+This section between the 50-mK and the 10-mK plates, is the last non-vertical section of the guide tubes, and is the last chance for thermalization of the strings before reaching the detectors themselves.
+Below the 10-mK plate, there are guide tubes in the top lead shield that carry the strings down to the TSP above the detectors. 
+In these regions below the 10-mK plate, the guide tubes consist of NOSV copper, and the detector region tubes, since they are hanging near the detectors under the top lead, are cleaned with the procedures mentioned in \autoref{ssec:Parts Selection and Cleaning}.
+These detector region guide tubes are made of 3 separate sections and are assembled in a glove box before installation and are installed along with the detectors into the cryostat.
 
 \begin{figure}[htbp]
     \centering
@@ -264,52 +268,163 @@ In the 10-mK region, the guide tubes are made of 3 separate parts and are assemb
 
 \subsection*{4-K Thermalization and Thermometry}
 \label{ssec:Thermalization_and_Thermometry}
-In order to deploy 12 calibration source strings from the 300-K stage down to the 50-mK or 10-mK stages, the calibration source strings need to be cooled as much as possible before reaching each stage of the cryostat or even the black-body thermal radiation from the sources will cause the temperature of the crystals and the cryostat to rise excessively and possibly dangerously. Most of the mass, and therefore the thermal energy is carried in the copper capsules. The Kevlar that holds the capsules is a poor conductor of heat compared, which is a necessary feature, in addition to its strength, as the Kevlar will form 12 continuous lines from the motion boxes at 300 K down to the detector region at 10 mK \cite{VENTURA2009735}.
-
-To effect this cooling on the source strings, multiple methods are used. The main cooling mechanism used is from the copper thermalizers located at the 4 K plate, shown in \autoref{fig:DCS_4K_schematic}. These thermalizers consist of a moving copper block and a copper base, with the copper block pushed away by a spring. The copper block is activated by another Kevlar string that, when pulled, pushes the copper block onto the copper base. The cooling time decreases as the force between the copper block and capsule increases, and a force of 32 N was chosen This cooling is performed at the 4-K stage as the cryostat has significant cooling power, as shown in \autoref{tab:cryostat_cooling_power}. Most of the cooling of the capsules is done at this position and this thermalization process over an entire string is a significant fraction of its total deployment time.
-
-The thermometer used on each of the thermalizers is a CX-1010-SD Cernox\footnote{https://lakeshore.com/Pages/PackagesCX.aspx.} thermometer calibrated to 1.4 K, and mounted at varying locations on each of the 600-mK guide tubes are CX-1030-SD Cernox thermometers, with 10 calibrated to 1.2 K, and the other 2 calibrated to 300 mK.
-During Run 3, one of the cold commissioning runs of the cryostat and the DCS, the 10 thermometers on the 600-mK guide tubes calibrated at 1.4 were then calibrated down to below 600 mK.
-
-\color{red}connect these figures \color{black}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\linewidth]{Figures/thermalization_system_labeled.pdf}
-    \caption[A cutaway drawing of the 4-K thermalization system on CUORE.]
-    {A cutaway drawing of the 4-K thermalization system on CUORE.
-    When the linear actuator is fully down, the hanging mass hangs freely from the rotary feedthrough, which is then connected through a pulley to the copper block.
-    This applies the 32 N of force acting on a capsule in order to cool it down to 4 K.}
-    \label{fig:DCS_4K_thermalizer}
-\end{figure}
+In order to deploy 12 calibration source strings from the 300-K stage down to the 50-mK or 10-mK stages, the calibration source strings need to be cooled as much as possible before reaching each stage of the cryostat or even the black-body thermal radiation from the sources will cause the temperature of the crystals and the cryostat to rise excessively and possibly dangerously.
+Most of the mass of the strings is in the copper capsules, and copper has a significantly higher thermal conductivity compared with Kevlar\footnote{While the Kevlar forms 12 continuous lines from the 300-K stage to the 10-mK stage of the cryostat, the low thermal conductivity of Kevlar keeps this from becoming a problematic thermal short.
+That said, the Kevlar will also have a significant thermal gradient from 300 K to 10 mK along its length.} \cite{Cu_thermal_conductivity, VENTURA2009735}.
+Therefore, the main efforts for cooling and thermalizing the source strings as they are deployed in the cryostat is focused on the copper capsules.
+To effect this cooling on the source strings, multiple methods are used. 
+As noted in \autoref{ssec:Guide Tubes}, one of the ways this is achieved is by contact with the guide tubes at varying thermal stages.
+This cooling, however, is limited by the angle of the tube as steeper angles provide less contact with the source capsule, although the chicanes on the 600-mK guide tubes mintage this effect and provide a stronger contact with the guide tube.
+An addition limitation on the cooling is by the temperature of the guide tubes themselves, as warm capsules will warm up the tubes and reduce the cooling provided until the tubes thermalize back to their nominal value.
+However, the main cooling mechanism used is from 4 copper thermalizers, one for each motion box, which are located at the 4-K plate, shown in \autoref{fig:DCS_4K_schematic}.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\linewidth]{Figures/Thermalizer_schematic_labeled.pdf}
-    \caption{Caption}
-    \label{fig:DCS_4K_schematic}
+\centering
+\begin{subfigure}[t]{0.4\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/thermalization_system_labeled.pdf}
+\caption{}
+\label{fig:4K_thermalizer_system}
+\end{subfigure}
+\qquad
+\begin{subfigure}[t]{0.4\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/Thermalizer_schematic_labeled.pdf}
+\caption{}
+\label{fig:4K_thermalizer_schematic}
+\end{subfigure}
+\caption[The 4-K thermalization setup for the DCS.]
+{The 4-K thermalization setup for the DCS.
+In (a), the setup for the system in conjunction with a motion box is shown (not shown are the other 3 motion boxes).
+In (b), the mechanism for activating the thermalizers is shown.
+A kevlar string connects the moving copper block through a pulley connected to the rotary feedthrough and a hanging mass that can be held up by a linear actuator.
+In this way, moving the linear actuator up and down releases and activates the thermalizer, respectively.
+Not shown is a metal ring that separates the kevlar string coming out of the shield box from the kevlar string from the thermalizer which reduces the thermal load and mechanical stress on the Kevlar.}
+\label{fig:DCS_4K_schematic}
 \end{figure}
 
-Another way in that heat is removed from the source strings is due to the contact with the walls of the guide tubes. This cooling, however, is limited in two main ways: by the angle of the tube as steeper angles provide less contact with the source capsule and by the heat capacity and thermal contact of the tube with each stage as some tubes, namely those at 600 mK will warm up to 4K or beyond. Below the thermalizers, the inner strings also go through a ``chicane" \color{red} Should I put this in quotes? Also, add reference to figure\color{black} which increases the contact between the capsules and the tubes. This is done to further increase the rate at which heat is removed from the capsules as the cooling on these sources that are to be deployed at the 10 mK stage are the most critical to cool, but the cooling power decreases at colder stages. 
+These thermalizers consist of a moving copper block and a copper base, with the copper block pushed away by a spring.
+The copper block is activated by another Kevlar string that, when pulled, pushes the copper block onto the copper base.
+The cooling time decreases as the force between the copper block and capsule increases until it reaches a maximum, and thus a force of 32 N was chosen as the force to apply as it would not damage the capsules.
+This force is applied by a mass hanging from a pulley over a linear actuator. When the linear actuator pushes up on the mass, the thermalizer is opened, while, when the linear actuator moves down, the weight of the hanging mass applies the 32 N of force to the capsule.
+The reason that the cooling is performed at the 4-K stage is that the cryostat still retains significant cooling power, as shown in \autoref{tab:cryostat_cooling_power}, yet can still cool the capsules to low enough temperatures.
+Most of the cooling of the capsules is done at this position and this thermalization process over an entire string is a significant fraction of its total deployment time.
+The size of the thermalizers is such that two source capsules can be inside the thermalizer at a time, and, similarly, up to four of the closer-packed weight capsules.
+
+In order to determine the effectiveness of the cooling applied by the thermalizers, each thermalizer is instrumented with a thermometer\footnote{Although, due to a design flaw in the electronic circuit which inputs power to the block when open, this can be difficult to determine from the 4-K thermalizer thermometers alone.} on the copper block.
+In addition, to verify that the thermalization of the thermalizers was sufficient, thermometers were also added to the 600-mK tubes, at varying locations as shown in \autoref{fig:600mK_thermometers}, to verify the thermalization of each capsule.
+The thermometer used on each of the thermalizers is a CX-1010-SD Cernox\footnote{\RaggedRight\url{https://lakeshore.com/Pages/PackagesCX.aspx.}} thermometer calibrated to 1.4 K, and mounted at varying locations on each of the 600-mK guide tubes are CX-1030-SD Cernox thermometers, with 10 calibrated to 1.2 K, and the other 2 calibrated to 300 mK.
+During Run 3, one of the cold commissioning runs of the cryostat and the DCS, the 10 thermometers on the 600-mK guide tubes calibrated at 1.4 K were then calibrated down to below 600 mK.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.9\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/Thermalizer_operation.png}
+\caption{}
+\label{fig:4K_operation}
+\end{subfigure}
+\qquad
+\begin{subfigure}[t]{0.9\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/Chicane_operation.png}
+\caption{}
+\label{fig:Chicane_operation}
+\end{subfigure}
+\caption[The thermometers on the 4-K thermalizers (a) and the 600-mK tubes (b) during a deployment.]
+{The thermometers on the 4-K thermalizers (a) and the 600-mK tubes (b) during deployment.
+Here, the 4 thermalizers simultaneously squeeze on capsules in regular intervals, with the openings of the thermalizers corresponding with the peaks in (a).
+When the capsules reach the 600-mK guide tubes, the capsules begin to release heat into the tubes, which causes the tubes to warm up as seen in (b).
+Due to the higher capsules on the string being warmer than the bottom capsules, the 600-mK guide tubes are heated more from later capsules, despite more of the mass of the string in the weight capsules.
+The thermometers that are located on the inner guide tubes with a chicane observe a much larger rise in temperature than the outer guide tubes as more heat is extracted inside the chicane.
+Not all 12 600-mK thermometers survived the cooldowns and installation, but enough are on each set of guide tubes to be able to measure the temperature of the incoming capsules.}
+\label{fig:Thermalization_operation}
+\end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\linewidth]{Figures/ChicaneThermometers.JPG}
-    \caption[The chicane thermometers.]
-    {The Chicane thermometers under the 4K stage.
-    These cernox thermometers are used to determine the temperature of the capsules as they leave the 4~K thermalizer into the 600~mK guide tubes.}
-    \label{fig:chicane_thermometers}
+    \caption[The 600-mK guide tube thermometers.]
+{The 600-mK guide tube thermometers.
+These thermometers are used to determine the temperature of the capsules as they leave the 4~K thermalizer into the 600~mK guide tubes.
+2 of the 3 thermometers are shown here and are held and thermalized to the tube with modified alligator clips.
+Note the small copper wire that was connected to each of the guide tubes.
+This wire connects each of the guide tubes such that the thermometers from one guide tube can measure the temperature rise on another guide tube which is particularly useful for tubes with a faulty thermometer connection.}
+    \label{fig:600mK_thermometers}
 \end{figure}
 
-Diagrams to include: pictures of the thermometers, heat loads on the thermometers in different scenarios, 600 mK chicane, 4K thermalizers
 
+\subsection*{Software Control of the DCS}
+\label{ssec:Software Control of the DCS}
+As mentioned in \autoref{sec:DCS_Overview}, the DCS needs to be operated and handled in a controlled and stable fashion, and, to this end, the choice was made to operate the entire system through software-controlled motors.
+A computer running Labview\footnote{\RaggedRight\url{http://www.ni.com/en-us/shop/labview/labview-details.html}} controls and monitors the hardware components of the DCS including the motors, the load cells, thermometers, pressure sensors, and other components described previously.
+These systems are described in detail in \cite{JeremyThesis}, but in this section, I will describe the interlocks used to ensure the safety of the system \color{red}cite appendix here?\color{black}.
+One of the first to mention are the interlocks for the vacuum systems.
+As remote operation is possible through the software control, a person on-site needs to be available to activate the gate valves below the motion boxes that connect to the IVC.
+This prevents any accidental openings of the motion box to the IVC, which would be a catastrophic event.
+The other interlocks relate to the motion and tension on the string itself.
+As mentioned above, the home switch and global stop switch are two-state switches that are used to stop motion when they are triggered.
+However, the load cell allows for more complex interlocks on the system as the tension in the string is measured constantly during their motion.
+This information is used to create a ``load cell profile" that is an averaging of multiple deployments of the string through the guide tubes.
+As the particular geometry of the guide tubes affects the tension of the strings, e.g. a vertical section has tension equal to the hanging weight of the source string, whereas an angled section has capsules slightly resting on the tubes, which decreases the tension in the string.
+With this information, this allows the software to detect situations such as when the string has missed a funnel and is beginning to rest on the cryostat or if there is an obstruction in the cryostat such as ice as shown in \autoref{fig:load_cell_profile}.
+In addition, the software uses the load cell to determine and stop motion in case of sudden changes in the tension.
+Because the length of the string that contains the weight capsules is a few cm long, this quick step in the voltage is another indication of the string stopping. 
+It also allows for an independent verification of the string position inside the cryostat in addition to the position readings from the encoder.
+With these checks, the dangerous scenarios that can be caused when a string fails to deploy properly, which can cause the string to misspool on the drive spool shaft, or to form a knot, each of which would be problematic for continued DCS performance or detector operation.
 
-\subsection{Software Control of the DCS}
-We control the DCS with a computer!
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/LoadCellProfile.png}
+    \caption[The load cell readings and profile during a string deployment.]
+    {The load cell readings (white) and profile (red) during a string deployment.
+    The load cell profile is an averaged reading from past deployments and contains a band of acceptable values inside.
+    When the load cell is outside of the accepted values for long enough, an error is returned, as was the case here.}
+    \label{fig:load_cell_profile}
+\end{figure}
 
-\subsection{Impact on Cryostat}
-
-Describe how the calibration affects the state of the cryostat. What are the temperature effects on the plates during the deployment.
-
+\subsection*{Impact on Cryostat}
+One of the main effects on the cryostat from the DCS in operation is the thermal stress it applies to the system.
+Were the DCS to drop the strings into the cryostat, the deployment would take only a matter of seconds, but this would catastrophically affect the operation of the dilution refrigerator.
+This constraint is the main constraint on the deployment speed and is one of the main constraints on the extraction speed.
+The effect of the source strings is negligible down to the 4-K stage, but even the radiative heat load of the strings as they reach the 4-K thermalizers applies a heat load to the 600-mK plate, as shown in \autoref{fig:600_mk_Precool}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/600mK_temperature_during_precool.png}
+    \caption[The temperature of the 600-mK thermometers as the source strings reach the 4-K stage.]
+    {The temperature of the 600-mK thermometers as the source strings reach the 4-K stage.
+    The heat load increases as more strings are successively deployed until the 4-K thermalizers are closed, cutting off the line-of-sight between the 600-mK stage and the capsules in the s-tubes above.}
+    \label{fig:600_mk_Precool}
+\end{figure}
+To reduce the temperature of these capsules before reaching the 600-mK stage, a two-stage process is undertaken.
+First, the strings are deployed to just above the 4-K stage at a speed of 75 mm/min\footnote{The motors can operate the strings at speeds up to 500 mm/min and as low as 1-2 mm/min.
+As the duration of the deployment in this region above 4-K is not a significant amount of time given the entire time for deployment, a higher speed is not used here.}.
+Then, after waiting $\sim12$ hours for pre-cooling, the strings begin a set of squeezes in the thermalizer.
+These squeezes vary in length from 10-minute squeezes on the lowest capsules that have cooled the most during the pre-cooling to 20-minute squeezes on the capsules that are the highest on the string.
+In fact, due to the geometry of the cryostat and the fact that the active region of the string is larger than the distance between cryostat stages, the top of the capsules are less than 20 cm below the proximity sensor during the first thermalizer squeezes, which is the reason why longer squeezes become necessary.
+After the thermalizer squeezes on the strings, the string is lowered slightly below the end of the thermalizer to allow for another string to be thermalized and for more time for cooling of the capsules to temperatures below 4 K.
+During this time, the speed that the strings move is also decreased, in order to reduce the thermal ``shock" of deploying the relatively warm capsules to increasingly colder regions.
+In addition, this slower speed increases the time to respond in case the capsules are warmer than anticipated and begin warming the cryostat.
+As the string are lowered into the 50-mK and 10-mK stages of the cryostat, the outer strings impact the cryostat to a lesser degree than the inner strings, as the 50-mK stage can handle more heat before cooling at the 10-mK stage is impacted, as shown in \autoref{fig:50mK_vessel_heating}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/OuterStringHeating.png}
+    \caption[The heating of the 50-mK vessel during an outer string deployment.]
+    {The heating of the 50-mK vessel during an outer string deployment.
+    As the string, in green, moves into the detector region, the 50-mK vessel warms by 6 mK, while the thermometer at the 10-mK stage, the noise thermometer, warms by 0.3 mK.
+    This data comes from a test run before the installation of the detectors, as the thermometers on the vessels are disconnected during later operations.}
+    \label{fig:50mK_vessel_heating}
+\end{figure}
+The largest effects on the detectors come from the inner strings as they are deployed into the 10-mk region.
+These effects are due to both the warm capsules entering the region, and due to the friction of the capsules moving against the guide tubes.
+In early tests in the 10-mK region before the detector region guide tubes were installed, the heating would be only a few mK.
+However, with the detectors installed, lowering the available cooling in the region, and the guide tubes also installed, increasing the vibrational and frictional effects of the deployment, the impact on the cryostat increased significantly.
+During these later deployments, the temperature of the cryostat reached approximately 25 mK while the strings were being lowered into this region\color{red} add a plot of this?\color{black}.
+When extracting the strings, the main constraints are due to the friction of the capsules as they move against the guide tubes.
+In extraction, in contrast to deployment, the capsules are colder than the stages they pass through, but limiting the speed is the need to reduce the effect of this friction.
+This friction is maximized at points where there is a bend in the guide tubes, such as the bend at the 10-mK plate for the inner source strings.
+The heating in this case depends strongly on the speed with which the strings are extracted, and the choice was made to keep the impact on the base temperature of the cryostat to similar levels as 25 mK that is reached during deployment.
+As the source strings leave the 50-mK region, this issue no longer becomes significant and the speed of the calibration sources can be increased as the strings pass through more cryostat stages\footnote{However, there is still an effective ``speed limit" as an obstruction that the string encounters on the way up through the cryostat could trigger the emergency stop switch if the strings are moving too quickly.}.
 
 \section{Calibration Simulation}
 Describe how the simulations for the calibration system are performed. How to determine the best calibration time and effects of pileup.
@@ -320,7 +435,8 @@ Figures to include; Geant4 visualization of the sources, rates on the detectors 
 
 Describe how well the calibration system has performed? Also show different strategies for deploying the DCS.
 
-\subsection{Calibration Strategies}
+\subsection*{Calibration Strategies}
+\label{ssec:Calibration Strategies}
 
 When deploying strings, it would be considerably simpler if one could deploy all the strings simultaneously down into the cryostat; however, there are multiple considerations that need to be taken into account during the operation.
 Firstly, one of the main constraints is that no strings can pass through a 4-K thermalizer while it is squeezing on another string.
