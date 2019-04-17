@@ -27,6 +27,7 @@
 \usepackage{float}
 \usepackage{url}
 \usepackage{multirow}
+\usepackage{appendix}
 
 % add custom commands and definitions
 \newcommand{\rulesep}{\unskip\ \vrule\ }
@@ -42,6 +43,9 @@
 \newcommand{\noop}[1]{}
 \def\quad{\hskip1em\relax}
 \def\qquad{\hskip2em\relax}
+
+% define CUORE values to use
+\newcommand{\livetime}{$387.5~\textrm{kg}\cdot\textrm{yr}$}
 
 
 \usepackage{ragged2e}
@@ -93,10 +97,9 @@ for letting my imagination run wild
 \input{Chapters/BackgroundModel.tex}
 \input{Chapters/Conclusion.tex}
 \backmatter
-\appendix
-% Appendices and Bibliography
-\input{Appendices/AppendixA.tex}
 \bibliographystyle{apsrev4-1}
 \bibliography{Bibliography.bib}
-
+\appendix
+% Appendices and Bibliography
+\input{Appendices/ToyMC_Systematics.tex}
 \end{document}

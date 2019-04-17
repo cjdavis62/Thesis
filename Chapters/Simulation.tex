@@ -26,6 +26,7 @@ First, a primary particle is generated in a particular material, e.g. a decay in
 At each step, one of the possible physics processes is sampled probabilistically and the energy lost due to interactions or creation of daughter particles is taken into account and particle (primary and any daughters) are transported along another step until their energies are lower than a defined threshold.
 Geant4 uses ``physics lists" to determine the physics that is sampled from for the interactions at each step, and CUORE utilizes the \textit{Livermore} and \textit{Shielding} physics lists to account for the low-energy electromagnetic interactions down to 250 eV and for higher-energy neutron penetration, respectively.
 In a detector, the energy lost by the particle and its daughters during steps inside the volume can then be recorded as the energy deposited in the detector and corresponds to what is measured by the NTDs in CUORE.
+However, the only information that is recorded here is the energy deposited in each crystal by each particle and the timing information\footnote{For decays generated through a decay chain, if there is $>1$ year between events, the next generated particles in the chain are moved to a separate location in the generating volume.}
 
 \section{CUORE Reconstruction in Geant4}
 CUORE utilizes Geant4\footnote{Version 9.6.p03} and has recreated the entire cryostat in its own software package, called \textit{qshields}, shown in \autoref{fig:CUORE_cyrostat_MC} and \autoref{fig:CUORE_crystals_MC}.
@@ -58,20 +59,37 @@ In addition, in order to reduce the computation time for propagating these parti
 
 \section{Simulating Detector Response}
 The physics simulation is Geant4 is only one part of the two-step process in performing physics simulations in CUORE.
-Geant4 does not take into consideration the actual detector response to the physics, nor does it consider any pileup effects between different primary particles.
-To then be able to characterize this response, another software package called \textit{g4cuore} is used.
-In this software, the pure physics output from the output of Geant4 is then passed through multiple parameters, including but not limited to
+Geant4 does not take into consideration the actual detector response to the physics, such as pileup between the physics simulated in parallel.
+To then be able to characterize this detector response, another software package called \textit{g4cuore} is used.
+This software works to replicate the software steps described in \autoref{ch:Data Acquisition and Processing} to turn the raw output of Geant4/\textit{qshields} into a processed spectrum similar to what would be observed in the data.
+In particular, the detector effects that are applied are:
 \begin{itemize}
+    \item event rates
     \item detector resolution
     \item pileup rejection and detector dead time
     \item energy thresholds
-    \item coincidences \color{red} maybe same as next? find better wording \color{black}
-    \item multi-site events
+    \item coincidences 
     \item quenching factors
 \end{itemize}
+In addition, not only does applying these effects allow for simulating the detector response, it also allows this detector response to be studied.
+For example, by varying the event rate, the effect of a particular pileup rejection cut can be studied as shown in \autoref{fig:pileup_effects}.
+Similarly, by varying the coincidence window and the event rate, the relative rates of real and accidental coincidences can be studied as well.
+
 
 \section{Simulation Benchmarking}
 
 As simulations are performed on multiple clusters and as updates are made to the software, it is important to perform benchmarking to discover bugs and other errors in the simulation.
-This is done by taking a representatitive sample of the decays that are produced by qshields and comparing to previous spectra.
-In this way, unexpected issues can be discovered.
+In addition, benchmarking is useful when created tagged versions of software as each tagged version can be checked back against earlier versions.
+To benchmark, a representative sample of simulations is produced by qshields and compared to the spectra produced by an earlier version of qshields.
+In this way, unexpected issues can be discovered and the effects of changes to the simulation can be observed.
+For example, errors were discovered in the way that the copper frames and PTFE holders were implemented in \textit{qshields} and this effect was quantified by performing this benchmarking of the simulations, as shown in \autoref{fig:PTFESx_M1}.
+In general, observing a difference in the spectral shape is evidence of an issue with the physics, such as a missing Geant4 patch, while observing a difference in the number of observed counts is generally caused by geometry.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/PTFESx_M1.pdf}
+    \caption[The changes in the simulated spectra due to fixes in the geometry in \textit{qshields}.]
+    {The changes in the simulated spectra due to fixes in the geometry in \textit{qshields}.
+    With the same number of decays generated, a roughly 20\% drop in the number of events is observed while preserving the spectral shape.}
+    \label{fig:PTFESx_M1}
+\end{figure}

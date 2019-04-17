@@ -21,6 +21,7 @@ To solve this issue, these sources with ``degenerate" spectra are combined in th
     \includegraphics[width=0.8\linewidth]{Figures/th232_copper_plates.pdf}
     \caption[Simulated rates from a $^{232}$Th source on the 50-mK and 600-mK plates.]
     {Simulated rates from a $^{232}$Th source on the 50-mK and 600-mK plates.
+    The y-axis is arbitrary and the number of entries is normalized.
     The spectra produced by these two materials are nearly identical and are indistinguishable for performing a fit.}
     \label{fig:degenerate_sources}
 \end{figure}
@@ -29,28 +30,108 @@ While some of this degeneracy could be removed by including the complete positio
 
 However, this position information for the sources can be a strong indicator for asymmetric sources in the cryostat.
 For example, in CUORE-0, an excess of $^{232}$Th and $^{40}$K events on some crystals were determined to be due to spot sources on the 50-mK shield and the bottom of the external lead shield.
-While CUORE benefits from improved procedures for handling and cleaning materials, it is not unreasonable to expect that there may be similar situations on CUORE, and indeed, excesses are observed in the data.
-A fully complete background model would include these sources, but these geometrical differences are included as a systematic in the fits produced by the data, as data is selected by different geometrical slicings of the data, e.g. by fitting only odd/even floors or by odd/even towers.
+While CUORE benefits from improved procedures for handling and cleaning materials, it is not unreasonable to expect that there may be similar situations on CUORE, and indeed, excesses are observed in the data, as shown in \autoref{fig:k40_towers}, \autoref{fig:k40_towerfloors}, \autoref{fig:Co60_towers}, and \autoref{fig:po210_towers}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{Figures/k40ByTower.pdf}
-    \caption[The number of $^{40}$K events at  on each CUORE tower.]
-    {The number of $^{40}$K events on each CUORE tower.
-    Tower 12 has considerably more $^40$K than the others.}
-    \label{fig:my_label}
+    \includegraphics[width=0.8\linewidth]{Figures/K40AllTowers.pdf}
+    \caption[The rate of $^{40}$K $\gamma$ events on each CUORE tower.]
+    {The rate of $^{40}$K $\gamma$ events on each CUORE tower.
+    While nearly all the towers have similar rates, an excess is observed on tower 12.}
+    \label{fig:k40_towers}
 \end{figure}
-include figures for search for spot-sources on the towers.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/K40TowerFloor.pdf}
+    \caption[The rate of $^{40}$K $\gamma$ events on each CUORE tower, split into each floor.]
+    {The rate of $^{40}$K $\gamma$ events on each CUORE tower, split into each floor.
+    There are significantly higher rates along the top floor of each tower, and along many of the floors on tower 12.}
+    \label{fig:k40_towerfloors}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/Co60_combined.pdf}
+    \caption[The rates of Co-60 decays at the 1330 and 1170 keV peaks.]
+    {The rates of Co-60 decays at the 1330 and 1170 keV peaks.
+    These events occur in coincidence at nearly equal rates during the decay of $^{60}$Co to $^{60}$Ni and the observed rates are consistent.
+    Note that the 1330 keV peak is shifted rightwards along the x-direction by 0.1 for clarity.}
+    \label{fig:Co60_towers}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/Po210AllTowers.pdf}
+    \caption[The rates of the Po-210 contaminations on the towers including the Q-value and $\alpha$ peaks.]
+    {The rates of the Po-210 contaminations on the towers including the Q-value and $\alpha$ peaks.
+    There is significant spread in the Po-210 rates along the towers, likely corresponding to the age of the towers ($T_{1/2}=$138 days) and contaminations during crystal growth.}
+    \label{fig:po210_towers}
+\end{figure}
+
+Unfortunately, many of these studies of these sources are currently statistics-limited, and CUORE lacks the data to perform a full analysis to characterize each of these asymmetric background sources.
+For example, with a year of live time, a 1 $\mu$Hz rate on a channel corresponds to merely approximately 30 expected events.
+Therefore, for now with the \livetime~of data in CUORE, there are a few candidates that are apparent, such as the excess of $^{40}$K events on tower 12, but precisely defining and locating these exact sources remains out of reach at present.
+That said, while a fully complete background model would include these sources, these geometrical differences can be treated as a systematic in the fits produced by the data.
+This is achieved by selecting data according to various geometrical subsets of the data, e.g. by fitting only odd/even floors or by odd/even towers, since the rates for Majoron emission are independent of the particular tower geometry.
+
+\subsubsection*{Creating the Background Model}
+
+The sum of each of the background sources in CUORE forms the background model of the experiment.
+The model can therefore be written as a sum of the normalizations of each of the $M$ Monte Carlo spectra as
+\begin{align}
+    B_\alpha &= \sum_j^N C_{j} \cdot M_{j,\alpha} 
+\end{align}
+where the $B_{\alpha}$ is the background model for multiplicity $\alpha$, $C_{j}$ is the normalization factor for the $j^{\textrm{th}}$ simulated spectra, and similarly $M_{j,\alpha}$ is the number of counts in the $j^{\textrm{th}}$ simulated spectrum for the same multiplicity $\alpha$.
 
 
+\begin{table}[htbp]
+    \centering
+    \caption[The background model components for CUORE]
+    {The background model components for CUORE.
+    The surface contaminations are modeled at multiple depths as some sources exhibit differing spectra at shallower or deeper depths.}
+    \label{tab:background_model_list}
+\begin{tabular}{l|l|l}
+\hline
+\hline
+Volume  & Type & Components \\
+\hline
+\multirow{2}{*}{TeO$_2$} & \multirow{2}{*}{Bulk} & $2\nu\beta\beta$, $^{210}$Pb, $^{232}$Th, $^{228}$Ra - $^{208}$Pb, $^{238}$U-$^{230}$Th, \\
+ & & $^{230}$Th, $^{226}$Ra-$^{210}$Pb, $^{40}$K, $^{60}$Co $^{125}$Sb, $^{190}$Pt \\
+ \hline
+\multirow{3}{*}{TeO$_2$} & Surface (0.01\mu m) & $^{232}$Th, $^{228}$Ra - $^{208}$Pb, $^{238}$U-$^{230}$Th, $^{226}$Ra-$^{210}$Pb, $^{210}$Pb \\
+        & Surface (1~$\mu$m) & $^{210}$Pb \\
+        & Surface (10~$\mu$m) & $^{210}$Pb, $^{232}$Th, $^{238}$U \\
+\hline
+CuNOSV & Bulk & $^{232}$Th, $^{238}$U, $^{40}$K, $^{60}$Co, $^{40}$Mn \\
+\hline
+\multirow{3}{*}{CuNOSV}& Surface (0.01 $\mu$m) & $^{210}$Pb, $^{232}$Th, $^{238}$U \\
+    & Surface (1 $\mu$m) & $^{210}$Pb, $^{232}$Th, $^{238}$U \\
+    & Surface (10 $\mu$m) & $^{210}$Pb, $^{232}$Th, $^{238}$U \\
+\hline
+Roman Lead & Bulk & $^{232}$Th, $^{238}$U, $^{108m}$Ag \\
+Top Lead & Bulk & $^{232}$Th, $^{238}$U, $^{210}$Bi \\
+Ext Lead & Bulk & $^{210}$Bi \\ 
+\hline
+CuOFE & Bulk & $^{232}$Th, $^{238}$U, $^{60}$Co \\
+\hline
+External & & Cosmic $\mu$ \\
+\hline
+\hline
+\end{tabular}
+\end{table}
 
 \section{Markov Chain Monte Carlo}
 \label{sec:MCMC}
-Performing a simultaneous fit of $60+$ spectra is a non-trivial challenge, particularly as each component to the fit is comprised of a 
+Performing a simultaneous fit of $60+$ spectra is a non-trivial challenge, particularly as each component to the fit is generally composed of a spectrum that can span a range from a few keV up to multiple MeV. 
+However, Markov Chain Monte Carlo provides a tractable solution to this computationally difficult multidimensional fit.
+This method can be thought of as performing a random walk in the available parameter space that minimizes a likelihood estimator such as the standard
+\begin{equation}
+\label{eq:chi_squared}
+\chi^2=\sum_i \frac{(O_i-E_i)^2}{E_i}
+\end{equation}
+likelihood, where $O_i$ and $E_i$ are the observed and expected counts in the $i^{\textrm{th}}$ bin.
 
-
-The method used for performing this fit to the data is Markov Chain Monte Carlo (MCMC).
-This method can be thought of as performing a random walk in the available parameter to determine the best fit to the data.
 This random walk then samples the joint posterior probability distribution function of the model parameters of the MCMC.
  
 To perform this fit, we use a program called Just Another Gibbs Sampler (JAGS)\footnote{\RaggedRight\url{http://mcmc-jags.sourceforge.net/}}.
