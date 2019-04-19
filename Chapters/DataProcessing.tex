@@ -32,7 +32,7 @@ As one of the critical parameters for CUORE is the sensitivity at the \zeronubb~
 This is achieved by first setting the bias on each of the NTDs.
 At low bias, the signal amplitude depends linearly on the bias, but, at high bias, the temperature of the NTD increases, which affects the resistance and sensitivity of the NTD to signal.
 In addition, different levels of bias induce various other effects on the noise, and the signal-to-noise ratio is not necessarily maximized when the amplitude is maximized.
-In these scenarios, the bias is set to be when the SNR is maximized which is generally higher than the bias that maximizes the amplitude.
+In these scenarios, the bias is set to be when the Signal-to-Noise Ratio (SNR) is maximized which is generally higher than the bias that maximizes the amplitude.
 However, if the SNR is maximized, but a high bias makes the baseline unstable, the bias is instead lowered to the bias that maximizes the amplitude \cite{Lucia:LoadCurvesDoc}.
 Following setting the bias for each channel, the gain and offset are then set for each channel such that a 2615 keV signal returns a 1-2 V amplitude and that events with energies up to 10-20 MeV can be recorded.
 Given that the ADC range is -10 V to 10 V, an offset of $-4$ to $-7$ V is used which allows for the higher-energy events to be observed, while preventing a drifting baseline from saturating the ADC low.
@@ -75,18 +75,52 @@ For energies near the \zeronubb Q-value, and 2615 keV peak, these energies are a
 \subsection*{First-Level Processing}
 The first level of processing involves the steps required to assign energies to the pulses and then the blinding of the \zeronubb~ROI.
 While this blinding is applied in every step of the analysis chain, this blinding procedure is not performed for the background model and Majoron searches, and will not be discussed in this thesis.
+
 \subsubsection*{Bad Intervals}
 Firstly, after the data is collected by \textsc{Apollo}, bad intervals are then applied to the data to subtract out times when the data are noisy or otherwise unsuitable for analysis, such as when the baselines saturate low or high, when a mechanical or electronic malfunction causes instability of the detector baseline, or during an earthquake.
 Depending on the source of the issue, these bad intervals can be set channel-by-channel or detector-wide, and can be set either by an automatic tool that detects these times, or manually by an analysis shifter.
+
 \subsubsection*{Preprocess}
-We prepare stuff for real processing
+Before processing each event, we first ``preprocess" to determine the detector state before the event occurs and to determine how many pulses are included in each trigger.
+This is done by fitting the first 2.25 seconds of the data before a trigger and fit a line to determine the average baseline and the baseline slope.
+In addition, the baseline noise is defined as the RMS of the data.
+Then, the number of pulses in the event is determined by taking a smoothed derivative of the pulse and searching for locations where the derivative is over 5 times that of the RMS with only positive pulses counted.
+
 \subsubsection*{Amplitude Evaluation}
-We calculate the height of the peaks
+Next, the amplitude of each event is calculated through a modeled waveform,
+\begin{align}
+    v_i(t) = \bar{A}_i\cdot s_i(t) + n_i(t) + b
+    \label{eq:pulse function}
+\end{align}
+for each bolometer $i$ where $\bar{A}_i$ is the amplitude of the pulse, $s_i(t)$ is the signal response, $n_i(t)$ is the noise, and $b$ is the baseline \cite{Alduino:2016zrl}.
+The amplitude $A$ can, to good approximation, be considered as
+\begin{align}
+    \bar{A}_i = G_i(T)\cdot A_i(E)
+\end{align}
+with $G_i(T)$ being the bolometric gain due to the temperature of the NTD and the setting of the working point, and $A_i(E)$ being the ``true" energy-dependent amplitude of the pulse from an energy deposition.
+To determine the signal response, a ``standard" set of pulses are used to evaluate an averaged pulse.
+This averaging is done with two sets of data: first, the heater pulses are used, and then, after the channels have been calibrated, pulses at the $^{208}$Tl 2615 keV peak are used.
+Average pulses are determined by taking the pulses in data for each channel with $>40\times$ the baseline RMS and averaging out the pulse shapes.
+This averaging removes any independent noise sources in $n_i(t)$ and allows for a measurement of $s_i(t)$.
+The next step is to reduce the noise term further, as the noise here directly affects the detector resolution.
+This is done via an optimum filter that converts the input voltage to frequency to maximize the SNR given the $s_i$ from averaging the pulses and an average noise power spectrum from the triggered noise events \cite{Gatti1986}.
+This filter takes \autoref{eq:pulse function} into frequency space as
+\begin{align}
+    O_i(\omega)=\frac{S_i^\star(\omega)}{N_i(\omega)}e^{i\omega t_{\textrm{max}}}V_i(\omega)
+\end{align}
+where $S_i(\omega)$ and $V_i(\omega)$ are the Fourier transforms of their counterparts in \autoref{eq:pulse function}, $N_i$ is the noise power spectral density, and $t_\textrm{max}$ is the time where the pulse amplitude is highest.
+With this filtered pulse, the height of the pulse is extracted by finding the first maximum in the filtered pulse and fitting a 2nd-order polynomial.
+This maximum is then used as the pulse amplitude\footnote{While, in principle, the pulse area could also be used to determine the energy of each pulse, using the height yields the best energy resolution.
+This can be understood as the SNR is maximized as only the noise at the maximum amplitude factors into the resolution instead of integrating the noise when evaluating the pulse area.}.
+
 \subsubsection*{Stabilization}
-Need to stabilize at different baselines
 \label{ssec:Stabilization}
 
-The energy dissipated in the silicon heater transfers into the bolometer similarly how a real energy deposition would look in a physics event, and allows for us to understand the response of the detector to fixed-energy input across various detector baselines as the temperature of the detectors drifts \cite{ALESSANDRELLO1998454:Si-heater}.
+While the temperatures of the bolometers are generally quite stable over a dataset, not every pulse happens with the crystals at precisely the same temperature.
+As noted previously in \autoref{ssec:Particle Detection with Bolometers} and above, the resistances of the NTDs are a function of temperature, and this directly affects the measured height of the pulses.
+To resolve this issue, the Si heaters are used to provide a temperature-independent pulse that allows for a measurement of $G_i(T)$.
+As the energy dissipated in the silicon heater transfers into the bolometer similarly how a real energy deposition would look in a physics event, we then apply a fixed-energy input \cite{ALESSANDRELLO1998454:Si-heater} at regular intervals.
+Using these known heater pulses, a linear fit is applied to the amplitudes of these pulses relative to their baselines.
 
 \subsubsection{Calibration}
 How do we tell that different calibration rates are correct?
