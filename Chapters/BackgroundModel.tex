@@ -79,18 +79,31 @@ This is achieved by selecting data according to various geometrical subsets of t
 \subsubsection*{Creating the Background Model}
 
 The sum of each of the background sources in CUORE forms the background model of the experiment.
-The model can therefore be written as a sum of the normalizations of each of the $M$ Monte Carlo spectra as
+The model can therefore be written as a sum of the normalizations of each of the $N$ Monte Carlo spectra as
 \begin{align}
     B_\alpha &= \sum_j^N C_{j} \cdot M_{j,\alpha} 
 \end{align}
-where the $B_{\alpha}$ is the background model for multiplicity $\alpha$, $C_{j}$ is the normalization factor for the $j^{\textrm{th}}$ simulated spectra, and similarly $M_{j,\alpha}$ is the number of counts in the $j^{\textrm{th}}$ simulated spectrum for the same multiplicity $\alpha$.
-
+where the $B_{\alpha}$ is the background model for the data splitting $\alpha$\footnote{Generally speaking, this splitting is typically done according to the multiplicity, viz. M1, M2, etc. spectra, but can also include other splittings as well.}, $C_{j}$ is the normalization factor for the $j^{\textrm{th}}$ simulated spectra, and similarly $M_{j,\alpha}$ is the number of counts in the $j^{\textrm{th}}$ simulated spectrum for the same multiplicity $\alpha$.
+In a Bayesian approach, the goal of creating the background model is to then define a joint posterior pdf defined by
+\begin{align}
+\begin{split}
+        Posterior(C_j, \langle M_{j,\alpha}\rangle|B_\alpha, M_{j,\alpha}) = \prod_\alpha Poisson(B_\alpha|\langle M_{j,\alpha}\rangle)\times \prod_j Prior(C_j) \\ \times \prod_{j, \alpha}Poisson(M_{j,\alpha}|\langle M_{j,\alpha}\rangle) \times Prior(\langle M_{j,\alpha}\rangle)
+\end{split}
+\end{align}
+where $\langle x \rangle$ is the expectation value of $x$, $Poisson(x|y)$ is the Poisson probability of observing $x$ with mean $y$, and $Prior(x)$ is the prior distribution of $x$.
+This somewhat intimidating posterior is merely just a rewriting of Bayes' theorem, given that both the real and simulated data both obey Poisson statistics and that a prior is included on each of these parameters.
+Of course, in Bayesian statistics, everything comes down to the choice of priors\footnote{\RaggedRight A cute caricature of which is described here: \url{https://xkcd.com/1132/}}.
+As discussed in \autoref{ssec:Parts Selection and Cleaning} and \autoref{ssec:Cryostat_Radiopurity}, these measurements of background activity in the fit could begin to constrain a few of the priors for $C_j$ used, but, even with upper limits, a choice needs to be made about the form of these priors.
+For this analysis then, the form for these priors is chosen to be a uniform non-informative prior that covers a large range from 0\footnote{Naturally, having a contribution produce a negative addition to the spectrum is unphysical, but this does introduce a slight positive fit bias.} to a significant overestimation of the contribution to the background model.
+Lastly, this background model is, in order to simplify the fitting and to reduce the effect of other systematics, treated as a binned analysis with varying bin size.
+In particular, while the bin size is set to a minimum width of 15 keV, the regions around each $\gamma$ or $\alpha$ peak are merged into a single bin in order to remove systematic uncertainties due to the particular shape of the peak, and, in addition, bins with $<30$ counts are also merged to reduce the effect of statistical fluctuations.
+This binning is then used to set the maximum value of the uniform prior for each of the counts as the
 
 \begin{table}[htbp]
     \centering
     \caption[The background model components for CUORE]
     {The background model components for CUORE.
-    The surface contaminations are modeled at multiple depths as some sources exhibit differing spectra at shallower or deeper depths.}
+    The surface contaminations are modeled at multiple depths as some sources exhibit differing spectra at shallower or deeper depths. \color{red}Add Sm-147?\color{black}}
     \label{tab:background_model_list}
 \begin{tabular}{l|l|l}
 \hline
