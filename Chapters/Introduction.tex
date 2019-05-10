@@ -18,11 +18,11 @@ This indeed is the main question addressed in this thesis, and has been a topic 
 \section{The Standard Model}
 \subsection{Overview}
 Since the days of Newton, physics has come a long way in describing the fundamental building blocks of nature.
-Currently, a theory developed in the 1960's known as the Standard Model of particle physics is the main explanation for physical phenomena and has correctly predicted the existence of multiple particles, most recently the Higgs boson \cite{Aad:2012tfa}\cite{Chatrchyan:2012xdj}.
+Currently, a theory developed in the 1960's known as the Standard Model of particle physics is the main explanation for physical phenomena and has correctly predicted the existence of multiple particles, most recently the Higgs boson \cite{Aad:2012tfa, Chatrchyan:2012xdj}.
 The Standard Model is one of the most powerful theories in physics, and together with $\Lambda$CDM in cosmology, has been able to correctly predict phenomena on both subatomic and cosmological scales.
 
 The Standard Model divides the universe into two main types of particles: the particles that make up the matter around us, called fermions, and the particles that mediate the fundamental forces of nature, called bosons.
-This splitting comes from the spins of the particles, viz., as particles with half-integer spin are labelled as fermions, and particles with integer spins are labelled as bosons
+This splitting comes from the spins of the particles, as particles with half-integer spin are labelled as fermions, and particles with integer spins are labelled as bosons
 This classifications can be further broken down for the fermions into two more sub-types of particles: quarks and leptons.
 The full list of the fermions and bosons in the Standard Model is shown in \autoref{fig:StandardModel}.
 However, the Standard Model does more than merely classify these particles found in nature, it also describes how each of these quarks and leptons interact with one another via the gauge bosons.
@@ -39,7 +39,7 @@ The Higgs boson, while also a boson, does not mediate a force, but instead arise
 \subsection{Leptons}
 Of greatest interest here for the work in this thesis are the particles known as leptons.
 These leptons come in 6 flavors: the electron, muon, tau, electron neutrino, the muon neutrino, and the tau neutrino.
-These particles interact with one another via the W and Z bosons which is discussed in more detail in \autoref{sec:Beta Decay}. 
+These particles interact with one another via the W and Z bosons and is discussed in more detail in \autoref{sec:Beta Decay}. 
 When the Standard Model was first introduced in the 1960's, the neutrinos were assumed to be massless.
 This was due to the fact that, as shown in \autoref{fig:NeutrinoMasses}, the masses of neutrinos are at least a million times lighter than the next-lightest particle, the electron with mass $0.511 \textrm{MeV}$
 \footnote{Natural units, e.g. $c=1$ and $\hbar=1$, will be used throughout this thesis.
@@ -58,9 +58,9 @@ The neutrinos are multiple orders of magnitude lighter than even their lightest 
 
 \subsubsection*{Neutrino Masses and Oscillation}
 \label{ssec:NeutrinoMassesandOscillation}
-Neutrinos were shown to have mass, however, after they were observed to oscillate between their generational counterparts, viz. $\nu_{\textrm{\alpha}} \leftrightarrow \nu_{\textrm{\beta}}$, where $\alpha$ and $\beta$ correspond to two different flavor states of the neutrino \cite{PhysRevLett.20.1205}\cite{Hatakeyama:1998ea}\cite{Ahmad:2001an}.
+The assumption that neutrinos were massless was shown to be incorrect, however, after they were observed to oscillate between their generational counterparts, namely $\nu_{\textrm{\alpha}} \leftrightarrow \nu_{\textrm{\beta}}$, where $\alpha$ and $\beta$ correspond to two different flavor states of the neutrino \cite{PhysRevLett.20.1205, Hatakeyama:1998ea, Ahmad:2001an}.
 Not only does this phenomenon imply that the neutrinos have non-zero mass, it also shows that the neutrino flavor eigenstates are not equivalent to their mass eigenstates.
-This transformation between the flavor and mass bases can be represented as a matrix, called the Pontecorvo–-Maki–-Nakagawa–-Sakata (PMNS) matrix as follows:
+This transformation between the flavor and mass bases can be represented as a matrix, called the Pontecorvo–-Maki–-Nakagawa–-Sakata (PMNS) matrix 
 
 \begin{equation}\label{eq:PMNS Matrix U Form}
 \begin{bmatrix}
@@ -78,9 +78,9 @@ This transformation between the flavor and mass bases can be represented as a ma
   	\nu_{1} \\
 	\nu_{2} \\
 	\nu_{3}
-  \end{bmatrix}.
+  \end{bmatrix}
   \end{equation}
-
+which unitarily transforms between the two bases.
 In this formalism, the probability for measuring an electron neutrino to have the mass associated with the $\nu_1$ state is $|U_{e1}|^2$. The notation usually used to differentiate the $\nu_1$, $\nu_2$, and $\nu_3$ states is in decreasing order of the probability for a $\nu_i$ state to be observed in a $\nu_e$ state.
 These probabilities are shown in \autoref{fig:Oscillations_electron_long}.
 The PMNS matrix in \autoref{eq:PMNS Matrix U Form} can also be written as follows: 
@@ -162,16 +162,16 @@ For this plot, $\delta_{CP}$ has been set to zero for illustrative purposes, but
 Even with the latest data from neutrino oscillation experiments, the exact masses of the neutrinos cannot be determined.
 This can be seen in \autoref{eq:OscillationProbability_2nu} where only the relative masses of the neutrinos play a role, not their absolute masses. 
 Other data, however, can set limits on the absolute mass scale of the neutrinos.
-Using data derived from the Cosmic Microwave Background and Baryon Acoustic Oscillations \cite{refId0}, the sum of the neutrino masses can be limited to, at 95\% C.L., $\sum_j m_j < 0.170~\textrm{eV}$, but there are existing models of neutrino mass generation where this result may not effectively constrain the neutrino mass \cite{Koksbang:2017rux} \cite{PhysRevLett.94.111801}.
+Using data derived from the Cosmic Microwave Background and baryon acoustic oscillations \cite{refId0}, the sum of the neutrino masses can be limited to, at 95\% C.L., $\sum_j m_j < 0.170~\textrm{eV}$, but there are existing models of neutrino mass generation where this result may not effectively constrain the neutrino mass \cite{Koksbang:2017rux} \cite{PhysRevLett.94.111801}.
 Results from direct mass measurement experiments such as the Troitsk and Mainz experiments limit the electron antineutrino mass to, at 95\% C.L., $m_{\bar{\nu}_e} < 2.05~\textrm{eV}$ and $m_{\bar{\nu}_e} < 2.3~\textrm{eV}$, respectively \cite{Aseev:2011dq} \cite{Kraus:2004zw}, in a model-independent way.
 Other upcoming experiments, KATRIN and Project 8, aim to measure these values with sensitivity up to 0.20 eV  and 0.04 eV, respectively \cite{Robertson:2013ziv} \cite{Esfahani:2017dmu}.
 
 Another reason that \autoref{eq:OscillationProbability_2nu} is insensitive to the neutrino masses comes from the fact that the probabilities are unaffected by the sign of $\Delta m^2$.
 However, this probability is for the propagation of a neutrino through vacuum, but in matter-dense regions, such as the sun, this probability is no longer correct.
-This Mikheyev-Smirnov-Wolfenstein effect has been observed in solar neutrino measurements and allows for the determination that $\Delta m_{21}^2>0$ \cite{1367-2630-6-1-139}.
+This Mikheyev-Smirnov-Wolfenstein effect has been observed in solar neutrino measurements and allows for the determination that $\Delta m_{21}^2>0$ \cite{1367-2630-6-1-139, PhysRevD.17.2369}.
 The sign of $\Delta m_{32}^2$ is still unknown, although long-baseline experiments of neutrino oscillation through the Earth aim to determine this effect.
 Because of this, there are two possible scenarios for neutrino mass ordering, either $m_1 < m_2 < m_3$, called Normal Hierarchy (NH), or $m_3 < m_1 < m_2$, called Inverted Hierarchy (IH), shown in \autoref{fig:neutrinosfigs3nuspic}.
-Recent results from the NOvA experiment point towards a NH Universe, but nothing yet to conclusively answer this question. \cite{Adamson:2017gxd}.
+Recent results from the NOvA experiment point towards a NH Universe, but there is nothing yet to conclusively answer this question. \cite{Adamson:2017gxd}.
 \begin{figure}[tbph]
 \centering
 \includegraphics[width=0.8\linewidth]{Figures/Neutrinos_figs_3nuspic.png}
@@ -243,7 +243,7 @@ One of the simplest methods in which the observed mass of the neutrinos could be
 This name is derived from the fact that, in this model, the left-handed light neutrinos are balanced out by the existence of more massive particles.
 There are two main types of models for this mechanism, called the type-I and type-II seesaw mechanisms.
 In the type-I seesaw mechanism, shown in \autoref{fig:TypeISeesawMechanism}, the neutrino mass is generated through fermion exchange, e.g. with the addition of heavy right-handed neutrinos, and in the type-II mechanism, shown in \autoref{fig:TypeIISeesawMechanism}, scalar boson exchange generates the neutrino mass.
-The model most commonly considered in the field of \zeronubb is the type-I seesaw mechanism and is discussed in greater detail in \autoref{sec:Neutrinoless Double Beta Decay}.
+The model most commonly considered in the field of \zeronubb~is the type-I seesaw mechanism and is discussed in greater detail in \autoref{sec:Neutrinoless Double Beta Decay}.
 \begin{figure}[tbph]
 \centering
 \includegraphics[width=0.40\linewidth]{Figures/TypeISeesaw.png}
@@ -275,14 +275,14 @@ Taking $m_D$ to be $\approx1~\textrm{MeV}$, a meV-scale neutrino exists with a h
 
 \section{Baryogenesis}
 If the neutrino is demonstrated to have a Majorana mass, there are possible far-reaching implications to the evolution of the early universe.
-In particular, after the Big Bang, matter and antimatter should have been produced in equal amounts; however, the matter in the universe has won out over the antimatter, evidenced by measurements of the observable universe showing that is is purely matter on large scales.
+In particular, after the Big Bang, matter and antimatter should have been produced in equal amounts; however, the matter in the universe dominates the antimatter, evidenced by measurements of the observable universe showing that is is purely matter on large scales.
 For example, if there were antimatter galaxies or sectors of the universe, we would be able to observe large releases of energy due to matter-antimatter annihilation from collisions of galaxies or if there were an antimatter-dominated region of the universe due to annihilations at the border between the matter and antimatter regions.
 This implies that the universe has a preference for slightly more baryons than antibaryons \cite{Canetti:2012zc}.
 The requirements for a process to create this asymmetry are summed up in the Sakharov conditions for baryogenesis \cite{Sakharov:1967dj}:
 \begin{enumerate}
-\item Baryon number, B, violation
-\item Charge, C, and Charge Parity, CP, violation
-\item Interactions out of thermal equilibrium
+\item Violation of baryon number, B
+\item Violation of charge, C, and charge parity, CP
+\item The asymmetry needs to be generated out of thermal equilibrium
 \end{enumerate}
 The first condition is needed so that there is a physics process within which a baryon can be created or an anti-baryon destroyed.
 Assigning baryons such as protons and neutrons $\textrm{B}=1$, antibaryons $\textrm{B}=-1$, and non-baryonic matter $\textrm{B}=0$, this constraint can be written as $\Delta \textrm{B}\neq0$.
@@ -290,14 +290,16 @@ On its own, baryon number violation is not enough to create an imbalance between
 Therefore, the second condition requires that a process with $\Delta\textrm{B}\neq0$ occurs more often for baryon creation or anti-baryon destruction than the reverse, i.e., $\Gamma(\Delta \textrm{B}>1) > \Gamma(\Delta \textrm{B}<-1)$.
 Finally, the third condition requires that the process has to occur when the universe is not in thermal equilibrium as other processes would have to oppose whatever process satisfies the first two Sakharov conditions due to CPT (charge, parity, and time reversal) symmetry.
 
-Therefore, in order to determine what caused the universe to evolve from equal parts matter and antimatter into the matter-dominated universe we see today, processes which satisfy all three Sakharov conditions are needed. In the framework of the Standard Model, Baryon number is not a fundamental symmetry such as electric charge and is merely an ``accidental" symmetry of the Lagrangian without an associated mediator like the photon.
-While baryon number cannot be violated classically in the Standard Model Lagrangian, quantum effects, viz. sphaleron processes, may violate it \cite{PhysRevLett.37.8} \cite{KUZMIN198536}, and, while these effects satisfy the other two Sakharov conditions, do not have enough of an effect to explain the measured asymmetry,
+Therefore, in order to determine what caused the universe to evolve from equal parts matter and antimatter into the matter-dominated universe we see today, processes which satisfy all three Sakharov conditions are needed.
+In the framework of the Standard Model, Baryon number is not a fundamental symmetry such as electric charge and is merely an ``accidental" symmetry of the Lagrangian without an associated mediator like the photon.
+While baryon number cannot be violated classically in the Standard Model Lagrangian, quantum effects, namely sphaleron processes, may violate it \cite{PhysRevLett.37.8, KUZMIN198536}.
+While these effects satisfy the other two Sakharov conditions, there is enough of an effect to explain the measured asymmetry,
 \begin{align}
-\Delta &= \frac{N_B - N_{\bar{B}}} {N_B + N_{\bar{B}}} \biggr\rvert_{T \gtrsim 1~\textrm{GeV}},
+\Delta &= \frac{N_B - N_{\bar{B}}} {N_B + N_{\bar{B}}} \biggr\rvert_{T \gtrsim 1~\textrm{GeV}}
 \label{eq:BAU_earlyuniverse}
 \end{align}
-where $N_B$ and $N_{\bar{B}}$ are the number of baryons and anti-baryons, respectively, when the asymmetry formed with the universe at a temperature of approximately 1 GeV.
-This Baryon Asymmetry in the Universe (BAU) can be inferred from the current abundance of baryons and photons in the universe at the current temperature of 0.2 meV.
+where $N_B$ and $N_{\bar{B}}$ are, respectively, the number of baryons and anti-baryons, when the asymmetry formed with the universe at a temperature of approximately 1 GeV.
+This baryon asymmetry in the Universe can be inferred from the current abundance of baryons and photons in the universe at the current temperature of 0.2 meV.
 In this way, \autoref{eq:BAU_earlyuniverse} can be written as
 \begin{align}
     \Delta &\sim \eta = \frac{N_B}{N_\gamma} \biggr\rvert_{T = 0.2 meV}
@@ -308,7 +310,7 @@ Calculations from fitting parameters due to Big Bang Nucleosynthesis from the ab
 However, the contributions to $\eta$ from Standard Model processes predict an $\eta$ of $10^{-20}$, far below the observed value.
 
 \subsection{Majorana Neutrinos and Leptogenesis}
-However, these sphaleron processes conserve another symmetry, viz. $\textrm{B}-\textrm{L}$, where L is the lepton number and has similar rules to the baryon number described above.
+However, these sphaleron processes conserve another symmetry, namely. $\textrm{B}-\textrm{L}$, where L is the lepton number and has similar rules to the baryon number described above.
 Therefore, a place to look for baryon number violation may be in the lepton sector.
 In this case, the imbalance between matter and antimatter is due to an imbalance in leptons that transfers over to the baryons.
 This `leptogenesis' would have to fulfill an analogous set of Sakharov conditions to that described above.
@@ -318,8 +320,9 @@ This violation is possible if the neutrino is its own antiparticle, for example,
 \includegraphics[width=0.35\linewidth]{Figures/0NuBB_clip.pdf}
 \caption[The Feynman diagram for a lepton-number violating process.]
 {The Feynman diagram for a lepton-number violating process.
-Two down quarks convert to up quarks and emit a $\textrm{W}^{-}$ boson which exchange a neutrino and emit an electron.
-This process is possible only if the neutrino is its own antiparticle.}
+Two down quarks each convert to an up quark and emit a $\textrm{W}^{-}$ boson.
+The two $\textrm{W}^{-}$ bosons then exchange a neutrino and emit an electron.
+Note that this process is possible only if the neutrino is its own antiparticle.}
 \label{fig:0nuBB}
 \end{figure}
 This method of lepton number violation would then also be associated with a baryon number violating process with $\Delta\textrm{B}=2$ as well.

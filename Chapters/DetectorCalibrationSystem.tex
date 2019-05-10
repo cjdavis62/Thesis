@@ -37,7 +37,7 @@ Figure from \cite{Cushman:2016cnv}.}
 
 \section{Calibration Hardware}
 
-The DCS can be divided into a few separate hardware components: the 12 source strings, the 12 sets of guide tubes for the string in the cryostat, the 4 motion boxes, the 4-K thermalization system, and the cabling for the software control system.
+The DCS can be divided into a few separate hardware components: the 12 source strings, the set of guide tubes for each string, the 4 motion boxes, the 4-K thermalization system, and the cabling for the software control system.
 Each of these sets of components has different technical challenges, particularly for the calibration tubes nearest to the detectors that have stringent radioactivity requirements, and are described in more detail in this section.
 
 \subsection*{Calibration Source Strings}
@@ -159,7 +159,7 @@ However, a known issue with load cells is that they have significant thermal dri
 The load cell is read out through an electrical feedthrough on the spool and the output signals are filtered, amplified, and digitized.
 The last two components on the drive spool are used for interlocks on the system.
 The home limit switch is lever with a hole sized to allow source capsules but not weight capsules through.
-When the weight capsules attempt to pass up through the lever, it triggers the switch and allows for the the string to say partially unwound from the spool, in addition to being the position that the source strings are left between calibrations.
+When the weight capsules attempt to pass up through the lever, it triggers the switch and allows for the the string to stay partially unwound from the spool, in addition to being the position that the source strings are left between calibrations.
 The last component on the drive spool is a PTFE guide that connects to a microswitch that triggers when the tension in the string becomes too high, around 0.5 N.
 This switch is not used during normal operation of the DCS, but activates in the case that the string becomes caught while extracting and experiences a rapid rise in tension that an operator cannot react quickly enough to.
 In addition, this interlock directly shuts down the hardware that runs the motor and kills any motion, protecting the string in the case of user or software error.
@@ -274,7 +274,7 @@ That said, the Kevlar will also have a significant thermal gradient from 300 K t
 Therefore, the main efforts for cooling and thermalizing the source strings as they are deployed in the cryostat is focused on the copper capsules.
 To effect this cooling on the source strings, multiple methods are used. 
 As noted in \autoref{ssec:Guide Tubes}, one of the ways this is achieved is by contact with the guide tubes at varying thermal stages.
-This cooling, however, is limited by the angle of the tube as steeper angles provide less contact with the source capsule, although the chicanes on the 600-mK guide tubes mintage this effect and provide a stronger contact with the guide tube.
+This cooling, however, is limited by the angle of the tube as steeper angles provide less contact with the source capsule, although the chicanes on the 600-mK guide tubes mitigate this effect and provide a stronger contact with the guide tube.
 An addition limitation on the cooling is by the temperature of the guide tubes themselves, as warm capsules will warm up the tubes and reduce the cooling provided until the tubes thermalize back to their nominal value.
 However, the main cooling mechanism used is from 4 copper thermalizers, one for each motion box, which are located at the 4-K plate, shown in \autoref{fig:DCS_4K_schematic}.
 
@@ -524,7 +524,7 @@ Since this procedure takes hours to complete, this is done in two stages.
 First, there is a precooling stage, where the 12 calibration source strings are deployed into the cryostat from the motion boxes to a position where the weight capsules of each string are midway through the thermalizer.
 Then, the thermalizer is closed on the string overnight, enabling the strings to cool down through contact with the walls of the s-tubes.
 The second stage of deployment begins after the precooling stage completes. Then, two of the strings from each motion box are moved back out of the thermalizer, while the string that has been in the thermalizer begins its thermalization steps.
-After the thermalizer has squeezed on each of the capsules on a string in succession, the string is moved $\approx5$ downwards out of the thermalizer for the thermalization on the next string to commence.
+After the thermalizer has squeezed on each of the capsules on a string in succession, the string is moved $\approx5$ cm downwards out of the thermalizer for the thermalization on the next string to commence.
 Now, two strategies are used to deploy the strings from the thermalizers.
 In one strategy, strings are be deployed into the detector region while the 4-K thermalization steps continue, and, in the other, the strings are deployed only after all the 4-K thermalization steps have been completed.
 In the strategy where the thermalizers are active during detector region deployments, the time it takes to deploy is approximately 20 hours from the start of thermalization after precooling.
@@ -548,7 +548,7 @@ Initially, the cause of this was believed to be due to leaky gate valves under t
 In addition, another problem appears when the inner source strings reach the vertical detector region guide tubes.
 For these strings, some of them are unable to fully deploy down through these tubes and behave as if there is increased friction between the capsules and the tubes that prevents their continued downwards motion.
 This stops four of the inner source strings at different locations in the detector region guide tubes, and two of the six have been entirely unaffected by it.
-This issue was never seen during test deployments with the cryostat at room temperature, and given its reproducity, seems to be an issue with unexpectedly high friction along the guide tubes, either in the detector region or above.
+This issue was never seen during test deployments with the cryostat at room temperature, and given its reproducibility, seems to be an issue with unexpectedly high friction along the guide tubes, either in the detector region or above.
 Altogether, these two issues cause the performance of the DCS to worsen considerably from that shown in \autoref{fig:FullString_50counts}.
 
 In all, the DCS has been used to calibrate the detectors four times to open and close datasets in 2017 and twice in 2018.
