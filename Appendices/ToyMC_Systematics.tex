@@ -27,7 +27,7 @@ The generation and fitting procedure for Toy Monte Carlo can be summed up with t
 \item See how parameters from $H_0$ compare with $H_i$
 \end{enumerate}
 
-In the case for \autoref{sec:Fit Biases} and \autoref{sec:Systematic Calculations}, this process is slightly different. There, the model needs to be perturbed in some manner when generating the data, so \autoref{item:generate} would then include an alteration of $H_0$ to a new model $H_1$ where the parameter has been perturbed.
+In the case for \autoref{ssec:Fit Biases} and \autoref{ssec:Systematic Calculations}, this process is slightly different. There, the model needs to be perturbed in some manner when generating the data, so \autoref{item:generate} would then include an alteration of $H_0$ to a new model $H_1$ where the parameter has been perturbed.
 
 Also, the choice of the model to use $H_0$ can be up for some debate. In order to keep the analysis blinded, it is important to finalize the method used beforehand. While for the first PRL paper, we decided to use the fit to data with the signal rate fixed to zero (the null hypothesis) as the base fit to use to calculate all the systematics, it would be better to use the fit to the data with a floating signal rate as the base fit to calculate systematics. Naturally, to evaluate the p-value, one should use the null hypothesis model.
 
@@ -71,7 +71,7 @@ The value from the fit to real data is marked in red.}
 
 
 \subsection*{Fit Biases}
-\label{sec:Fit Biases}
+\label{ssec:Fit Biases}
 As mentioned previously, another use of the Toy MC is to determine bias to the fits.
 In particular, in a fit to Toy MC generated without any signal ought to reconstruct, on average, zero signal with a roughly gaussian shape.
 Any deviation from zero in this case can be detected by finding the mean of the distribution of signal rates from the ToyMC and by determining the distribution of the pulls of the rates, shown in \autoref{fig:signalrate} and \autoref{fig:signalpulls} respectively.

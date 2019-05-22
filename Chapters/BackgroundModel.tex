@@ -79,7 +79,7 @@ This is achieved by selecting data according to various geometrical subsets of t
 \subsubsection*{Creating the Background Model}
 
 The sum of each of the background sources in CUORE forms the background model of the experiment.
-The model can therefore be written as a sum of the normalizations of each of the $N$ Monte Carlo spectra as
+The model can be written as a sum of the normalizations of each of the $N$ Monte Carlo spectra as
 \begin{align}
     B_\alpha &= \sum_j^N C_{j} \cdot M_{j,\alpha} 
 \end{align}
@@ -234,6 +234,8 @@ In particular, the choices for priors on the sources that anticorrelate with a M
 These priors are tested by taking the posterior values given from the $H_0$ fit and applied as the priors to the $H_1$ fit.
 This answers a different question than the systematic choices listed above, and determines whether the $H_1$ fit truly improves the fit to the data or is merely a result of anticorrelations with multiple spectra.
 The best-fit values for each of these systematics are shown in \color{red}add reference to plot here\color{black} and the 90\% upper limits on the half life are shown in \color{red}add reference to table here\color{black}.
+\item [Fit Systematics] As thinning the MCMC can reduce the effect of bias, a longer chain with a larger $k$ picked for thinning can help estimate this autocorrelation bias in the fit.
+If the choice of $k$ is already sufficient, this should have a negligible effect on the final result.
 
 Figures to include:
 Plot for best-fits for half-life (or normalization constant, haven't 100\% committed to either. Both are effectively the same), table of 90\% limits, table of fit references (e.g. floors, no Sm, etc.)

@@ -117,7 +117,7 @@ The rate of \zeronubb~decay in particular nuclei can be expressed according to
     [T^{0\nu}_{1/2}]^{-1}&=\ln(2)G_{0\nu}|M_{0\nu}|^2|f(m_i,U_{ei})|^2
     \label{eq:halflife}
 \end{align}
-where the phase space factor, $G_{0\nu}$, is determined by the kinematics, $|M_{0\nu}|$ is the nuclear matrix element determined by the physics of each nucleus, and $|f(m_i, U_{ei})|$ is the determined by the underlying physics of the interaction and includes the masses $m_i$ and mixing matrix elements $U_{ei}$ of the neutrino species \cite{Barea:2013bz}.
+where the phase space factor, $G_{0\nu}$, is determined by the kinematics, $|M_{0\nu}|$ is the nuclear matrix element determined by the physics of each nucleus, and $|f(m_i, U_{ei})|$ is determined by the underlying physics of the interaction and includes the masses $m_i$ and mixing matrix elements $U_{ei}$ of the neutrino species \cite{Barea:2013bz}.
 As experiments searching for \zeronubb~are only truly sensitive to the half-life, any further statements on any other physical parameters contained in $|f(m_i, U_{ei})|$ require difficult calculations of $G_{0\nu}$ and $|M_{0\nu}|$.
 In particular, there are many different theoretical models which calculate $|M_{0\nu}|$ for various isotopes, shown in \autoref{fig:NME}.
 \begin{figure}[htbp]
@@ -148,15 +148,15 @@ For an experiment such as CUORE, with the source of \zeronubb~also acting as the
     \label{eq:signal_betabeta}
 \end{align}
 where $\epsilon$ is the signal detection efficiency and $N$ is the number of nuclei able to undergo \zeronubb.
-Similarly, for the number of background events, $B$, in the same interval is given by
+Similarly, the number of background events, $B$, in the same interval is given by
 \begin{align}
     B &= b\cdot M \cdot t \cdot \Delta E
     \label{eq:background_betabeta}
 \end{align}
 where $b$ is the background rate per unit energy per unit detector mass and $M$ is the total active mass of the detector.
-If $\Delta E$ is sufficiently small that the irreducible background from \twonubb~decays does not appreciably factor into the background and the background is therefore externally sourced and obeys Gaussian statistics, a $1\sigma$ half-life sensitivity is then given by
+If $\Delta E$ is sufficiently small that the irreducible background from \twonubb~decays does not appreciably factor into the background and the background is therefore externally sourced and obeys Gaussian\footnote{A more complete treatment of the sensitivity calculation, including the low-statistics Poissonian case is described in \cite{Alessandria:2011rc}.} statistics, a $1\sigma$ half-life sensitivity, s, is then given by
 \begin{align}
-    T^{0\nu}_{1/2}=\ln(2)\frac{\epsilon \cdot a_I \cdot N_A \cdot \eta}{W} \sqrt{\frac{M\cdot t}{b\cdot \Delta E}},
+    s=\ln(2)\frac{\epsilon \cdot a_I \cdot N_A \cdot \eta}{W} \sqrt{\frac{M\cdot t}{b\cdot \Delta E}},
     \label{eq:sensitivity_long}
 \end{align}
 with $\eta$ as the number of nuclei of interest per molecule of the detector, e.g. 1 for CUORE's \teotwo~crystals, and where the number of candidate nuclei from \autoref{eq:signal_betabeta} is rewritten as
@@ -166,17 +166,17 @@ with $\eta$ as the number of nuclei of interest per molecule of the detector, e.
 taking into account isotopic abundance, $a_I$, of the decaying isotope and its molar mass, $W$ along with Avogadro's number, $N_A$.
 For an experiment that searches for \zeronubb, maximizing this sensitivity is of paramount importance, and the most experimentally-relevant factors result in a common rewriting of the sensitivity as
 \begin{align}
-S &\propto a_I \sqrt{\frac{M \cdot t}{b \cdot \Delta E}}.
+s &\propto a_I \sqrt{\frac{M \cdot t}{b \cdot \Delta E}}.
 \label{eq:sensitivity_short}
 \end{align}
 This means that an experiment searching for \zeronubb~gains by increasing the isotopic abundance of the decay of interest, increasing its live-time, $M\cdot t$, decreasing its background, and improving its energy resolution.
-Many experiments enrich their isotope of choice in order to increase their sensitivity, while CUORE benefits from the relatively high natural abundance of \teonethirty, shown in \autoref{fig:q_vs_ia-color}, and does not need to undergo the expense process of isotope enrichment.
-A high Q-value also helps to decrease the background as \gamma~backgrounds generally decrease at higher energies and it is equally important to avoid other \gamma~peaks from decays near the Q-value.
-For example, in CUORE, two \gamma~particles emitted from $^{60}\textrm{Co}$ decays may be absorbed simultaneously in a detector with an energy of approximately 2605 keV.
+Many experiments enrich their isotope of choice in order to increase their sensitivity, while CUORE benefits from the relatively high natural abundance of \teonethirty, shown in \autoref{fig:q_vs_ia-color}, and does not need to undergo the expensive process of isotope enrichment.
+A high Q-value also helps to decrease the background as $\gamma$ backgrounds generally decrease at higher energies, and it is equally important to avoid other $\gamma$ peaks from decays near the Q-value.
+For example, in CUORE, two $\gamma$ particles emitted from $^{60}\textrm{Co}$ decays may be absorbed simultaneously in a detector with an energy of approximately 2605 keV.
 Since this is close the to the Q-value of 2528 keV for \teonethirty, this requires $\Delta E$ small enough to distinguish these background events from the possible signal.
 CUORE's design goal of 5 keV resolution is more than enough to accomplish this.
-In practice, experiments such as CUORE with a precise energy resolution suffer from having a segmented detector, as the materials used to hold the detectors in place also contribute to the background.
-Other experiments such as those that search for \zeronubb~decay in $^{136}$Xe are able to scale up their mass much easier as it is all one continuous volume, but suffer from having significantly less precise energy resolution.
+In practice, experiments such as CUORE with a precise energy resolution suffer from having a segmented detector as the materials used to hold the detectors in place also contribute to the background.
+Other experiments such as those that search for \zeronubb~decay in $^{136}$Xe are able to scale up their mass more easily  as it is all one continuous volume, but suffer from having significantly less precise energy resolution.
 A further discussion of other experiments in the field is in \autoref{sec:State of Neutrinoless Double Beta Decay Experiments}.
 \begin{figure}[htbp]
     \centering
@@ -189,7 +189,7 @@ A further discussion of other experiments in the field is in \autoref{sec:State 
 A goal of many next-generation \zeronubb~decay experiments is to have a negligibly small background near the Q-value.
 This changes the calculation in \autoref{eq:sensitivity_short} to be merely
 \begin{align}
-    S &\propto a_I \cdot M \cdot t
+    s &\propto a_I \cdot M \cdot t
 \end{align}
 which is a significant increase in sensitivity, especially as experiments work to scale up in mass to become more sensitive to longer half-lives.
 \subsection{Neutrinoless Double-Beta Decay with Majoron Emission}
@@ -198,46 +198,49 @@ which is a significant increase in sensitivity, especially as experiments work t
 Some proposed models of \zeronubb~decay predict the existence of another particle, called a majoron, that is emitted during the decay.
 In the original theory, these majorons are the Goldstone boson that is created during a spontaneous global breaking of B-L symmetry \cite{CHIKASHIGE1981265}.
 The Majorons in the original models were posited as belonging to either a singlet, doublet, or triplet state, but the doublet and triplet states have been ruled out by precision measurements of the Z boson width at the LEP experiment \cite{ALEPH:2005ab}.
-However, a whole class of models have now been developed that predict similar phenomena as the original theories where either one or two light, neutral bosons\footnote{Although the original majoron was postulated as a Goldstone boson, the majoron in these models may or may not be a Goldstone boson.}
+However, a whole class of models have now been developed that predict similar phenomena where either one or two light, neutral bosons\footnote{Although the original majoron was postulated as a Goldstone boson, the majoron in these models may or may not be a Goldstone boson.}
 are emitted during a neutrinoless double-beta decay \cite{HIRSCH19968}.
 Decays emitting a single majoron are denoted as \zeronubbonechi, and decays emitting two majorons are denoted as \zeronubbtwochi.
 These models are classified into two types (I and II) where either lepton number is (type I) violated in neutrinoless double-beta decay, i.e. the lepton number of the majoron is zero, or where lepton number is not (type II) violated, i.e. the lepton number of the majoron cancels out the $L=\pm2$ from the emitted electrons.
 In models of type II, \zeronubb~decay without majoron emission is forbidden, whereas for models of type I, \zeronubb~decay is allowed.
 However, as \zeronubb~decay has yet to be observed in the laboratory, these two types of models are indistinguishable from one another.
-The types of models for majoron decay are summarized in \autoref{tab:Majoron Decay Modes}. 
+The types of models for majoron decay are summarized in \autoref{tab:Majoron Decay Modes} along with their best limits from recent experiments. 
+\begin{landscape}
 \begin{table}[H]
     \centering
-\begin{tabular}{lllcc}
+    \caption[The majoron models and their associated decay modes.]
+{The majoron models and their associated decay modes.
+The column labelled ``G.B" indicates if the majoron is a goldstone boson, ``L.N." indicates the lepton number of each Majoron, and ``S.I" indicates the spectral index of the decay.
+Also listed are the current best limits from multiple experiments, with EXO and KamLAND-ZEN using $^{136}$Xe, GERDA using $^{76}$Ge, and MiBETA, a predecessor of CUORE, using $^{130}$Te.
+In particular for type II models, each majoron has an associated lepton number which precisely cancels out the $\Delta L$ carried by the electrons in these decays.}
+\label{tab:Majoron Decay Modes}
+\begin{tabular}{lllcccccc}
 \hline \hline
-Model   & Decay Mode & Goldstone Boson & Lepton Number & Spectral Index \\ \hline
-IB      & \zeronubbonechi & no              & 0    & 1              \\ 
-IC      & \zeronubbonechi & yes             & 0    & 1              \\ 
-ID      & \zeronubbtwochi & no              & 0    & 3              \\ 
-IE      & \zeronubbtwochi & yes             & 0    & 3              \\ 
+Model   & Decay & G.B. & L.N. & S.I. & EXO \cite{Albert:2014fya} & KamLAND-ZEN \cite{Gando:2012pj} & GERDA \cite{Hemmer2015} & MiBETA \cite{Arnaboldi:2002te} \\ \hline
+IB      & \zeronubbonechi & no              & 0    & 1 & $>1.2\cdot 10^{24}$    & $>2.6 \cdot 10^{24}$       & $>4.2 \cdot 10^{23}$ & $>2.2 \cdot 10^{21} $           \\ 
+IC      & \zeronubbonechi & yes             & 0    & 1 & $>1.2\cdot 10^{24}$    & $>2.6 \cdot 10^{24}$       & $>4.2 \cdot 10^{23}$ & $>2.2 \cdot 10^{21} $             \\ 
+ID      & \zeronubbtwochi & no              & 0    & 3 & $>2.7 \cdot 10^{22}$   & $>4.5\cdot 10^{23}$        & $>8 \cdot 10^{22}$ & $>0.9 \cdot 10^{21} $            \\ 
+IE      & \zeronubbtwochi & yes             & 0    & 3 & $>2.7 \cdot 10^{22}$   & $>4.5\cdot 10^{23}$        & $>8 \cdot 10^{22}$ & $>0.9 \cdot 10^{21} $             \\ 
 \hline
-IIB     & \zeronubbonechi & no              & -2   & 1              \\ 
-IIC     & \zeronubbonechi & yes             & -2   & 3              \\ 
-IID     & \zeronubbtwochi & no              & -1   & 3              \\ 
-IIE     & \zeronubbtwochi & no              & -1   & 7              \\ 
-IIF     & \zeronubbonechi & no              & -2   & 3              \\ 
+IIB     & \zeronubbonechi & no              & -2   & 1 & $>1.2\cdot 10^{24}$    & $>2.6 \cdot 10^{24}$       & $>4.2 \cdot 10^{23}$ & $>2.2 \cdot 10^{21} $             \\ 
+IIC     & \zeronubbonechi & yes             & -2   & 3 & $>2.7\cdot 10^{22}$    & $>4.5\cdot 10^{23}$        & $>8 \cdot 10^{22}$ & $>0.9 \cdot 10^{21} $             \\ 
+IID     & \zeronubbtwochi & no              & -1   & 3 & $>2.7 \cdot 10^{22}$   & $>4.5\cdot 10^{23}$        & $>8 \cdot 10^{22}$ & $>0.9 \cdot 10^{21} $             \\ 
+IIE     & \zeronubbtwochi & no              & -1   & 7 & $>6.1\cdot 10^{21}$    & $>1.1\cdot 10^{22}$        & $>3 \cdot 10^{22}$ &              \\ 
+IIF     & \zeronubbonechi & no              & -2   & 3 & $>2.7\cdot 10^{22}$    & $>4.5\cdot 10^{23}$        & $>8 \cdot 10^{22}$ & $>0.9 \cdot 10^{21} $             \\ 
 \hline
-``bulk" \cite{Mohapatra:2000px} & \zeronubbonechi & no              & 0    & 2              \\
+``bulk" \cite{Mohapatra:2000px} & \zeronubbonechi & no              & 0    & 2 & $>2.5\cdot 10^{23}$    & $>1.0 \cdot 10^{24}$       & $>1.8 \cdot 10^{23}$ &              \\
 \hline \hline
 \end{tabular}
-\caption[The majoron models and their associated decay modes.]
-{The majoron models and their associated decay modes.
-Also shown is if the majoron is a Goldstone boson, the associated lepton number of the majoron, and the spectral index of the decay.
-In models of type II \zeronubbtwochi, each majoron has an associated lepton number which precisely cancels out the $\Delta L$ carried by the electrons in these \zeronubbtwochi~decays.}
-\label{tab:Majoron Decay Modes}
 \end{table}
-Experimentally, the energy spectrum of the two electrons emitted varies by the spectral index of each of the models according to
+\end{landscape}
+Experimentally, the energy spectrum of the two electrons emitted varies by the spectral index, $n$, of each of the models according to
 \begin{align}
 \begin{split}\label{eq:spectral index}
     S(E_{\textrm{sum}}) = \int_1^{E_{sum}-1}&F(Z, E_1) E_1 p_1 F(Z, E_2) E_2 p_2 (E_{tot}-E_1-E_2)^n \\
     & dE_1 dE_2 \delta(E_{sum}-E_1-E_2)
 \end{split}
 \end{align}
-where $E_{\textrm{sum}}$ is the summed energy of the electrons, $F(Z, E)$ is the Fermi function for the daughter nucleus with atomic number Z, $E_i$ and $p_i$ are the energy and momentum of each particle, respectively, and $n$ is the spectral index.
+where $E_{\textrm{sum}}$ is the summed energy of the electrons, $F(Z, E)$ is the Fermi function for the daughter nucleus with atomic number Z, and $E_i$ and $p_i$ are the energy and momentum of each particle, respectively.
 The Fermi function comes from a correction due to Coulomb interactions between the emitted electrons and the daughter nucleus in the decay.
 To lowest order, this function is given by 
 \begin{align}
@@ -246,8 +249,8 @@ To lowest order, this function is given by
     y &= \alpha Z W / p
 \end{align}
 where $\rho$ is the nuclear radius, $p$ is the momentum of the electron, and $\Gamma(x)$ is the gamma function\footnote{$\Gamma(z)=\int_0^\infty x^{z-1}e^{-x}dx$} \cite{PhysRev.150.846}.
-The spectrum for \twonubb~decay corresponds to a spectral index of 5.
-The energy spectrum for each spectral index of \zeronubb~with majoron emission is shown in \autoref{fig:Majoron Spectrum}.
+Each different model predicts a particular spectral index from $n=1,2,3,7$, with multiple models predicting spectral indices 1 and 3.
+A spectral index of 5 corresponds to the observed \twonubb~decay and is shown for reference along with the majoron spectral indices in \autoref{fig:Majoron Spectrum}.
 
 \begin{figure}[htbp]
     \centering
@@ -259,6 +262,7 @@ The energy spectrum for each spectral index of \zeronubb~with majoron emission i
     \label{fig:Majoron Spectrum}
 \end{figure}
 
+
 \section{State of Neutrinoless Double-Beta Decay Experiments}
 \label{sec:State of Neutrinoless Double Beta Decay Experiments}
 In addition to CUORE, many other experiments are currently searching and have searched for \zeronubb~ decay. Some of these experiments are listed below and the current status of the field is shown in \autoref{fig:cuore-mbetabeta}.
@@ -268,13 +272,16 @@ As an example, a 1-tonne experiment searching for \zeronubb~decay would expect o
 This is generally realized in experiments by going to deep underground laboratories to escape cosmic radiation sources and by having pure and clean materials in and near the detector and sources.
 Also, due to the energies being produced according to a spectrum, all of the backgrounds with energy up to the Q-value will reduce the sensitivity of the measurement.
 The experiments listed here all seek to identify these signals using a particular technology or set of technologies, some of which, especially in the case of GERDA and MAJORANA, are quite similar to CUORE's.
-Despite the wide array of technologies, all the experiments below, including CUORE, seek to identify these decays by honing in on and measuring the emitted electron energies as the summed energy spectrum is well-defined as a sharp peak for \zeronubb~or as a broader spectrum for \twonubb~for Majoron emission.
+Despite the wide array of technologies, all the experiments below, including CUORE, seek to identify these decays by honing in on and measuring the energies of the emitted electrons.
+In the case of \zeronubb, the summed energy of the electrons is a sharp peak, and, in the case of \twonubb~or Majoron emission, the summed energy of the electrons is a broader distribution.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.7\linewidth]{Figures/M_bb_vs_mlightest_CL_2018.pdf}
 \caption[The current status of the field of \zeronubb.]
-{The current status of the field of \zeronubb. See \autoref{eq:mbetabeta} for the definition of $m_{\beta\beta}$ and $m_{\textrm{lightest}}$ corresponds to the mass of the lightest neutrino in either normal or inverted hierarchy.
+{The current status of the field of \zeronubb.
+Refer to  \autoref{eq:mbetabeta} for the definition of $m_{\beta\beta}$.
+$m_{\textrm{lightest}}$ corresponds to the mass of the lightest neutrino in either normal or inverted hierarchy.
 The previous experiments in the line of CUORE, CUORE-0 and Cuoricino, have their combined $^{130}$Te result and the results for Mo, Ge, and Xe are shown from NEMO-3, GERDA, and KamLAND-Zen, respectively.}
 \label{fig:cuore-mbetabeta}
 \end{figure}
@@ -282,12 +289,12 @@ The previous experiments in the line of CUORE, CUORE-0 and Cuoricino, have their
 \subsection{GERDA}
 
 The GERmanium Detector Array (GERDA) Experiment is currently searching for \zeronubb~at the Laboratori Nationali del Gran Sasso (LNGS) using  $^{76}$Ge as the source \cite{Agostini:2017iyd}.
-Unlike in CUORE, the source is enriched from the natural $7.8\%$ abundance up to $86\%$ and acts acts both the source and the detector of \zeronubb.
+Unlike in CUORE, the source is enriched from the natural $7.8\%$ abundance up to $86\%$ and acts as both the source and the detector of \zeronubb.
 In the most recent phase of GERDA, Phase II, 37 enriched detectors, 35.6 kg, are assembled along 6 strings around a central string with 3 unenriched detectors.
 These detectors are then submerged in a 64 $\textrm{m}^3$ LAr cryostat inside a 590 $\textrm{m}^3$ water tank.
 The water acts as a passive shield for the experiment, while the LAr also acts as an active shield.
-One of the advantages that CUORE shares with GERDA over other detector technologies is the excellent energy resolution which, recalling \autoref{eq:sensitivity_short} inversely effects the sensitivity.
-GERDA also takes advantage of the pulse-shape discrimination (PSD) between \zeronubb-like events and $\gamma$-like events in 30 broad energy (BEGe) detectors in addition to scintillation light from the surrounding LAr.
+One of the advantages that CUORE shares with GERDA over other detector technologies is the excellent energy resolution which, recalling \autoref{eq:sensitivity_short}, inversely affects the sensitivity.
+GERDA also takes advantage of the pulse-shape discrimination (PSD) between \zeronubb-like events and $\gamma$-like events in 30 broad energy detectors in addition to scintillation light from the surrounding LAr.
 With this, the background at $Q_{\beta\beta}$ for the BEGe detectors is low enough at $(0.07^{+1.1}_{-0.5})\times 10^{-3} ~\textrm{counts} \cdot  (\textrm{keV} \cdot \textrm{kg} \cdot \textrm{yr})^{-1}$ allowing for the experiment to be considered background-free at the design exposure of $100 \textrm{kg \cdot yr}$.
 A diagram of the GERDA experimental setup is shown in \autoref{fig:gerda-labelled}.
 \begin{figure}[tbph]
@@ -302,7 +309,7 @@ Liquid argon is also inside the copper shielding with the detectors submerged.}
 \subsection{MAJORANA}
 The \textsc{Majorana Demonstrator}, shown in \autoref{fig:MajoranaDemonstrator} is another experiment using $^{76}$Ge to search for \zeronubb~located in the Sanford Underground Research Facility in South Dakota.
 This experiment deploys 30 kg of Ge enriched to 87\% $^{76}$Ge and 14 kg of Ge with natural 7.8\% $^{76}$Ge \cite{1742-6596-606-1-012004}.
-The detection principles for the \textsc{Demonstrator} are similar to that of GERDA, but there are differences in detector operation and construction, particularly as the \textsc{Demonstrator} does not have the active lAr veto from GERDA, but has a more stringent materials selection and parts processing which results in their background rate of $1.6^{+1.2}_{-1.0}\times10^{-3} ~\textrm{counts}\cdot(\textrm{keV}\cdot \textrm{kg} \cdot \textrm{yr})^{-1}$.
+The detection principles for the \textsc{Demonstrator} are similar to that of GERDA, but there are differences in detector operation and construction, particularly as the \textsc{Demonstrator} does not have the active liquid Ar veto from GERDA, but has a more stringent materials selection and parts processing which results in their background rate of $1.6^{+1.2}_{-1.0}\times10^{-3} ~\textrm{counts}\cdot(\textrm{keV}\cdot \textrm{kg} \cdot \textrm{yr})^{-1}$.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{Figures/MajoranaDemonstrator.png}
@@ -320,7 +327,7 @@ Xe benefits from self-shielding due to the attenuation length of gammas in xenon
 This is a distinct advantage over experiments such as CUORE, MAJORANA, and GERDA, as their detectors need to be held in place and cannot self-shield as a result.
 Also, the detector mass is relatively easily scalable by the size of the balloon and does not require a full reconstruction of the surrounding veto from the KamLAND experiment.
 In addition, by taking out the Xe or depleting the Xe in the liquid scintillator, the experiment can make an on/off measurement to confirm any possible measurement of \zeronubb. 
-However, the energy resolution of the KamLAND-Zen is significantly worse than the $\mathcal{O}(\textrm{keV})$ resolution in these experiments which introduces the tail of the \twonubb spectrum as an irreducible background.
+However, the energy resolution of the KamLAND-Zen is significantly worse than the $\mathcal{O}(\textrm{keV})$ resolution in these experiments which introduces the tail of the \twonubb~spectrum as an irreducible background.
 A diagram of the KamLAND-Zen detector is shown in \autoref{fig:kamlandzen}.
 \begin{figure}[tbph]
 \centering
@@ -333,9 +340,9 @@ Figure from \cite{::2015uaa}.}
 \end{figure}
 
 \subsection{EXO-200}
-The Enriched Xenon Observatory (EXO-200) searches for \zeronubb~ with 200 kg of Xe with 80.6\% enriched $^{136}$Xe in a liquid xenon time projection chamber (TPC) and is located in the Waste Isolation Pilot Plant near Calsbad New Mexico \cite{Albert:2017owj}.
+The Enriched Xenon Observatory (EXO-200) searches for \zeronubb~ with 200 kg of Xe with 80.6\% enriched $^{136}$Xe in a liquid xenon time projection chamber (TPC) and is located in the Waste Isolation Pilot Plant near Carlsbad, New Mexico \cite{Albert:2017owj}.
 The TPC collects both charge and light signals from energy depositions in the Xe and reconstructs them as either single-site or multi-site events.
-This provides discrimination between the multi-site \gamma~backgrounds and the single-site signal.
+This provides discrimination between the multi-site $\gamma$ backgrounds and the single-site signal.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\linewidth]{Figures/EXO.png}
