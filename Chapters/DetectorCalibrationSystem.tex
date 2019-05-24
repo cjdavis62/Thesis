@@ -156,7 +156,6 @@ This helps another component on the drive spool in the interior of the motion bo
 This load cell is rated up to 20 N and is used to measure the tension on the string.
 This is another critical component of the system, as the measurement of the tension is the only signal that a source string has encountered difficulties during deployment or extraction, e.g. the tension rises if the string is obstructed on the way up and decreases if the string misses a funnel and is spooling up on one of the cryostat plates.
 However, a known issue with load cells is that they have significant thermal drift, which the thermal fin helps mitigate.
-\color{red} Add parts to call to appendix on operation?\color{black}.
 The load cell is read out through an electrical feedthrough on the spool and the output signals are filtered, amplified, and digitized.
 The last two components on the drive spool are used for interlocks on the system.
 The home limit switch is lever with a hole sized to allow source capsules but not weight capsules through.
@@ -170,8 +169,8 @@ Lastly, two of the four motion boxes are instrumented with a vacuum gauge, as ea
 The full vacuum setup of the motion boxes is shown in \autoref{fig:vacuum_setup_diagram}.
 Before operation of the DCS, the motion boxes are first pumped out to a pressure of $\mathcal{O}(10^{-5})$ mbar before opening the gate valves into the cryostat.
 During operation of the DCS, the motion boxes are continuously pumped by the OVC turbo, until the strings are fully deployed into the cryostat.
-Afterwards, the hand valves on the motion boxes are closed and the motion boxes are cryopumped through the tubes below the gate valve into the IVC\footnote{Unfortunately, this is a significant design flaw of the DCS, as any leak or outgassing in the motion box builds up in these tubes and can fully block a calibration source's movement.}.
-This cryopumping can be observed as well as shown in \autoref{fig:capsule_cryopumping} when the cold capsules are extracted from the cyrostat and return to the motion box.
+Afterwards, the hand valves on the motion boxes are closed and the motion boxes are cryopumped through the tubes below the gate valve into the IVC\footnote{Unfortunately, this is a significant design flaw of the vacuum system of the experiment, as any leak or outgassing in the motion box builds up in these tubes and can fully block a calibration string's movement.}.
+This cryopumping can be observed as well as shown in \autoref{fig:capsule_cryopumping} when the cold capsules are extracted from the cryostat and return to the motion box.
 
 \begin{figure}[htbp]
     \centering
@@ -204,7 +203,8 @@ At the 300-K stage, the strings first are guided by an ``s-tube" that connects t
     {The 3 stainless steel s-tubes below a motion box.
     The tubes are thermally connected to the 300-K, 40-K, and 4-K plates and form a thermal gradient between each.
     The bend in the tubes is for both geometrical reasons and for reducing the radiative heat load on the bottom stages of the cryostat as there is no line-of-sight from the top of the funnels at 300-K to the bottom at 4-K.
-    As the strings are deployed down through the tube, they are thermalized by contact with the walls of the tube and by radiative cooling.}
+    As the strings are deployed down through the tube, they are thermalized by contact with the walls of the tube and by radiative cooling.
+    Figure from \cite{Cushman:2016cnv}.}
     \label{fig:s-tube}
 \end{figure}
 Below the s-tubes and the 4-K thermalizers are the stainless steel 600-mK guide tubes, shown in \autoref{fig:600mK_guide_tubes}.
@@ -281,14 +281,14 @@ However, the main cooling mechanism used is from 4 copper thermalizers, one for 
 
 \begin{figure}[htbp]
 \centering
-\begin{subfigure}[t]{0.4\textwidth}
+\begin{subfigure}[t]{0.44\textwidth}
 \centering
 \includegraphics[width=\textwidth]{Figures/thermalization_system_labeled.pdf}
 \caption{}
 \label{fig:4K_thermalizer_system}
 \end{subfigure}
 \qquad
-\begin{subfigure}[t]{0.4\textwidth}
+\begin{subfigure}[t]{0.44\textwidth}
 \centering
 \includegraphics[width=\textwidth]{Figures/Thermalizer_schematic_labeled.pdf}
 \caption{}
@@ -300,7 +300,8 @@ In (a), the setup for the system in conjunction with a motion box is shown (not 
 In (b), the mechanism for activating the thermalizers is shown.
 A kevlar string connects the moving copper block through a pulley connected to the rotary feedthrough and a hanging mass that can be held up by a linear actuator.
 In this way, moving the linear actuator up and down releases and activates the thermalizer, respectively.
-Not shown is a metal ring that separates the kevlar string coming out of the shield box from the kevlar string from the thermalizer which reduces the thermal load and mechanical stress on the Kevlar.}
+Not shown is a metal ring that separates the kevlar string coming out of the shield box from the kevlar string from the thermalizer which reduces the thermal load and mechanical stress on the Kevlar.
+Figure from \cite{Cushman:2016cnv}.}
 \label{fig:DCS_4K_schematic}
 \end{figure}
 
@@ -359,10 +360,10 @@ This wire connects each of the guide tubes such that the thermometers from one g
 \label{ssec:Software Control of the DCS}
 As mentioned in \autoref{sec:DCS_Overview}, the DCS needs to be operated and handled in a controlled and stable fashion, and, to this end, the choice was made to operate the entire system through software-controlled motors.
 A computer running Labview\footnote{\RaggedRight\url{http://www.ni.com/en-us/shop/labview/labview-details.html}} controls and monitors the hardware components of the DCS including the motors, the load cells, thermometers, pressure sensors, and other components described previously.
-These systems are described in detail in \cite{JeremyThesis}, but in this section, I will describe the interlocks used to ensure the safety of the system \color{red}cite appendix here?\color{black}.
+These systems are described in detail in \cite{JeremyThesis}, but in this section, I will describe the interlocks used to ensure the safety of the system with even more details in \autoref{ch:DCS Guide and Manual}.
 One of the first to mention are the interlocks for the vacuum systems.
 As remote operation is possible through the software control, a person on-site needs to be available to activate the gate valves below the motion boxes that connect to the IVC.
-This prevents any accidental openings of the motion box to the IVC, which would be a catastrophic event.
+This prevents any accidental openings of the motion box to the IVC, which has the potential to be a catastrophic event.
 The other interlocks relate to the motion and tension on the string itself.
 As mentioned above, the home switch and global stop switch are two-state switches that are used to stop motion when they are triggered.
 However, the load cell allows for more complex interlocks on the system as the tension in the string is measured constantly during their motion.
@@ -420,7 +421,7 @@ The largest effects on the detectors come from the inner strings as they are dep
 These effects are due to both the warm capsules entering the region, and due to the friction of the capsules moving against the guide tubes.
 In early tests in the 10-mK region before the detector region guide tubes were installed, the heating would be only a few mK.
 However, with the detectors installed, lowering the available cooling in the region, and the guide tubes also installed, increasing the vibrational and frictional effects of the deployment, the impact on the cryostat increased significantly.
-During these later deployments, the temperature of the cryostat reached approximately 25 mK while the strings were being lowered into this region\color{red} add a plot of this?\color{black}.
+During these later deployments, the temperature of the cryostat reached approximately 25 mK while the strings were being lowered into this region.
 When extracting the strings, the main constraints are due to the friction of the capsules as they move against the guide tubes.
 In extraction, in contrast to deployment, the capsules are colder than the stages they pass through, but limiting the speed is the need to reduce the effect of this friction.
 This friction is maximized at points where there is a bend in the guide tubes, such as the bend at the 10-mK plate for the inner source strings.
@@ -531,7 +532,6 @@ Now, two strategies are used to deploy the strings from the thermalizers.
 In one strategy, strings are be deployed into the detector region while the 4-K thermalization steps continue, and, in the other, the strings are deployed only after all the 4-K thermalization steps have been completed.
 In the strategy where the thermalizers are active during detector region deployments, the time it takes to deploy is approximately 20 hours from the start of thermalization after precooling.
 In the strategy where the thermalization is completed before deploying strings into the detector region, the time it takes to deploy is approximately 24 hours.
-\color{red} include representations of these?\color{black}
 
 \subsection*{CUORE Calibrations}
 \label{ssec:CUORE Calibrations}
@@ -555,7 +555,7 @@ Altogether, these two issues cause the performance of the DCS to worsen consider
 
 In all, the DCS has been used to calibrate the detectors four times to open and close datasets in 2017 and twice in 2018.
 Because of these issues, an external calibration system was developed and deployed between the 300-K vessel and the lead shielding of the cryostat.
-This system was able to use $^{232}$Th to calibrate the detectors as well, although, due to the multiple shields between the crystals and the sources, and the self-shielding of the detectors themselves, do a poor job of irradiating the detectors evenly\color{red} citation needed \color{black} and does not irradiate the detectors with a peak at energies below 511 keV\footnote{Although work has been done to replace the $^{232}$Th source with a mixed $^{232}$Th and $^{60}$Co source to populate more peaks in calibration at energies between 511 and 2615 keV}.
+This system was able to use $^{232}$Th to calibrate the detectors as well, although, due to the multiple shields between the crystals and the sources, and the self-shielding of the detectors themselves, do a poor job of irradiating the detectors evenly\footnote{In this case, the self-shielding of the CUORE detectors is problematic and results in the outer towers observing substantially more events than the inner towers due to an external calibration source.} and does not irradiate the detectors with a peak at energies below 511 keV\footnote{Although work has been done to replace the $^{232}$Th source with a mixed $^{232}$Th and $^{60}$Co source to populate more peaks in calibration at energies between 511 and 2615 keV}.
 However, this system does not require any thermalization and is not integrated into the cryostat, allowing for considerably simpler and quicker operation that takes $\sim15$ minutes instead of days.
 
 \begin{figure}[htbp]

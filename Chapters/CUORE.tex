@@ -519,16 +519,17 @@ Figure courtesy of the CUORE collaboration.}
 \subsubsection*{Detector Shielding and Vibration Isolation}
 As noted above, the detectors need to be shielded from the environment and even from radioactivity in the shielding itself.
 Starting from the outside of the experiment, shown in \autoref{fig:external_shielding}, there is an external lead shield with a layer of polyethylene and boric acid that surrounds the cryostat.
-This $\sim70$ ton, 25 cm thick lead shielding acts to shield from the environmental gammas from LNGS, and the 18 cm thick polyethlene and 2 cm thick boric acid (H$_3$BO$_3$ powder) thermalize and absorb environmental neutrons.
+This $\sim70$ tonne, 25 cm thick lead shielding acts to shield from the environmental gammas from LNGS, and the 18 cm thick polyethylene and 2 cm thick boric acid (H$_3$BO$_3$ powder) shields thermalize and absorb environmental neutrons.
 This external shielding can be raised and lowered as needed, and remains lowered while working on the cryostat, and raised during physics data-taking.
 Inside this external shielding is the cryostat, suspended from the main support plate above by three steel ropes.
 This plate is supported by sand-filled columns, resting on rubber dampeners which act to seismically isolate the main support plate, and thus the cryostat) from the ground.
 This is a particularly important component given the seismic nature of the area around LNGS as vibrations contribute to low-frequency noise in CUORE, as, at the low temperatures of CUORE, the frictive heating from motion of the cryostat affects the sensitivity of the CUORE bolometers.
-In fact, even despite all these components, we set bad intervals, \color{red} discussed later in subsubsection bad intervals \color{black} during particularly intense seismic events around the globe.
+In fact, even despite all these components, we set bad intervals, described moore in \autoref{ssec:Bad Intervals} during particularly intense seismic events around the globe.
 At the top of the cryostat, the 300-K plate supports the 40-K, 4-K, and 600-mK plates by segmented steel rods.
 Each of these plates also holds a corresponding cylindrical vessel that surrounds the inner vessels.
-In addition, these vessels act as a radiation shield, both for thermal and particle radiation \color{red} better wording here? \color{black}.
-In order to minimize the radioactivity of these components, with over 7 tonnes of mass, these plates and vessels are made of Oxygen-Free Electronic (OFE) copper (99.99\% Cu), with the exception of the 300-K plate and the top of the 300-K vessel which is made of the stronger austenitic stainless steel due to the load it carries. This radioactivity constraint carries over to the superinsulation used to cover the 40-K and 4-K stages of the cryostat, which is needed to reduce the thermal radiation heat load on the vessels, and was optimized for a choice of 17 kg in 30 and 10 layers of aluminized mylar and polyester foil for the 40-K and 4-K stages, respectively.
+In addition, these vessels act as a radiation shield, both for thermal radiation that would heat up the inner vessels and particle radiation that would deposit energy in the detectors.
+In order to minimize the radioactivity of these components, with over 7 tonnes of mass, these plates and vessels are made of Oxygen-Free Electronic (OFE) copper (99.99\% Cu), with the exception of the 300-K plate and the top of the 300-K vessel which is made of the stronger austenitic stainless steel due to the load it carries.
+This radioactivity constraint carries over to the superinsulation used to cover the 40-K and 4-K stages of the cryostat, which is needed to reduce the thermal radiation heat load on the vessels, and was optimized for a choice of 17 kg in 30 and 10 layers of aluminized mylar and polyester foil for the 40-K and 4-K stages, respectively.
 
 \begin{figure}
     \centering
@@ -536,7 +537,8 @@ In order to minimize the radioactivity of these components, with over 7 tonnes o
     \caption[The external shielding and supports of the CUORE cryostat]
     {The external shielding and supports of the CUORE cryostat.
     The external lead shields, with polyethylene and borated polyethlyene, is shown lowered down below the cryostat and is raised up around the cryostat during operation.
-    The cryostat is suspended above, and the support structure is designed to minimize the mechanical coupling of the cryostat to the outside world and the resultant vibrational noise.}
+    The cryostat is suspended above, and the support structure is designed to minimize the mechanical coupling of the cryostat to the outside world and the resultant vibrational noise.
+    Figure courtesy of the CUORE collaboration.}
     \label{fig:external_shielding}
 \end{figure}
 Inside the 4-K stage of the cryostat, additional 6 cm thick lead shielding is used to further reduce radioactive backgrounds. This shielding comprises over 4 tonnes of ancient shipwrecked lead \cite{roman_lead} and covers the sides and bottom of the cryostat.
@@ -546,7 +548,8 @@ This lead has a contamination of $^{210}$Po less than 10 mBq/kg\footnote{$^{210}
     \centering
     \includegraphics[width=0.4\linewidth, height=0.4\pageheight, keepaspectratio]{Figures/roman_lead_shield.jpg}
     \caption[The roman lead shield installed inside the 4-K vessel]
-    {The roman lead shield installed inside the 4-K vessel. The shield extends laterally around the detector region and a separate piece is below (not visible).}
+    {The roman lead shield installed inside the 4-K vessel. The shield extends laterally around the detector region and a separate piece is below (not visible).
+    Photograph courtesy of the CUORE collaboration}
     \label{fig:roman_lead_shield}
 \end{figure}
 The 600-mK plate holds the 50-mK plate, which in turn holds up the 10-mK plate, with a double Kevlar rope and a copper rod, respectively.
@@ -573,7 +576,7 @@ Worsening this issue, the five pulse tubes\footnote{PT415-RM from Cryomech \url{
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\linewidth]{Figures/Helium_phase_diagram.pdf}
+    \includegraphics[width=0.5\linewidth]{Figures/Helium_phase_diagram.pdf}
     \caption[Phase diagram for $^{3}$He and superfluid $^{4}$He]
     {Phase diagram for $^{3}$He and superfluid $^{4}$He.
     The separation between the dilute and concentrated phases provides the power that cools the cryostat down to mK-scale temperatures.}
@@ -592,6 +595,11 @@ With these systems, the cooldown of the CUORE cryostat can be effected in $\sim2
 
 \begin{table}[htbp]
     \centering
+    \caption[The cooling power of the cryostat at varying thermal stages]
+    {The cooling power of the cryostat at varying thermal stages.
+    The power is maximized in warmer stages, but decreases significantly towards the coldest stages.
+    The values here come from the manufacturers of the pulse tubes and Dilution unit, except for the thermal power of the dilution unit at 12 mK which was determined in a test cryostat (*).}
+    \label{tab:cryostat_cooling_power}
     \begin{tabular}{c|c}
     \hline
     \hline
@@ -604,12 +612,8 @@ With these systems, the cooldown of the CUORE cryostat can be effected in $\sim2
     \hline
     \hline
     \end{tabular}
-    \caption[The cooling power of the cryostat at varying thermal stages]
-    {The cooling power of the cryostat at varying thermal stages.
-    The power is maximized in warmer stages, but decreases significantly towards the coldest stages.
-    The values here come from the manufacturers of the pulse tubes and Dilution unit, except for the thermal power of the dilution unit at 12 mK which was determined in a test cryostat (*).}
-    \label{tab:cryostat_cooling_power}
 \end{table}
+
 \subsubsection*{Cryostat Radiopurity}
 \label{ssec:Cryostat_Radiopurity}
 As mentioned above, the cryostat also needs to both shield the detectors from outside radioactive sources and simultaneously not contribute to the radioactive backgrounds in the detectors.
