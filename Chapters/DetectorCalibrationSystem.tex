@@ -41,7 +41,7 @@ The DCS can be divided into a few separate hardware components: the 12 source st
 Each of these sets of components has different technical challenges, particularly for the calibration tubes nearest to the detectors that have stringent radioactivity requirements, and are described in more detail in this section.
 
 \subsection*{Calibration Source Strings}
-There are 12 calibration source strings, referred to throughout the section as source strings, that are deployed in to the detector region in order to calibrate the 19 towers of CUORE.
+There are 12 calibration source strings, referred to throughout the section as source strings, that are deployed into the detector region in order to calibrate the 19 towers of CUORE.
 These source strings consist of copper capsules covered in PTFE heat shrink tubing that enclose the 2\% thoriated tungsten source inside, shown in \autoref{fig:source_carrierA}.
 The copper is crimped on top and bottom in order to hold it onto the Kevlar string and to hold the source inside, and the PTFE heat shrink reduces the friction between the copper capsules and the DCS guide tubes. In addition, the bottom 8 capsules have reducing spacing and are wider and shorter than the other capsules, shown in \autoref{fig:source_carrierB}.
 The mass of the weight capsules (and the Kevlar in between) on the string is 2.8 g, the mass of all 33 capsules (and the Kevlar in between) on a string is 5.6 g, and the mass of an entire unwound string is 13.7 g.
@@ -164,7 +164,7 @@ The last component on the drive spool is a PTFE guide that connects to a microsw
 This switch is not used during normal operation of the DCS, but activates in the case that the string becomes caught while extracting and experiences a rapid rise in tension that an operator cannot react quickly enough to.
 In addition, this interlock directly shuts down the hardware that runs the motor and kills any motion, protecting the string in the case of user or software error.
 A useful tool that an operator can use on the motion box are the windows that open on the opposite face of the motion box from the drive spools. These spools allow the operator to see the string coming out of the PTFE string guide and into the home switch and to verify string integrity and motor operation even when the motion box is closed off and under vacuum.
-When the source strings are deployed into the cryostat, they are each contained in a separate guide tube that guides them through the motion box and down into the proximity sensor and below, with a gap at the gate valve.
+Inside the motion boxes are the guide tube for each source string that guide the string out of the spool and down into the proximity sensor and into the cryostat, with a gap at the gate valve.
 Lastly, two of the four motion boxes are instrumented with a vacuum gauge, as each motion box is its own vacuum environment, only connecting to the IVC when the gate valves are opened, such as when the calibration strings are being deployed into the cryostat.
 The full vacuum setup of the motion boxes is shown in \autoref{fig:vacuum_setup_diagram}.
 Before operation of the DCS, the motion boxes are first pumped out to a pressure of $\mathcal{O}(10^{-5})$ mbar before opening the gate valves into the cryostat.
@@ -276,7 +276,7 @@ Therefore, the main efforts for cooling and thermalizing the source strings as t
 To effect this cooling on the source strings, multiple methods are used. 
 As noted in \autoref{ssec:Guide Tubes}, one of the ways this is achieved is by contact with the guide tubes at varying thermal stages.
 This cooling, however, is limited by the angle of the tube as steeper angles provide less contact with the source capsule, although the chicanes on the 600-mK guide tubes mitigate this effect and provide a stronger contact with the guide tube.
-An addition limitation on the cooling is by the temperature of the guide tubes themselves, as warm capsules will warm up the tubes and reduce the cooling provided until the tubes thermalize back to their nominal value.
+An additional limitation on the cooling is by the temperature of the guide tubes themselves, as capsules coming in from warmer cryostat stages will heat the tubes and reduce the cooling provided until the tubes thermalize back to their nominal value.
 However, the main cooling mechanism used is from 4 copper thermalizers, one for each motion box, which are located at the 4-K plate, shown in \autoref{fig:DCS_4K_schematic}.
 
 \begin{figure}[htbp]
@@ -369,7 +369,7 @@ As mentioned above, the home switch and global stop switch are two-state switche
 However, the load cell allows for more complex interlocks on the system as the tension in the string is measured constantly during their motion.
 This information is used to create a ``load cell profile" that is an averaging of multiple deployments of the string through the guide tubes.
 As the particular geometry of the guide tubes affects the tension of the strings, e.g. a vertical section has tension equal to the hanging weight of the source string, whereas an angled section has capsules slightly resting on the tubes, which decreases the tension in the string.
-With this information, this allows the software to detect situations such as when the string has missed a funnel and is beginning to rest on the cryostat or if there is an obstruction in the cryostat such as ice as shown in \autoref{fig:load_cell_profile}.
+This information allows the software to detect situations such as when the string has missed a funnel and is beginning to rest on the cryostat or if there is an obstruction in the cryostat such as ice as shown in \autoref{fig:load_cell_profile}.
 In addition, the software uses the load cell to determine and stop motion in case of sudden changes in the tension.
 Because the length of the string that contains the weight capsules is a few cm long, this quick step in the voltage is another indication of the string stopping. 
 It also allows for an independent verification of the string position inside the cryostat in addition to the position readings from the encoder.
@@ -430,7 +430,7 @@ As the source strings leave the 50-mK region, this issue no longer becomes signi
 
 \section{Calibration Simulation}
 In order to properly understand the activities of the sources and the optimal duration for calibrations of the detectors, Monte Carlo simulations of the calibration sources are performed.
-These way in which these simulations are performed is described in more detail in \autoref{ch:Simulation in CUORE}, but the results of these simulations for calibration are described here.
+The way in which these simulations are performed is described in more detail in \autoref{ch:Simulation in CUORE}, but the results of these simulations for calibration are described here.
 As the role of calibration is to define the energy scaling of the detector response, viz. how to map the output voltages of the NTD thermistors to the amount of energy deposited into the crystal, the use of a ``standard candle" is needed in calibration.
 The well-understood decay chain of $^{232}$Th serves this purpose as the calibration sources used in the DCS, as it produces multiple monoenergetic photons ranging from the 239 keV from $^{212}$Pb to the 2615 keV from $^{208}$Tl shown in \autoref{fig:Outer_and_inner_spectra}.
 \begin{figure}[htbp]

@@ -230,7 +230,7 @@ This growth was performed in two phases: crystal growth and crystal polishing.
 During each procedure, extreme care was taken to minimize bulk contaminations forming in the first phase and surface contaminations in the second \cite{crystal_growth_methods, crystal_growth_methods_2, Barghouty:2010kj}.
 During the first procedure, the crystals are grown twice, where, after the first growth, 1 mm is removed from the ingots and the selected best sections of the first growth are used as high-purity powder for the second.
 This two-stage growth process enables crystal purity of 99.999\%, up from the 99.99\% purity of commercially available powder.
-This increased purity, along with growing the crystals from powder, strongly reduces bulk contaminations of $^{40}$K, which is a particularly problematic background for \twonubb~measurements, as it decays through beta-decay.
+This increased purity, along with growing the crystals from powder, strongly reduces bulk contaminations of $^{40}$K, which is a particularly problematic background for \twonubb~measurements, as it decays through beta-decay and has a similar spectral shape to \twonubb~decays.
 
 After the crystals are grown, they are then cut into cubes with $5 \pm 0.0050$ cm edges and $0.05$ cm chamfers with an average flatness on each face of $<0.001$ cm.
 In addition, the cubic faces are oriented parallel to the planes of the crystalline structure of the \teotwo~within $\pm1^{\circ}$ by means of an X-ray on the crystals after their growth.
@@ -239,7 +239,7 @@ Each of these processes removes approximately $10^5$ atomic layers from the surf
 At the end of the polishing step, the completed crystal is then triple-bagged in vacuum and stored in groups of 6 in a polyethylene vacuum box in order to avoid exposure to atmospheric radon.
 
 Once the crystals arrive at LNGS, they are immediately placed in storage underground under a flux of nitrogen.
-Despite the short $\sim$1 month that the crystals are aboveground causes the crystals to have cosmogenic activation of $^{110m}$Ag and $^{60}$Co that contribute $<1\%$ of the background at the Q-value of $^{130}$Te \cite{PhysRevC.92.024620, BARGHOUTY201316}.
+Despite the short $\sim$1 month that the crystals are aboveground, this exposure to cosmic rays causes the crystals to have cosmogenic activation of $^{110m}$Ag and $^{60}$Co that contribute $<1\%$ of the background at the Q-value of $^{130}$Te \cite{PhysRevC.92.024620, BARGHOUTY201316}.
 
 \subsubsection{Parts Selection and Cleaning}
 \label{ssec:Parts Selection and Cleaning}
@@ -393,10 +393,9 @@ After the tower assembly is completed, the towers are stored in nitrogen-flushed
 \subsubsection{Tower Installation}
 After the towers are completed and the cryostat is ready for operation, the CUORE towers need to be installed into the cryostat.
 This is another critical operation, as this is the first and only time that the CUORE crystals are exposed to air, with an approximate exposure of 1 day per tower.
-In order to complete this activity, a specialized clean room was installed around the exposed inner part of the cryostat.
-As the danger of being exposed to air is due to the presence of Radon in the air.
-LNGS has an activity of 80 $\textrm{Bq}/\textrm{m}^3$ of Radon \cite{UndergroundLabs_Radon}, which required the use of a system to flush this specialized clean room with radon-free air.
-This system reduced the radon to $<1~\textrm{Bq}/\textrm{m}^3$.
+What makes exposure to air particularly worrisome, is that Radon present in air will radioactively contaminate the towers.
+In order to complete this activity while minimizing the contact of Radon in air, a specialized clean room was installed around the exposed inner part of the cryostat.
+In addition, this room was equipped with a radon abatement system that flushed the room with Radon-free air, taking the activity of Radon in the air from the 80 $\textrm{Bq}/\textrm{m}^3$ \cite{UndergroundLabs_Radon} at LNGS down to $<1~\textrm{Bq}/\textrm{m}^3$ inside the clean room.
 Each of the towers is then connected to the tower support plate independently, and the inner guide tubes for the DCS, discussed later in \autoref{chap:DCS}, are also connected at this time.
 A view of the completed cryostat is shown in \autoref{fig:cuore_photograph}.
 
@@ -414,10 +413,10 @@ A view of the completed cryostat is shown in \autoref{fig:cuore_photograph}.
 \section{Predecessor Experiments}
 \label{sec:Predecessor Experiments}
 The CUORE experiment benefits from the experience gained through multiple previous incarnations of this bolometric technique in \teotwo.
-Starting with the smallest proof-of-concept detectors, successive generations of this technology \cite{ }have increased in total detector mass and decreased in background in order to increase sensitivity and further probe \zeronubb~decay.
+Starting with the smallest proof-of-concept detectors, successive generations of this technology have increased in total detector mass and decreased in background in order to increase sensitivity and further probe \zeronubb~decay.
 This almost-exponential growth in mass in the different generations of CUORE-like experiments from 73~g to 742~kg is shown in \autoref{fig:bolometer_mass_over_time}.
-Of course, as shown in \autoref{eq:sensitivity_short}, the detector mass is only one part of the sensitivity equation, but successive experiments have also have significantly reduced backgrounds and other improvements to increase sensitivity beyond merely the increase from increased mass.
-As a full description and history of the CUORE-like experiments is too long for discussion here, the most recent experiments, viz. Cuoricino and CUORE-0, that directly inform choices made for CUORE are described below.
+Of course, as shown in \autoref{eq:sensitivity_short}, the detector mass is only one part of the sensitivity equation, but successive experiments have also significantly reduced backgrounds and other improvements to increase sensitivity beyond merely gaining from increased mass.
+As a full description and history of the CUORE-like experiments is too long for discussion here, the most recent experiments, namely Cuoricino and CUORE-0, that directly inform choices made for CUORE are described below.
 
 \begin{figure}[htbp]
     \centering
@@ -476,8 +475,8 @@ A schematic of the experimental apparatus can be seen in \autoref{fig:CUORE-0_cr
 \end{figure}
 
 The purpose of this experiment, besides making a measurement of \zeronubb, was to validate the improved materials selection and cleaning of the CUORE crystals.
-This improvement is quantified in \autoref{fig:cuore-0_vs_cuoricino} where a signficant decrease is observed in the \alpha~backgrounds which are due to components nearest to the crystals.
-The \gamma~backgrounds are not reduced as significantly as the cryostat is the same between the CUORE and Cuoricino experiments.
+This improvement is quantified in \autoref{fig:cuore-0_vs_cuoricino} where a significant decrease is observed in the $\alpha$ backgrounds due to components nearest to the crystals.
+The $\gamma$ backgrounds are not reduced as significantly as the cryostat is the same between the CUORE and Cuoricino experiments.
 
 \begin{figure}[htpb]
     \centering
@@ -519,16 +518,16 @@ Figure courtesy of the CUORE collaboration.}
 \subsubsection*{Detector Shielding and Vibration Isolation}
 As noted above, the detectors need to be shielded from the environment and even from radioactivity in the shielding itself.
 Starting from the outside of the experiment, shown in \autoref{fig:external_shielding}, there is an external lead shield with a layer of polyethylene and boric acid that surrounds the cryostat.
-This $\sim70$ tonne, 25 cm thick lead shielding acts to shield from the environmental gammas from LNGS, and the 18 cm thick polyethylene and 2 cm thick boric acid (H$_3$BO$_3$ powder) shields thermalize and absorb environmental neutrons.
+This $\approx70$ tonne, 25 cm thick lead shielding acts to shield the interior of the cryostat from the environmental gammas from LNGS, and the 18 cm thick polyethylene and 2 cm thick boric acid (H$_3$BO$_3$ powder) shields thermalize and absorb environmental neutrons.
 This external shielding can be raised and lowered as needed, and remains lowered while working on the cryostat, and raised during physics data-taking.
 Inside this external shielding is the cryostat, suspended from the main support plate above by three steel ropes.
 This plate is supported by sand-filled columns, resting on rubber dampeners which act to seismically isolate the main support plate, and thus the cryostat) from the ground.
 This is a particularly important component given the seismic nature of the area around LNGS as vibrations contribute to low-frequency noise in CUORE, as, at the low temperatures of CUORE, the frictive heating from motion of the cryostat affects the sensitivity of the CUORE bolometers.
-In fact, even despite all these components, we set bad intervals, described moore in \autoref{ssec:Bad Intervals} during particularly intense seismic events around the globe.
+In fact, even despite all these components, we set bad intervals, described more in \autoref{ssec:Bad Intervals} during particularly intense seismic events around the globe.
 At the top of the cryostat, the 300-K plate supports the 40-K, 4-K, and 600-mK plates by segmented steel rods.
 Each of these plates also holds a corresponding cylindrical vessel that surrounds the inner vessels.
 In addition, these vessels act as a radiation shield, both for thermal radiation that would heat up the inner vessels and particle radiation that would deposit energy in the detectors.
-In order to minimize the radioactivity of these components, with over 7 tonnes of mass, these plates and vessels are made of Oxygen-Free Electronic (OFE) copper (99.99\% Cu), with the exception of the 300-K plate and the top of the 300-K vessel which is made of the stronger austenitic stainless steel due to the load it carries.
+In order to minimize the radioactivity of these components, with over 7 tonnes of mass, these plates and vessels are made of Oxygen-Free Electronic (OFE) copper (99.99\% Cu). However, the 300-K plate and the top of the 300-K vessel are made of stronger austenitic stainless steel due to the load they carry.
 This radioactivity constraint carries over to the superinsulation used to cover the 40-K and 4-K stages of the cryostat, which is needed to reduce the thermal radiation heat load on the vessels, and was optimized for a choice of 17 kg in 30 and 10 layers of aluminized mylar and polyester foil for the 40-K and 4-K stages, respectively.
 
 \begin{figure}

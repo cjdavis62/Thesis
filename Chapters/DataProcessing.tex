@@ -5,7 +5,7 @@ While CUORE benefits from a relatively simplistic detection method compared with
 In particular, given that the NTDs have a strong dependence on the temperature, there are multiple sources of noise such as the pulse tubes, and data is being collected on nearly 1000 crystals simultaneously, collecting, processing, and optimizing this data requires automated and parallelizable software procedures.
 
 \section{CUORE Data Acquisition}
-Because of the need in CUORE to calibrate $\sim$monthly, there are multiple layers for how data is organized for CUORE.
+Because of the need in CUORE to calibrate approximately monthly, there are multiple layers for how data is organized for CUORE.
 At the largest scales, there are datasets that begin and end during these monthly calibrations where the closing calibration for one dataset can be used as the opening calibration for the following dataset.
 Composing each dataset are runs of $\sim24$ hour length.
 These runs are further broken down into 3 types: `background' for physics runs, `calibration' for calibration runs, and `test' runs.
@@ -34,8 +34,8 @@ At low bias, the signal amplitude depends linearly on the bias, but, at high bia
 In addition, different levels of bias induce various other effects on the noise, and the signal-to-noise ratio is not necessarily maximized when the amplitude is maximized.
 In these scenarios, the bias is set to be when the Signal-to-Noise Ratio (SNR) is maximized which is generally higher than the bias that maximizes the amplitude.
 However, if the SNR is maximized, but a high bias makes the baseline unstable, the bias is instead lowered to the bias that maximizes the amplitude \cite{Lucia:LoadCurvesDoc}.
-Following setting the bias for each channel, the gain and offset are then set for each channel such that a 2615 keV signal returns a 1-2 V amplitude and that events with energies up to 10-20 MeV can be recorded.
-Given that the ADC range is -10 V to 10 V, an offset of $-4$ to $-7$ V is used which allows for the higher-energy events to be observed, while preventing a drifting baseline from saturating the ADC low.
+After setting the bias for each channel, the gain and offset are then set for each channel such that a 2615 keV signal returns a 1-2 V amplitude and that events with energies up to 10-20 MeV can be recorded.
+Given that the ADC range is $-10$ V to 10 V, an offset of $-4$ to $-7$ V is used which allows for the higher-energy events to be observed, while preventing a drifting baseline from saturating the ADC low.
 This setting of bias, gain, and offset for each channel is called a working point, and these working points are generally held constant between datasets\footnote{In the event of a warm-up between datasets or in the case of changing the operating temperature of CUORE, these values need to be redetermined.}.
 Lastly, the electronics hardware also assigns tower and channel numbering to all the detectors in CUORE, as shown in \autoref{fig:DAQ_tower_numbering}.
 
@@ -51,7 +51,7 @@ Lastly, the electronics hardware also assigns tower and channel numbering to all
 
 \section{Online Data Taking}
 \label{sec:Online Data Taking}
-The software used to collect the CUORE data is the \textsc{Apollo} software package that controls the working point setup and reading and triggering on data.
+The software used to collect the CUORE data is the \textsc{Apollo} software package that controls the working point setup along with reading and triggering on data.
 During data-taking, events can be categorized into three categories.
 The first type of events are the physics events that consist of particles depositing energy in the crystals.
 The second type of events are the heater pulses that occur on every channel every 380 seconds.
@@ -94,7 +94,7 @@ Depending on the source of the issue, these bad intervals can be set channel-by-
 
 \subsubsection*{Preprocess}
 Before processing each event, we first ``preprocess" to determine the detector state before the event occurs and to determine how many pulses are included in each trigger.
-This is done by fitting the first 2.25 seconds of the data before a trigger and fit a line to determine the average baseline and the baseline slope.
+The preprocessing step starts by fitting the first 2.25 seconds of the data before a trigger with a line to determine the average baseline and the baseline slope.
 In addition, the baseline noise is defined as the RMS of the data.
 Then, the number of pulses in the event is determined by taking a smoothed derivative of the pulse and searching for locations where the derivative is over 5 times that of the RMS with only positive pulses counted.
 
@@ -166,7 +166,7 @@ For example, a pulse that is due to a spike in detector noise may have a fast ri
 A good event will have a slope that is generally flat, corresponding to the detector conditions also being stable, while, e.g., an event that occurs too soon after another pulse in the same bolometer will have a falling baseline slope and will degrade a measurement of the energy of the later pulse.
 \item [Peak delay] As triggered pulses have 3 seconds of data written before the trigger and it takes a good event roughly 100 ms to rise to the maximum, another parameter is the time it takes the pulse to reach the maximum from the start of the triggered window.
 \item [TVL and TVR] Parameters named ``Test Variable Left" and ``Test Variable Right", effectively $\chi^2$ values for a fit between the template averaged pulse versus each pulse, are also used.
-These are used on the right- and left-hand sides of the peak and determine how well the pulse matches the template, and are named.
+These are used on the right- and left-hand sides of the peak and determine how well the pulse matches the template.
 \end{description}
 Each of the distributions in each of these parameters vary across channels and datasets, and have an additional complication as they are also energy-dependent.
 The solution to avoiding these complications is to normalize each of these parameters into a channel-, dataset-, and energy-independent form.
@@ -185,26 +185,26 @@ This distance, $D_M$, is defined as
     D_M(\Vec{x}) = \sqrt{(\Vec{x}-\Vec{\mu})^TS^{-1}(\Vec{x}-\Vec{\mu})}
 \end{align}
 where $\Vec{x}$ and $\Vec{\mu}$ are vectors containing the normalized parameters from a pulse and the mean of the ``good" pulses and S is the covariance matrix of these parameters.
-Setting an upper limit on this allowed distance is then used as the pulse shape cut, and thus a limit of $D_M<5$ is set by optimizing the senstitivity.
+Setting an upper limit on this allowed distance is then used as the pulse shape cut, and thus a limit of $D_M<5$ is set by optimizing the sensitivity.
 
 \subsubsection*{Coincidence Analysis}
-One of the last data to be processed is an analysis of the coincidence rates between various bolometers.
+One of the last steps in data processing is an analysis of the coincidence rates between various bolometers.
 While CUORE lacks any particular particle identification through any pulse shape analysis, there is still significant background rejection that can be had through a coincidence analysis.
 For example, a $\gamma$ or muon can deposit energy in multiple crystals, whereas an expected \zeronubb~or\twonubb~decay will deposit its energy in a single crystal 88\% of the time.
 Therefore, this stage of the analysis seeks to label each event as being in coincidence with either 0, 1, 2, etc. other events.
 However, while the events that interact with multiple crystals are significantly faster than the readout\footnote{Compare a $\gamma$ that pass through the detector region in $\mathcal{O}(10^{-9})$ seconds or a 4 MeV $\alpha$ that can pass between crystals in also in nanoseconds to the millisecond response time of the electronics.} and can be considered as instantaneous, variations in the responses of each crystal require more careful consideration.
 These variations are called ``jitter" and need to be taken into account when determining the rates of ``true" versus ``accidental" coincidences between events that are truly coincident such as Compton scattering in multiple crystals versus two single-crystal events that happen to occur simultaneously, respectively.
-In order to measure this jitter, calibration data with a large fraction of 2615 keV $^{208}$Tl events are used because have significantly higher rates of ``true" versus ``accidental" coincidences.
+In order to measure this jitter, calibration data with a large fraction of 2615 keV $^{208}$Tl events are used because they have significantly higher rates of ``true" versus ``accidental" coincidences.
 In this data, two pulses within a $\pm100$ ms window that have total energy summing up to 2615 keV should only have a timing difference due to their responses.
 Therefore, when considering pulses to be simultaneous, by correcting the timing of events with this jitter, a significantly smaller coincidence window can be used\footnote{An important question that should be asked is if this is true at multiple baselines or at varying energies, but this jitter seems to be independent of these effects, greatly simplifying this analysis.}.
-In the analysis, a coincidence window of $\pm5$ ms is then used to label each event with the number of simultaneous events in the detectors, viz. M1, M2, ... where M$\star$ refers to the ``multiplicity" of the event\footnote{No geometric cut is used on CUORE data, however, as it does not strongly affect the results within a 10 ms window.}.
+In the analysis, a coincidence window of $\pm5$ ms is then used to label each event with the number of simultaneous events in the detectors, namely M1, M2, ... where M$\star$ refers to the ``multiplicity" of the event\footnote{No geometric cut is used on CUORE data, however, as it does not strongly affect the results within a 10 ms window.}.
 This labelling is highly critical not only to a \zeronubb~search, but also to any measurements of the background model, as discussed in \autoref{ch:Background Model}.
 In particular, the processed data are split by their multiplicities, and any misidentification of an M1 event as M2 or M2 as M3 and their reverses due to accidentals or otherwise adversely affect the accuracy of the fit. 
 Lastly, events to be considered in these windows are all subject to the same pulse triggers and cuts and are such constrained to have energies $>150$ keV, and to simplify the analysis, only a single energy estimator, $E_{OF}$ is used, which will be discussed in the following.
 
 \subsubsection*{Energy Estimator Selection}
 As there are multiple ways to estimate the energy of events in CUORE due to multiple methods of processing the data, e.g. the choice of stabilizing pulse amplitudes off of the heater pulses or off of $^{208}$Tl decays, a choice needs to be made as to which estimation is used in the final analysis.
-Instead of making this decision a priori or even during the analysis, the analysis is performed after performing all the steps above.
+Instead of making this decision a priori or even during the analysis, this analysis is performed after all the steps above have been taken.
 Naturally, for some channels that lack a functioning Si heater, there is not a choice of which estimator to use in this case, but, in principle when there is a choice between two estimators to use or a choice between a new analysis technique versus an older one, the following procedure, described in the case of the stabilization choice, is followed \cite{PRL2017_InternalNote}.
 First, a ratio, R, is calculated according to the formula
 \begin{align}
