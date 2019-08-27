@@ -94,16 +94,17 @@ where $\langle x \rangle$ is the expectation value of $x$, $Poisson(x|y)$ is the
 This somewhat intimidating posterior is merely just a rewriting of Bayes' theorem, given that both the real and simulated data both obey Poisson statistics and that a prior is included on each of these parameters.
 Of course, in Bayesian statistics, everything comes down to the choice of priors\footnote{\RaggedRight A cute caricature of which is described here: \url{https://xkcd.com/1132/}}.
 As discussed in \autoref{ssec:Parts Selection and Cleaning} and \autoref{ssec:Cryostat_Radiopurity}, these measurements of background activity in the fit could begin to constrain a few of the priors for $C_j$ used, but, even with upper limits, a choice needs to be made about the form of these priors.
-For this analysis then, the form for these priors is chosen to be a uniform non-informative prior that covers a large range from 0\footnote{Naturally, having a contribution produce a negative addition to the spectrum is unphysical, but this can introduce a slight positive fit bias.} to a significant overestimation of the contribution to the background model.
+For this analysis then, the form for these priors is chosen to be a uniform non-informative prior that covers a large range from 0\footnote{Naturally, having a contribution produce a negative addition to the spectrum is unphysical, but this can introduce a slight positive fit bias.} to a significant overestimation of the contribution to the background model, done by assuming the contribution of a particular spectrum explains all of the data in a particular bin and doubling that value\footnote{The muon background in CUORE is not left as a non-informative prior, however.
+This value is fixed to a Gaussian prior computed from the high-multiplicity spectra ($\mathcal{M}>5$) where the muon rate dominates the spectrum.}.
 Lastly, this background model is, in order to simplify the fitting and to reduce the effect of other systematics, treated as a binned analysis with varying bin size.
-In particular, while the bin size is set to a minimum width of 15 keV, the regions around each $\gamma$ or $\alpha$ peak are merged into a single bin in order to remove systematic uncertainties due to the particular shape of the peak, and, in addition, bins with $<30$ counts are also merged to reduce the effect of statistical fluctuations.
+In particular, while the bin size is set to a minimum width of 15 keV, the regions around each $\gamma$ or $\alpha$ peak are merged into a single bin in order to remove systematic uncertainties due to the particular shape of the peak, and, in addition, bins with fewer than 30 counts are also merged to reduce the effect of statistical fluctuations.
 In addition, this bin size also sets the maximum range on each of the uniform priors.
 This is done by assuming that a particular source contributes every count in a bin, and the upper limit on the prior is set to be twice the maximum normalization $C_j$ that satisfies this.
 \begin{table}[htbp]
     \centering
     \caption[The background model components for CUORE]
     {The background model components for CUORE.
-    The surface contaminations are modeled at multiple depths as some sources exhibit differing spectra at shallower or deeper depths. \color{red}Add Sm-147?\color{black}}
+    The surface contaminations are modeled at multiple depths as some sources exhibit differing spectra at shallower or deeper depths.}
     \label{tab:background_model_list}
 \begin{tabular}{l|l|l}
 \hline
@@ -171,11 +172,61 @@ While this causes large losses in efficiency, this benefits the MCMC results by 
 These techniques are not used in this analysis, but could be used in future analyses.}.
 \section{Majoron Analysis}
 When fitting the data with JAGS, the spectrum is split into three main components: the single-crystal \Mone~spectrum, the multi-crystal \Mtwo~spectrum, and the summed multi-crystal \Msum~spectrum.
-This is done as the signal events from a Majoron search mostly deposit energy into a single crystal, as is typical of events originating from the bulk of the crystal volume, whereas many other sources that are external to a crystal or on the surface have a higher probability of depositing energy into more than one crystal.
+This is done as the signal events from majoron decays mostly deposit energy into a single crystal, as is typical of events originating from the bulk of the crystal volume, whereas many other sources that are external to a crystal or on the surface have a higher probability of depositing energy into more than one crystal.
 Higher multiplicity spectra are not used, as they do not add significant information to the fit for other sources.
-The fit with the full background model, which will be called $H_0$, is shown in \color{red}include $H_0$ fit here\color{black}.
-The $\chi^2$ of the fit is \color{red}insert $\chi^2$ here\color{black}.
-For the fit, each of the possible Majoron spectral indices are considered independently and are shown for each multiplicity in \autoref{fig:SpectralIndicesM1Fit} and \autoref{fig:SpectralIndicesM2Fit}.
+In addition, for \Mone~events there is a further subdivision for events that occur in the innermost detectors versus the outermost detectors.
+This splits the detector array into ``inner" and ``outer" layers, called here Layer 0 and Layer 1.
+This split takes place as shown in \autoref{fig:inner_outer_layers}.
+This division allows for events that are generally external to the detector array, such as gammas from the copper shields, to be me up more in the outer layer, while more internal events, such as \twonubb~or majoron decays, comprise a larger fraction of the events in the inner layer.
+For the fits shown here, these four spectra: \Mone~in both layers, \Mtwo, and \Msum~are fit simultaneously to the data.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/Inner_Outer_Layers.png}
+    \caption[A cartoon showing the splitting of the detectors into ``inner" and ``outer" layers]
+    {A cartoon showing the splitting of the detectors into ``inner" and ``outer" layers.
+    Left is a top-down view of the detectors, and the cutout is a side-on view of a single inner tower with the top two and bottom two floors in the outer layer.}
+    \label{fig:inner_outer_layers}
+\end{figure}
+The fit of all these spectra with the full background model, be called $H_0$, is shown in \autoref{fig:H0_fit_M1} and \autoref{fig:H0_fit_M2}.
+For these fits fpr $H_0$, the fit is generally quite good, with the exception of discrepancies in the alpha region.
+These discrepancies are particularly pronounced in the \Mtwo~and \Msum~spectra, which are generally less well-understood as the \Mone~spectra.
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{\textwidth}
+\includegraphics[width=0.9\textwidth]{Figures/2nu_M1L0.pdf}
+\end{subfigure}
+\par\bigskip\bigskip
+\begin{subfigure}[t]{\textwidth}
+\includegraphics[width=0.9\textwidth]{Figures/2nu_M1L1.pdf}
+\end{subfigure}
+\caption[The fitted \Mone~spectra according to the $H_0$ model]
+{The fitted \Mone~spectra according to the background-only $H_0$ model for both the inner (top) and outer (bottom) layers, along with the residuals for each.}
+\label{fig:H0_fit_M1}
+\end{figure}
+\begin{figure}[htbp]
+\begin{subfigure}[t]{\linewidth}
+\includegraphics[width=0.9\textwidth]{Figures/2nu_M2.pdf}
+\end{subfigure}
+\par\bigskip\bigskip
+\begin{subfigure}[t]{\linewidth}
+\includegraphics[width=0.9\textwidth]{Figures/2nu_M2sum.pdf}
+\end{subfigure}
+\caption[The fitted \Mtwo~and \Msum~spectra according to the $H_0$ model]
+{The fitted \Mtwo~(top) and \Msum~(bottom) spectra according to the background-only $H_0$ model, along with the residuals for each.}
+\label{fig:H0_fit_M2}
+\end{figure}
+The $\chi^2$ of the \Mone~fit in the inner layer is 784.1 with 166 degrees of freedom, as shown in \autoref{fig:2nu_n1_combinedM1L0chi2}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/Combined_M1L0_chi2_fixed_labels.pdf}
+    \caption[$\chi^2$ comparison of the 2nu and spectral index 1 majoron fits]
+    {$\chi^2$ comparison of the 2nu and spectral index 1 majoron fits for the inner layer \Mone~fit with residuals below.
+    While the fit observes a slight improvement in the $\chi^2$ in the gamma region, variations in the alpha region cause the improvement in $\chi^2$ to be negligible.}
+    \label{fig:2nu_n1_combinedM1L0chi2}
+\end{figure}
+
+For the fits for each of the majoron spectra, the fits are performed independently for each spectral index, where the data is now fit to the $H_0$ background model with the addition of one of the majoron spectra.
+These models now form four separate $H_1$ models, one for each of the majoron spectral indices: 1, 2, 3, and 7.
 
 \begin{figure}[htbp]
 \centering
@@ -218,8 +269,6 @@ For the fit, each of the possible Majoron spectral indices are considered indepe
 \caption[The fitted contribution of Majoron decays for the different spectral indices in the \Mtwo~ spectrum]{The fitted contribution of Majoron decays for the different spectral indices in the \Mtwo~ spectrum.}
 \label{fig:SpectralIndicesM2Fit}
 \end{figure}
-
-Figures to include: Correlation matrix, Fit value distributions for all the Majoron spectra, background model with only 2nu -- describe deficiencies i.e. alpha region low-E and 2 MeV, systematics (floors, layers, etc.), 
 
 \section{Majoron Systematics}
 For the fits described above, it is important to also consider the systematics associated with each result.
